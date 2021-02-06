@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './index.css'
 
 const AboutMe = ({ description }) => (
-  <div className='about-me'>{description}</div>
+  <div className='about-me item item_1'>
+    <div className='description'>{description}</div>
+  </div>
 )
 
 AboutMe.propTypes = {

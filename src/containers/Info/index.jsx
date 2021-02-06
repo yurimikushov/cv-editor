@@ -16,39 +16,17 @@ import {
   languageList,
 } from './fake-data'
 
-const withItemWrapper = (WrappedComponent) => {
-  const WithItemWrapper = (props) => (
-    <div className='info__item'>
-      <WrappedComponent {...props} />
-    </div>
-  )
-
-  const wrappedComponentName =
-    WrappedComponent.displayName || WrappedComponent.name || 'Component'
-
-  WithItemWrapper.displayName = `WithItemWrapper(${wrappedComponentName})`
-
-  return WithItemWrapper
-}
-
-const AboutMeItem = withItemWrapper(AboutMe)
-const ExperienceListItem = withItemWrapper(ExperienceList)
-const EducationListItem = withItemWrapper(EducationList)
-const ContactListItem = withItemWrapper(ContactList)
-const TechnologyListItem = withItemWrapper(TechnologyList)
-const LanguageListItem = withItemWrapper(LanguageList)
-
 const InfoContainer = () => (
   <main className='info'>
     <div className='main-info'>
-      <AboutMeItem description={aboutMe} />
-      <ExperienceListItem experienceList={experiences} />
-      <EducationListItem educationList={educations} />
+      <AboutMe description={aboutMe} />
+      <ExperienceList experienceList={experiences} />
+      <EducationList educationList={educations} />
     </div>
     <div className='another-info'>
-      <ContactListItem contacts={contacts} />
-      <TechnologyListItem description={technologies} />
-      <LanguageListItem languages={languageList} />
+      <ContactList contacts={contacts} />
+      <TechnologyList description={technologies} />
+      <LanguageList languages={languageList} />
     </div>
   </main>
 )

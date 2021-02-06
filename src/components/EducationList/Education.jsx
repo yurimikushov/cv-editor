@@ -2,16 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Education = ({ degree, university, duration }) => (
-  <div className='education__item'>
-    <div className='education__item-title education__item-title_lvl-1'>
-      {degree}
-    </div>
-    <div className='education__item-title education__item-title_lvl-2'>
-      {university}
-    </div>
-    <div className='education__item-title education__item-title_lvl-3'>
-      {duration}
-    </div>
+  <div className='education item item_2'>
+    <div className='title title_1'>{degree}</div>
+    <div className='title title_2'>{university}</div>
+    <div className='title title_4'>{duration}</div>
   </div>
 )
 

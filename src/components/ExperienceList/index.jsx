@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Experience from './Experience'
-import './index.css'
 
 const ExperienceList = ({ experienceList }) => (
-  <div className='experience'>
-    <header className='experience__title'>Experience</header>
+  <div className='experiences item item_1'>
+    <div className='title title_0'>Experience</div>
     {experienceList.map((experience) => (
       <Experience key={experience.id} {...experience} />
     ))}

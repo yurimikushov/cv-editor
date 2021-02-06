@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './index.css'
 
 const TechnologyList = ({ description }) => (
-  <div className='technologies'>
-    <header className='technologies__title'>Technologies</header>
-    <div className='technologies__description'>{description}</div>
+  <div className='technologies item item_1'>
+    <div className='title title_3'>Technologies</div>
+    <div className='technology description description_1'>{description}</div>
   </div>
 )
 

@@ -3,7 +3,7 @@
   --color-black: #000;
   --color-gray-0: #e5e5e5;
   --color-gray-1: #73808d;
-  --font-family: "Arial", sans-serif;
+  --font-family: 'Arial', sans-serif;
   --font-size: 13px;
   --page-width: 800px;
   --page-min-height: 900px;
@@ -25,4 +25,59 @@ a {
 
 a:hover {
   color: var(--color-black);
+}
+
+.title {
+  margin-bottom: 5px;
+  color: var(--color-black);
+  font-size: 1.15rem;
+}
+
+.title.title_0 {
+  color: var(--color-gray-1);
+  font-size: 0.7rem;
+  letter-spacing: 0.15rem;
+  line-height: 1.4rem;
+  text-transform: uppercase;
+}
+
+.title.title_1 {
+  font-weight: bold;
+  letter-spacing: 0.07rem;
+}
+
+.title.title_2 {
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.title.title_3 {
+  color: var(--color-gray-1);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.title.title_4 {
+  color: var(--color-gray-1);
+  font-size: 0.77rem;
+  font-weight: 100;
+}
+
+.description {
+  color: var(--color-black);
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.description.description_1 {
+  color: var(--color-gray-1);
+  font-size: 0.85rem;
+}
+
+.item.item_1:not(:first-child) {
+  margin-top: 14px;
+}
+
+.item.item_2:not(:first-child) {
+  margin-top: 7px;
 }

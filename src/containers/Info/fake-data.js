@@ -7,7 +7,7 @@ const experiences = [
     position: 'Position name',
     company: 'Company name',
     duration: 'Experience duration',
-    discription:
+    description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?',
   },
   {
@@ -15,7 +15,7 @@ const experiences = [
     position: 'Position name',
     company: 'Company name',
     duration: 'Experience duration',
-    discription:
+    description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?',
   },
   {
@@ -23,7 +23,7 @@ const experiences = [
     position: 'Position name',
     company: 'Company name',
     duration: 'Experience duration',
-    discription:
+    description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?',
   },
 ]

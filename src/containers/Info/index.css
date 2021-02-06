@@ -11,7 +11,3 @@
 .another-info {
   width: 20%;
 }
-
-.info__item:not(:first-child) {
-  margin-top: 20px;
-}

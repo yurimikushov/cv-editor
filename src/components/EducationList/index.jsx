@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Education from './Education'
-import './index.css'
 
 const EducationList = ({ educationList }) => (
-  <div className='education'>
-    <header className='education__title'>Education</header>
+  <div className='educations item item_1'>
+    <div className='title title_0'>Education</div>
     {educationList.map((education) => (
       <Education key={education.id} {...education} />
     ))}

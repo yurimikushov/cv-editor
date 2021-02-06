@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Contact = ({ href, title }) => (
-  <div className='contact'>
+  <div className='contact description description_1'>
     <a href={href}>{title}</a>
   </div>
 )
