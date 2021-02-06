@@ -1,0 +1,7 @@
+.experience__title {
+  color: var(--color-gray-1);
+  font-size: 0.7rem;
+  letter-spacing: 0.15rem;
+  line-height: 1.4rem;
+  text-transform: uppercase;
+}
