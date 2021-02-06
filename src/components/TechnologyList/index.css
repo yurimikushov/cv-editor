@@ -1,0 +1,12 @@
+.technologies__title {
+  color: var(--color-gray-1);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+}
+
+.technologies__description {
+  color: var(--color-gray-1);
+  font-size: 0.85rem;
+  line-height: 1.4rem;
+}
