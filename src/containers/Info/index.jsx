@@ -38,7 +38,7 @@ const ContactListItem = withItemWrapper(ContactList)
 const TechnologyListItem = withItemWrapper(TechnologyList)
 const LanguageListItem = withItemWrapper(LanguageList)
 
-const Info = () => (
+const InfoContainer = () => (
   <main className='info'>
     <div className='main-info'>
       <AboutMeItem description={aboutMe} />
@@ -53,4 +53,4 @@ const Info = () => (
   </main>
 )
 
-export default Info
+export default InfoContainer
