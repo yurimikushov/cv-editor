@@ -6,6 +6,10 @@
   text-transform: uppercase;
 }
 
+.education__item:not(:first-child) {
+  margin-top: 10px;
+}
+
 .education__item-title {
   margin: 5px 0;
   color: var(--color-black);
@@ -13,6 +17,7 @@
 }
 
 .education__item-title_lvl-1 {
+  font-weight: bold;
   letter-spacing: 0.07rem;
 }
 

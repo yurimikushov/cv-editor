@@ -4,12 +4,12 @@ import Contact from './Contact'
 import './index.css'
 
 const ContactList = ({ contacts }) => (
-  <article className='contacts'>
+  <div className='contacts'>
     <header className='contacts__title'>Contacts</header>
     {contacts.map((contact) => (
       <Contact key={contact.title} href={contact.href} title={contact.title} />
     ))}
-  </article>
+  </div>
 )
 
 ContactList.propTypes = {

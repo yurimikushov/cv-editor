@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import './index.css'
 
 const AboutMe = ({ description }) => (
-  <article className='about-me'>{description}</article>
+  <div className='about-me'>{description}</div>
 )
 
 AboutMe.propTypes = {

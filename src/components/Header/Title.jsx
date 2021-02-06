@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 const Title = ({ name, position }) => (
   <div className='header__title'>
-    <p className='header__name'>{name}</p>
-    <p className='header__position'>{position}</p>
+    <div className='header__name'>{name}</div>
+    <div className='header__position'>{position}</div>
   </div>
 )
 

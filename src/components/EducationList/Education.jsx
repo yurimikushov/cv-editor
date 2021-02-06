@@ -2,17 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Education = ({ degree, university, duration }) => (
-  <article className='education__item'>
-    <h1 className='education__item-title education__item-title_lvl-1'>
+  <div className='education__item'>
+    <div className='education__item-title education__item-title_lvl-1'>
       {degree}
-    </h1>
-    <h2 className='education__item-title education__item-title_lvl-2'>
+    </div>
+    <div className='education__item-title education__item-title_lvl-2'>
       {university}
-    </h2>
-    <h3 className='education__item-title education__item-title_lvl-3'>
+    </div>
+    <div className='education__item-title education__item-title_lvl-3'>
       {duration}
-    </h3>
-  </article>
+    </div>
+  </div>
 )
 
 Education.propTypes = {

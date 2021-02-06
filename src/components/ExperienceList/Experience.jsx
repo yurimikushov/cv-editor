@@ -2,18 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Experience = ({ position, company, duration, discription }) => (
-  <article className='experience__item'>
-    <h1 className='experience__item-title experience__item-title_lvl-1'>
+  <div className='experience__item'>
+    <div className='experience__item-title experience__item-title_lvl-1'>
       {position}
-    </h1>
-    <h2 className='experience__item-title experience__item-title_lvl-2'>
+    </div>
+    <div className='experience__item-title experience__item-title_lvl-2'>
       {company}
-    </h2>
-    <h3 className='experience__item-title experience__item-title_lvl-3'>
+    </div>
+    <div className='experience__item-title experience__item-title_lvl-3'>
       {duration}
-    </h3>
-    <p className='experience__item-discription'>{discription}</p>
-  </article>
+    </div>
+    <div className='experience__item-discription'>{discription}</div>
+  </div>
 )
 
 Experience.propTypes = {

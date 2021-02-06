@@ -4,12 +4,12 @@ import Language from './Language'
 import './index.css'
 
 const LanguageList = ({ languages }) => (
-  <article className='languages'>
+  <div className='languages'>
     <header className='languages__title'>Languages</header>
     {languages.map((language) => (
       <Language key={language.title} title={language.title} />
     ))}
-  </article>
+  </div>
 )
 
 LanguageList.propTypes = {
