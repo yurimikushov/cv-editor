@@ -4,6 +4,7 @@ import ExperienceList from '../../components/ExperienceList'
 import EducationList from '../../components/EducationList'
 import ContactList from '../../components/ContactList'
 import TechnologyList from '../../components/TechnologyList'
+import LanguageList from '../../components/LanguageList'
 import './index.css'
 
 const aboutMeText =
@@ -61,6 +62,8 @@ const contacts = [
 const technologiesDescription =
   'HTML5, CSS3, SCSS, JS, React, React Hooks, Redux, MobX, Git'
 
+const languageList = [{ title: 'Russian' }, { title: 'English' }]
+
 const Info = () => (
   <main className='info'>
     <div className='main-info'>
@@ -80,6 +83,9 @@ const Info = () => (
       </div>
       <div className='another-info__item'>
         <TechnologyList description={technologiesDescription} />
+      </div>
+      <div className='another-info__item'>
+        <LanguageList languages={languageList} />
       </div>
     </div>
   </main>
