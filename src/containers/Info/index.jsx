@@ -1,6 +1,7 @@
 import React from 'react'
 import AboutMe from '../../components/AboutMe'
 import ExperienceList from '../../components/ExperienceList'
+import EducationList from '../../components/EducationList'
 import './index.css'
 
 const aboutMeText =
@@ -33,6 +34,21 @@ const experienceList = [
   },
 ]
 
+const educationList = [
+  {
+    id: 'id-1',
+    degree: 'Degree name',
+    university: 'University name',
+    duration: 'Education duration',
+  },
+  {
+    id: 'id-2',
+    degree: 'Degree name',
+    university: 'University name',
+    duration: 'Education duration',
+  },
+]
+
 const Info = () => (
   <main className='info'>
     <div className='main-info'>
@@ -41,6 +57,9 @@ const Info = () => (
       </div>
       <div className='main-info__item'>
         <ExperienceList experienceList={experienceList} />
+      </div>
+      <div className='main-info__item'>
+        <EducationList educationList={educationList} />
       </div>
     </div>
     <div className='another-info'></div>
