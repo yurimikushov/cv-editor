@@ -7,86 +7,48 @@ import TechnologyList from '../../components/TechnologyList'
 import LanguageList from '../../components/LanguageList'
 import './index.css'
 
-const aboutMeText =
-  'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto laborum dolores eos deleniti inventore delectus omnis, velit repudiandae qui nobis vel consequatur quisquam. Doloremque incidunt magnam quasi autem mollitia est praesentium voluptate voluptatem, harum, similique temporibus architecto eum cupiditate eligendi enim ab iste, alias ea. Veritatis id harum dolores unde.'
+import {
+  aboutMe,
+  experiences,
+  educations,
+  contacts,
+  technologies,
+  languageList,
+} from './fake-data'
 
-const experienceList = [
-  {
-    id: 'id-1',
-    position: 'Position name',
-    company: 'Company name',
-    duration: 'Experience duration',
-    discription:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?',
-  },
-  {
-    id: 'id-2',
-    position: 'Position name',
-    company: 'Company name',
-    duration: 'Experience duration',
-    discription:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?',
-  },
-  {
-    id: 'id-3',
-    position: 'Position name',
-    company: 'Company name',
-    duration: 'Experience duration',
-    discription:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?',
-  },
-]
+const withItemWrapper = (WrappedComponent) => {
+  const WithItemWrapper = (props) => (
+    <div className='info__item'>
+      <WrappedComponent {...props} />
+    </div>
+  )
 
-const educationList = [
-  {
-    id: 'id-1',
-    degree: 'Degree name',
-    university: 'University name',
-    duration: 'Education duration',
-  },
-  {
-    id: 'id-2',
-    degree: 'Degree name',
-    university: 'University name',
-    duration: 'Education duration',
-  },
-]
+  const wrappedComponentName =
+    WrappedComponent.displayName || WrappedComponent.name || 'Component'
 
-const contacts = [
-  { title: 'email', href: '/' },
-  { title: 'telephone', href: '/' },
-  { title: 'github.com', href: '/' },
-  { title: 'location', href: '/' },
-]
+  WithItemWrapper.displayName = `WithItemWrapper(${wrappedComponentName})`
 
-const technologiesDescription =
-  'HTML5, CSS3, SCSS, JS, React, React Hooks, Redux, MobX, Git'
+  return WithItemWrapper
+}
 
-const languageList = [{ title: 'Russian' }, { title: 'English' }]
+const AboutMeItem = withItemWrapper(AboutMe)
+const ExperienceListItem = withItemWrapper(ExperienceList)
+const EducationListItem = withItemWrapper(EducationList)
+const ContactListItem = withItemWrapper(ContactList)
+const TechnologyListItem = withItemWrapper(TechnologyList)
+const LanguageListItem = withItemWrapper(LanguageList)
 
 const Info = () => (
   <main className='info'>
     <div className='main-info'>
-      <div className='main-info__item'>
-        <AboutMe text={aboutMeText} />
-      </div>
-      <div className='main-info__item'>
-        <ExperienceList experienceList={experienceList} />
-      </div>
-      <div className='main-info__item'>
-        <EducationList educationList={educationList} />
-      </div>
+      <AboutMeItem description={aboutMe} />
+      <ExperienceListItem experienceList={experiences} />
+      <EducationListItem educationList={educations} />
     </div>
     <div className='another-info'>
-      <div className='another-info__item'>
-        <ContactList contacts={contacts} />
-      </div>
-      <div className='another-info__item'>
-        <TechnologyList description={technologiesDescription} />
-      </div>
-      <div className='another-info__item'>
-        <LanguageList languages={languageList} />
-      </div>
+      <ContactListItem contacts={contacts} />
+      <TechnologyListItem description={technologies} />
+      <LanguageListItem languages={languageList} />
     </div>
   </main>
 )
