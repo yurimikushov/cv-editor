@@ -2,6 +2,7 @@ import React from 'react'
 import AboutMe from '../../components/AboutMe'
 import ExperienceList from '../../components/ExperienceList'
 import EducationList from '../../components/EducationList'
+import ContactList from '../../components/ContactList'
 import './index.css'
 
 const aboutMeText =
@@ -49,6 +50,13 @@ const educationList = [
   },
 ]
 
+const contacts = [
+  { title: 'email', href: '/' },
+  { title: 'telephone', href: '/' },
+  { title: 'github.com', href: '/' },
+  { title: 'location', href: '/' },
+]
+
 const Info = () => (
   <main className='info'>
     <div className='main-info'>
@@ -62,7 +70,11 @@ const Info = () => (
         <EducationList educationList={educationList} />
       </div>
     </div>
-    <div className='another-info'></div>
+    <div className='another-info'>
+      <div className='another-info__item'>
+        <ContactList contacts={contacts} />
+      </div>
+    </div>
   </main>
 )
 
