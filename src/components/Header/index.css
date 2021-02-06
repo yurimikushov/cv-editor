@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  height: var(--header-height);
+  justify-content: space-between;
+}
+
+.header__title {
+  width: 70%;
+}
+
+.header__title > * {
+  margin: 5px 0;
+  color: var(--color-black);
+}
+
+.header__name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.header__position {
+  font-size: 1.7rem;
+}
+
+.avatar-wrapper {
+  width: 20%;
+}
+
+.avatar {
+  width: var(--header-height);
+  height: var(--header-height);
+  border-radius: 50%;
+}
