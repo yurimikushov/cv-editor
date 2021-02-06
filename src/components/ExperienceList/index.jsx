@@ -5,7 +5,7 @@ import './index.css'
 
 const ExperienceList = ({ experienceList }) => (
   <div className='experience'>
-    <header className='experience__title'></header>
+    <header className='experience__title'>Experience</header>
     {experienceList.map((experience) => (
       <Experience key={experience.id} {...experience} />
     ))}
