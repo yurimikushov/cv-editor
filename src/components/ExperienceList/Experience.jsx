@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './index.css'
 
 const Experience = ({ position, company, duration, discription }) => (
   <article className='experience__item'>

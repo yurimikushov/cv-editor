@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Education from '../Education'
+import Education from './Education'
 import './index.css'
 
 const EducationList = ({ educationList }) => (

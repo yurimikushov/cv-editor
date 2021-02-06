@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './index.css'
 
 const Education = ({ degree, university, duration }) => (
   <article className='education__item'>
