@@ -6,7 +6,7 @@ const ContactList = ({ contacts }) => (
   <div className='contacts item item_1'>
     <div className='title title_3'>Contacts</div>
     {contacts.map((contact) => (
-      <Contact key={contact.title} href={contact.href} title={contact.title} />
+      <Contact key={contact.id} href={contact.href} title={contact.title} />
     ))}
   </div>
 )

@@ -1,6 +1,8 @@
-const experiences = [
+import { nanoid } from 'nanoid'
+
+const exapmleExperiences = [
   {
-    id: 'id-1',
+    id: nanoid(),
     position: 'Position name',
     company: 'Company name',
     duration: 'Experience duration',
@@ -8,7 +10,7 @@ const experiences = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?',
   },
   {
-    id: 'id-2',
+    id: nanoid(),
     position: 'Position name',
     company: 'Company name',
     duration: 'Experience duration',
@@ -16,7 +18,7 @@ const experiences = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?',
   },
   {
-    id: 'id-3',
+    id: nanoid(),
     position: 'Position name',
     company: 'Company name',
     duration: 'Experience duration',
@@ -25,31 +27,22 @@ const experiences = [
   },
 ]
 
-const educations = [
-  {
-    id: 'id-1',
-    degree: 'Degree name',
-    university: 'University name',
-    duration: 'Education duration',
+const createExperiencesStore = () => ({
+  experiences: exapmleExperiences,
+  addExperience(position, company, duration, description) {
+    this.experiences.push({
+      id: nanoid(),
+      position,
+      company,
+      duration,
+      description,
+    })
   },
-  {
-    id: 'id-2',
-    degree: 'Degree name',
-    university: 'University name',
-    duration: 'Education duration',
+  removeExperience(id) {
+    this.experiences = this.experiences.filter(
+      (experience) => experience.id !== id
+    )
   },
-]
+})
 
-const contacts = [
-  { title: 'email', href: '/' },
-  { title: 'telephone', href: '/' },
-  { title: 'github.com', href: '/' },
-  { title: 'location', href: '/' },
-]
-
-const technologies =
-  'HTML5, CSS3, SCSS, JS, React, React Hooks, Redux, MobX, Git'
-
-const languageList = [{ title: 'Russian' }, { title: 'English' }]
-
-export { experiences, educations, contacts, technologies, languageList }
+export default createExperiencesStore
