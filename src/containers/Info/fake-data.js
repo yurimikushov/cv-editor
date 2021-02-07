@@ -1,6 +1,3 @@
-const aboutMe =
-  'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto laborum dolores eos deleniti inventore delectus omnis, velit repudiandae qui nobis vel consequatur quisquam. Doloremque incidunt magnam quasi autem mollitia est praesentium voluptate voluptatem, harum, similique temporibus architecto eum cupiditate eligendi enim ab iste, alias ea. Veritatis id harum dolores unde.'
-
 const experiences = [
   {
     id: 'id-1',
@@ -55,11 +52,4 @@ const technologies =
 
 const languageList = [{ title: 'Russian' }, { title: 'English' }]
 
-export {
-  aboutMe,
-  experiences,
-  educations,
-  contacts,
-  technologies,
-  languageList,
-}
+export { experiences, educations, contacts, technologies, languageList }
