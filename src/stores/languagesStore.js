@@ -12,6 +12,7 @@ const createLanguagesStore = () => ({
       id: nanoid(),
       title,
     })
+    this.languages = [...this.languages]
   },
   removeLanguage(id) {
     this.languages = this.languages.filter((language) => language.id !== id)

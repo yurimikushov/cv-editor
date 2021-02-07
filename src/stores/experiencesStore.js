@@ -37,6 +37,7 @@ const createExperiencesStore = () => ({
       duration,
       description,
     })
+    this.experiences = [...this.experiences]
   },
   removeExperience(id) {
     this.experiences = this.experiences.filter(

@@ -24,6 +24,7 @@ const createEducationsStore = () => ({
       university,
       duration,
     })
+    this.educations = [...this.educations]
   },
   removeEducations(id) {
     this.educations = this.educations.filter((education) => education.id !== id)

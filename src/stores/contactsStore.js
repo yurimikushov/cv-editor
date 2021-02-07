@@ -15,6 +15,7 @@ const createContactsStore = () => ({
       title,
       href,
     })
+    this.contacts = [...this.contacts]
   },
   removeContact(id) {
     this.contacts = this.contacts.filter((contact) => contact.id !== id)
