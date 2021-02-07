@@ -7,7 +7,11 @@ const HeaderContainer = observer(() => {
   const aboutMeStore = useAboutMeStore()
 
   return (
-    <Header name={aboutMeStore.fullName} position={aboutMeStore.position} />
+    <Header
+      name={aboutMeStore.fullName}
+      position={aboutMeStore.position}
+      avatar={aboutMeStore.avatar}
+    />
   )
 })
 

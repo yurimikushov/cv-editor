@@ -4,12 +4,16 @@ const exapmleDescription =
 const createAboutMeStore = () => ({
   fullName: 'Full name',
   position: 'Frontend developer',
+  avatar: 'https://i.ibb.co/KF2jBLd/image.jpg',
   description: exapmleDescription,
   setFullName(fullName) {
     this.fullName = fullName
   },
   setPosition(position) {
     this.position = position
+  },
+  setAvatar(src) {
+    this.avatar = src
   },
   setAboutMe(description) {
     this.description = description
