@@ -2,17 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Experience from './Experience'
 
-const ExperienceList = ({ experienceList }) => (
+const ExperienceList = ({ experiences }) => (
   <div className='experiences item item_1'>
     <div className='title title_0'>Experience</div>
-    {experienceList.map((experience) => (
+    {experiences.map((experience) => (
       <Experience key={experience.id} {...experience} />
     ))}
   </div>
 )
 
 ExperienceList.propTypes = {
-  experienceList: PropTypes.array.isRequired,
+  experiences: PropTypes.array.isRequired,
 }
 
 export default ExperienceList

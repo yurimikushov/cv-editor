@@ -28,12 +28,12 @@ const InfoContainer = observer(() => {
     <main className='info'>
       <div className='main-info'>
         <AboutMe description={aboutMeStore.description} />
-        <ExperienceList experienceList={experiencesStore.experiences} />
-        <EducationList educationList={educationsStore.educations} />
+        <ExperienceList experiences={experiencesStore.experiences} />
+        <EducationList educations={educationsStore.educations} />
       </div>
       <div className='another-info'>
         <ContactList contacts={contactsStore.contacts} />
-        <TechnologyList description={technologiesStore.technologies} />
+        <TechnologyList technologies={technologiesStore.technologies} />
         <LanguageList languages={languagesStore.languages} />
       </div>
     </main>
