@@ -27,6 +27,18 @@ a:hover {
   color: var(--color-black);
 }
 
+button {
+  display: flex;
+  align-items: center;
+  color: var(--color-gray-1);
+  fill: var(--color-gray-1);
+}
+
+button:hover {
+  color: var(--color-black);
+  fill: var(--color-black);
+}
+
 input {
   padding: 2px 4px;
   border: 1px solid rgba(21, 21, 21, 0.3);
