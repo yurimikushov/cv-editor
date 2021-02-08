@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { observer } from 'mobx-react-lite'
 import { useAppPropsStore } from './stores'
+import TopLine from './components/TopLine'
 import EditButton from './containers/EditButton'
 import Header from './containers/Header'
 import Info from './containers/Info'
@@ -15,7 +16,7 @@ const App = observer(() => {
 
   return (
     <>
-      <div className='top-line'></div>
+      <TopLine />
       <EditButton />
       <div className='cv'>
         <Header />
