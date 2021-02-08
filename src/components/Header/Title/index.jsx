@@ -1,36 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Title from './Title'
-import Avatar from './Avatar'
-import './index.css'
+import FullName from './FullName'
+import Position from './Position'
 
-export const Header = ({
+const Title = ({
   showPreview,
   fullName,
   position,
   setFullName,
   setPosition,
-  avatar,
 }) => (
-  <header className='header'>
-    <Title
+  <div className='header__title'>
+    <FullName
       showPreview={showPreview}
       fullName={fullName}
-      position={position}
       setFullName={setFullName}
+    />
+    <Position
+      className='header__position'
+      showPreview={showPreview}
+      position={position}
       setPosition={setPosition}
     />
-    <Avatar src={avatar} />
-  </header>
+  </div>
 )
 
-Header.propTypes = {
+Title.propTypes = {
   showPreview: PropTypes.bool.isRequired,
   fullName: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
   setFullName: PropTypes.func.isRequired,
   setPosition: PropTypes.func.isRequired,
-  avatar: PropTypes.string.isRequired,
 }
 
-export default Header
+export default Title

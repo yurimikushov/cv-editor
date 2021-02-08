@@ -4,12 +4,16 @@ import Header from '../components/Header'
 import { useAboutMeStore } from '../stores'
 
 const HeaderContainer = observer(() => {
+  const showPreview = false
   const aboutMeStore = useAboutMeStore()
 
   return (
     <Header
-      name={aboutMeStore.fullName}
+      showPreview={showPreview}
+      fullName={aboutMeStore.fullName}
       position={aboutMeStore.position}
+      setFullName={aboutMeStore.setFullName}
+      setPosition={aboutMeStore.setPosition}
       avatar={aboutMeStore.avatar}
     />
   )
