@@ -27,6 +27,17 @@ a:hover {
   color: var(--color-black);
 }
 
+input {
+  padding: 2px 4px;
+  border: 1px solid rgba(21, 21, 21, 0.3);
+  border-radius: 5px;
+}
+
+input:focus {
+  box-shadow: 0 0 4px 0 #ddd;
+  outline: none;
+}
+
 .title {
   margin-bottom: 5px;
   color: var(--color-black);
