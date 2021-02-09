@@ -10,14 +10,14 @@ const Title = ({
   setFullName,
   setPosition,
 }) => (
-  <div className='header__title'>
+  <div className='cv-header__title'>
     <FullName
       showPreview={showPreview}
       fullName={fullName}
       setFullName={setFullName}
     />
     <Position
-      className='header__position'
+      className='cv-header__position'
       showPreview={showPreview}
       position={position}
       setPosition={setPosition}

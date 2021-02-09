@@ -1,13 +1,17 @@
-.info {
+.cv {
+  margin: 50px;
+}
+
+.cv-body {
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
 }
 
-.main-info {
+.cv-main-info {
   width: 70%;
 }
 
-.another-info {
+.cv-another-info {
   width: 20%;
 }

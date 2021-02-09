@@ -1,5 +1,6 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
+import Header from '../Header'
 import {
   useAboutMeStore,
   useExperiencesStore,
@@ -16,7 +17,7 @@ import TechnologyList from '../../components/TechnologyList'
 import LanguageList from '../../components/LanguageList'
 import './index.css'
 
-const InfoContainer = observer(() => {
+const CVContainer = observer(() => {
   const aboutMeStore = useAboutMeStore()
   const experiencesStore = useExperiencesStore()
   const educationsStore = useEducationsStore()
@@ -25,19 +26,22 @@ const InfoContainer = observer(() => {
   const languagesStore = useLanguagesStore()
 
   return (
-    <main className='info'>
-      <div className='main-info'>
-        <AboutMe description={aboutMeStore.description} />
-        <ExperienceList experiences={experiencesStore.experiences} />
-        <EducationList educations={educationsStore.educations} />
-      </div>
-      <div className='another-info'>
-        <ContactList contacts={contactsStore.contacts} />
-        <TechnologyList technologies={technologiesStore.technologies} />
-        <LanguageList languages={languagesStore.languages} />
-      </div>
-    </main>
+    <div className='cv'>
+      <Header />
+      <main className='cv-body'>
+        <div className='cv-main-info'>
+          <AboutMe description={aboutMeStore.description} />
+          <ExperienceList experiences={experiencesStore.experiences} />
+          <EducationList educations={educationsStore.educations} />
+        </div>
+        <div className='cv-another-info'>
+          <ContactList contacts={contactsStore.contacts} />
+          <TechnologyList technologies={technologiesStore.technologies} />
+          <LanguageList languages={languagesStore.languages} />
+        </div>
+      </main>
+    </div>
   )
 })
 
-export default InfoContainer
+export default CVContainer

@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './index.css'
 
 const EditButton = ({ showPreview, toggleShowPreview }) => (
-  <button className='edit-btn' onClick={toggleShowPreview}>
+  <button className='edit-btn edit-btn_tr' onClick={toggleShowPreview}>
     {showPreview ? 'Edit' : 'Preview'}
   </button>
 )

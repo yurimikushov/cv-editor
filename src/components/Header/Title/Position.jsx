@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 
 const Position = ({ showPreview, position, setPosition }) => {
   if (showPreview) {
-    return <div className='header__position'>{position}</div>
+    return <div className='cv-header__position'>{position}</div>
   }
 
   return (
     <input
-      className='header__position'
+      className='cv-header__position'
       type='text'
       value={position}
       placeholder='Position'

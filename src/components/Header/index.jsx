@@ -12,7 +12,7 @@ export const Header = ({
   setPosition,
   avatar,
 }) => (
-  <header className='header'>
+  <header className='cv-header'>
     <Title
       showPreview={showPreview}
       fullName={fullName}

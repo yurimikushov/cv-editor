@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 
 const FullName = ({ showPreview, fullName, setFullName }) => {
   if (showPreview) {
-    return <div className='header__name'>{fullName}</div>
+    return <div className='cv-header__name'>{fullName}</div>
   }
 
   return (
     <input
-      className='header__name'
+      className='cv-header__name'
       type='text'
       value={fullName}
       placeholder='Full name'

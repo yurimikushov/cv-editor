@@ -3,8 +3,7 @@ import { observer } from 'mobx-react-lite'
 import { useAppPropsStore } from './stores'
 import TopLine from './components/TopLine'
 import EditButton from './containers/EditButton'
-import Header from './containers/Header'
-import Info from './containers/Info'
+import CV from './containers/CV'
 import './App.css'
 
 const App = observer(() => {
@@ -18,10 +17,7 @@ const App = observer(() => {
     <>
       <TopLine />
       <EditButton />
-      <div className='cv'>
-        <Header />
-        <Info />
-      </div>
+      <CV />
     </>
   )
 })
