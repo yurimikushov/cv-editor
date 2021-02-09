@@ -15,7 +15,7 @@ const createAboutMeStore = () => ({
   setAvatar(src) {
     this.avatar = src
   },
-  setAboutMe(description) {
+  setDescription(description) {
     this.description = description
   },
 })
