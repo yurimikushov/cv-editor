@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Position = ({ showPreview, position, setPosition }) => {
   if (showPreview) {
-    return <div className='cv-header__position'>{position}</div>
+    return <div className='cv-header__position'>{position || 'Position'}</div>
   }
 
   return (

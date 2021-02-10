@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const FullName = ({ showPreview, fullName, setFullName }) => {
   if (showPreview) {
-    return <div className='cv-header__name'>{fullName}</div>
+    return <div className='cv-header__name'>{fullName || 'Full name'}</div>
   }
 
   return (
