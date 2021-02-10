@@ -1,3 +1,7 @@
-.about-me__description[contenteditable=true] {
-  min-height: 70px;
+.about-me__description {
+  width: 100%;
+  min-height: 80px;
+  color: var(--color-black);
+  font-size: 1rem;
+  line-height: 1.4rem;
 }
