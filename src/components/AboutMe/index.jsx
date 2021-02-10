@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import TextBox from '../TextBox'
 import './index.css'
 
 const AboutMe = ({ showPreview, description, setDescription }) => (
@@ -7,16 +8,15 @@ const AboutMe = ({ showPreview, description, setDescription }) => (
     {showPreview ? (
       <div className='about-me__description'>{description}</div>
     ) : (
-      <textarea
+      <TextBox
         className='about-me__description'
-        defaultValue={description}
+        value={description}
         placeholder='Describe yourself'
-        onChange={(e) => setDescription(e.target.value)}
-      ></textarea>
+        onChange={setDescription}
+      />
     )}
   </div>
 )
-
 AboutMe.propTypes = {
   showPreview: PropTypes.bool.isRequired,
   description: PropTypes.string.isRequired,
