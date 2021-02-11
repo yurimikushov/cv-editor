@@ -1,7 +1,12 @@
 .about-me__description {
   width: 100%;
-  min-height: 80px;
+  height: auto;
   color: var(--color-black);
+  font-family: inherit;
   font-size: 1rem;
   line-height: 1.4rem;
+}
+
+.about-me__description:not([readOnly]) {
+  min-height: 80px;
 }
