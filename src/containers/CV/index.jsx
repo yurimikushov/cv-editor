@@ -24,20 +24,22 @@ const CVContainer = observer(() => {
   const languagesStore = useLanguagesStore()
 
   return (
-    <div className='cv'>
-      <Header />
-      <main className='cv-body'>
-        <div className='cv-main-info'>
-          <AboutMe />
-          <ExperienceList experiences={experiencesStore.experiences} />
-          <EducationList educations={educationsStore.educations} />
-        </div>
-        <div className='cv-another-info'>
-          <ContactList contacts={contactsStore.contacts} />
-          <TechnologyList technologies={technologiesStore.technologies} />
-          <LanguageList languages={languagesStore.languages} />
-        </div>
-      </main>
+    <div className='cv-wrapper'>
+      <div className='cv'>
+        <Header />
+        <main className='cv-body'>
+          <div className='cv-main-info'>
+            <AboutMe />
+            <ExperienceList experiences={experiencesStore.experiences} />
+            <EducationList educations={educationsStore.educations} />
+          </div>
+          <div className='cv-another-info'>
+            <ContactList contacts={contactsStore.contacts} />
+            <TechnologyList technologies={technologiesStore.technologies} />
+            <LanguageList languages={languagesStore.languages} />
+          </div>
+        </main>
+      </div>
     </div>
   )
 })
