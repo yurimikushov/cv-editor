@@ -7,7 +7,11 @@ const AutoResizeTextArea = (props) => {
   const [textAreaHeight, setTextAreaHeight] = useState('auto')
 
   useEffect(() => {
-    setTextAreaHeight(`${textAreaRef.current.scrollHeight}px`)
+    // FIXME: find out where the padding comes from
+    const textAreaBottomPadding = 4
+    setTextAreaHeight(
+      `${textAreaRef.current.scrollHeight - textAreaBottomPadding}px`
+    )
   }, [text])
 
   const onChangeHandler = (e) => {
@@ -20,15 +24,18 @@ const AutoResizeTextArea = (props) => {
   }
 
   return (
-    <textarea
-      ref={textAreaRef}
-      className={props.className}
-      defaultValue={text}
-      placeholder={props.placeholder}
-      readOnly={props.readOnly}
-      style={{ height: textAreaHeight }}
-      onChange={onChangeHandler}
-    />
+    <div className={props.className} style={{ height: textAreaHeight }}>
+      <textarea
+        ref={textAreaRef}
+        className={props.className}
+        defaultValue={text}
+        placeholder={props.placeholder}
+        rows='1'
+        readOnly={props.readOnly}
+        style={{ height: textAreaHeight }}
+        onChange={onChangeHandler}
+      />
+    </div>
   )
 }
 
