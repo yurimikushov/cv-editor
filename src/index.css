@@ -99,10 +99,10 @@ textarea:not([readonly]):focus {
   font-size: 0.85rem;
 }
 
-.item.item_1:not(:first-child) {
-  margin-top: 14px;
+.item.item_1:not(:last-child) {
+  margin-bottom: 14px;
 }
 
-.item.item_2:not(:first-child) {
-  margin-top: 7px;
+.item.item_2:not(:last-child) {
+  margin-bottom: 7px;
 }
