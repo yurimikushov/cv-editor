@@ -54,7 +54,7 @@ textarea:not([readonly]):focus {
 
 .title {
   display: block;
-  margin-bottom: 5px;
+  margin: 5px 0;
   color: var(--color-black);
   font-size: 1.15rem;
 }
