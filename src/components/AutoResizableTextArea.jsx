@@ -7,12 +7,13 @@ const AutoResizeTextArea = (props) => {
   const [textAreaHeight, setTextAreaHeight] = useState('auto')
 
   useEffect(() => {
-    // FIXME: find out where the padding comes from
-    const textAreaBottomPadding = 4
+    // FIXME: don't should remove the bottom padding in JS
+    const textAreaBottomPadding = !props.readOnly ? 4 : 0
+
     setTextAreaHeight(
       `${textAreaRef.current.scrollHeight - textAreaBottomPadding}px`
     )
-  }, [text])
+  }, [text, props.readOnly])
 
   const onChangeHandler = (e) => {
     setText(e.target.value)
@@ -23,15 +24,21 @@ const AutoResizeTextArea = (props) => {
     }
   }
 
+  let textAreaValue = text
+
+  if (!text && props.readOnly && props.readOnlyPlaceholder) {
+    textAreaValue = props.readOnlyPlaceholder
+  }
+
   return (
-    <div className={props.className} style={{ height: textAreaHeight }}>
+    <div className='textarea-wrapper' style={{ height: textAreaHeight }}>
       <textarea
         ref={textAreaRef}
         className={props.className}
-        defaultValue={text}
+        value={textAreaValue}
         placeholder={props.placeholder}
-        rows='1'
         readOnly={props.readOnly}
+        rows='1'
         style={{ height: textAreaHeight }}
         onChange={onChangeHandler}
       />
@@ -43,6 +50,7 @@ AutoResizeTextArea.propTypes = {
   className: PropTypes.string,
   text: PropTypes.string,
   placeholder: PropTypes.string,
+  readOnlyPlaceholder: PropTypes.string,
   readOnly: PropTypes.bool,
   onChange: PropTypes.func,
 }

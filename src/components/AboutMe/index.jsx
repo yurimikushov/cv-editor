@@ -9,6 +9,7 @@ const AboutMe = ({ showPreview, description, setDescription }) => (
       className='about-me__description'
       text={description}
       placeholder='Describe yourself'
+      readOnlyPlaceholder='Description of your qualities, knowledge and hobbies.'
       readOnly={showPreview}
       onChange={(e) => setDescription(e.target.value)}
     />
