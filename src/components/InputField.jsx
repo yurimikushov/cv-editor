@@ -11,7 +11,7 @@ const Title = ({
   <input
     className={className}
     type='text'
-    value={value}
+    value={!value && readOnly && placeholder ? placeholder : value}
     placeholder={placeholder}
     readOnly={readOnly}
     onChange={onChange}
