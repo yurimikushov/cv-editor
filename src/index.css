@@ -53,6 +53,7 @@ textarea:not([readonly]):focus {
 }
 
 .title {
+  display: block;
   margin-bottom: 5px;
   color: var(--color-black);
   font-size: 1.15rem;
@@ -89,7 +90,9 @@ textarea:not([readonly]):focus {
 }
 
 .description {
+  width: 100%;
   color: var(--color-black);
+  font-family: var(--font-family);
   font-size: 1rem;
   line-height: 1.4rem;
 }
@@ -100,9 +103,9 @@ textarea:not([readonly]):focus {
 }
 
 .item.item_1:not(:last-child) {
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 
 .item.item_2:not(:last-child) {
-  margin-bottom: 7px;
+  margin-bottom: 14px;
 }

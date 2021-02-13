@@ -1,8 +1,7 @@
-import { nanoid } from 'nanoid'
+import createExperience from '../models/experience'
 
-const exapmleExperiences = [
+let exapmleExperiences = [
   {
-    id: nanoid(),
     position: 'Position name',
     company: 'Company name',
     duration: 'Experience duration',
@@ -10,7 +9,6 @@ const exapmleExperiences = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?',
   },
   {
-    id: nanoid(),
     position: 'Position name',
     company: 'Company name',
     duration: 'Experience duration',
@@ -18,7 +16,6 @@ const exapmleExperiences = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?',
   },
   {
-    id: nanoid(),
     position: 'Position name',
     company: 'Company name',
     duration: 'Experience duration',
@@ -27,23 +24,25 @@ const exapmleExperiences = [
   },
 ]
 
-const createExperiencesStore = () => ({
+exapmleExperiences = exapmleExperiences.map((experience) =>
+  createExperience(
+    experience.position,
+    experience.company,
+    experience.duration,
+    experience.description
+  )
+)
+
+const createExperienceStore = () => ({
   experiences: exapmleExperiences,
   addExperience(position, company, duration, description) {
-    this.experiences.push({
-      id: nanoid(),
-      position,
-      company,
-      duration,
-      description,
-    })
-    this.experiences = [...this.experiences]
+    this.experiences.push(
+      createExperience(position, company, duration, description)
+    )
   },
   removeExperience(id) {
-    this.experiences = this.experiences.filter(
-      (experience) => experience.id !== id
-    )
+    this.experiences.filter((experience) => experience.id !== id)
   },
 })
 
-export default createExperiencesStore
+export default createExperienceStore
