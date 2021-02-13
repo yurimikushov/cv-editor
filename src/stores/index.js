@@ -54,7 +54,10 @@ const StoreProvider = ({ children }) => {
 }
 
 StoreProvider.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element.isRequired,
+    PropTypes.arrayOf(PropTypes.element).isRequired,
+  ]),
 }
 
 const useAppPropsStore = () => useContext(AppPropsContext)
