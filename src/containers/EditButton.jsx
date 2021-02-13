@@ -4,12 +4,12 @@ import EditButton from '../components/EditButton'
 import { useAppPropsStore } from '../stores'
 
 const EditButtonContainer = observer(() => {
-  const appProps = useAppPropsStore()
+  const appPropsStore = useAppPropsStore()
 
   return (
     <EditButton
-      showPreview={appProps.showPreview}
-      toggleShowPreview={appProps.toggleShowPreview}
+      showPreview={appPropsStore.showPreview}
+      toggleShowPreview={appPropsStore.toggleShowPreview}
     />
   )
 })

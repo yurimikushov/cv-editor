@@ -4,12 +4,12 @@ import Header from '../components/Header'
 import { useAppPropsStore, useAboutMeStore } from '../stores'
 
 const HeaderContainer = observer(() => {
-  const appProps = useAppPropsStore()
+  const appPropsStore = useAppPropsStore()
   const aboutMeStore = useAboutMeStore()
 
   return (
     <Header
-      showPreview={appProps.showPreview}
+      showPreview={appPropsStore.showPreview}
       fullName={aboutMeStore.fullName}
       position={aboutMeStore.position}
       setFullName={aboutMeStore.setFullName}
