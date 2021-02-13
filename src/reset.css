@@ -29,9 +29,9 @@ input:focus {
 }
 
 textarea {
-  overflow: auto;
+  overflow: hidden;
   border: none;
   box-shadow: none;
   outline: none;
-  resize: none; 
+  resize: none;
 }

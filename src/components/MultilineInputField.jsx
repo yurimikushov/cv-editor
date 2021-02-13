@@ -15,11 +15,11 @@ const MultilineInputField = ({
 
   useEffect(() => {
     // FIXME: don't should remove the bottom padding in JS
-    const textAreaBottomPadding = !readOnly ? 4 : 0
-
-    setTextAreaHeight(
-      `${textAreaRef.current.scrollHeight - textAreaBottomPadding}px`
-    )
+    if (!readOnly) {
+      setTextAreaHeight(`calc(${textAreaRef.current.scrollHeight}px - 0.3rem)`)
+    } else {
+      setTextAreaHeight(`${textAreaRef.current.scrollHeight}px`)
+    }
   }, [text, readOnly])
 
   const onChangeHandler = (e) => {
@@ -42,18 +42,16 @@ const MultilineInputField = ({
   }
 
   return (
-    <div className='textarea-wrapper' style={{ height: textAreaHeight }}>
-      <textarea
-        ref={textAreaRef}
-        className={className}
-        value={textAreaValue}
-        placeholder={placeholder}
-        readOnly={readOnly}
-        rows='1'
-        style={{ height: textAreaHeight }}
-        onChange={onChangeHandler}
-      />
-    </div>
+    <textarea
+      ref={textAreaRef}
+      className={className}
+      value={textAreaValue}
+      placeholder={placeholder}
+      readOnly={readOnly}
+      rows='1'
+      style={{ height: textAreaHeight }}
+      onChange={onChangeHandler}
+    />
   )
 }
 
