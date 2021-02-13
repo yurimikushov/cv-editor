@@ -14,7 +14,7 @@ import TechnologyList from '../../components/TechnologyList'
 import LanguageList from '../../components/LanguageList'
 import './index.css'
 
-const CVContainer = observer(() => {
+const CVContainer = () => {
   const contactsStore = useContactsStore()
   const technologiesStore = useTechnologiesStore()
   const languagesStore = useLanguagesStore()
@@ -38,6 +38,6 @@ const CVContainer = observer(() => {
       </div>
     </div>
   )
-})
+}
 
-export default CVContainer
+export default observer(CVContainer)

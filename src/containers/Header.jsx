@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 import Header from '../components/Header'
 import { useAppPropsStore, useAboutMeStore } from '../stores'
 
-const HeaderContainer = observer(() => {
+const HeaderContainer = () => {
   const appPropsStore = useAppPropsStore()
   const aboutMeStore = useAboutMeStore()
 
@@ -17,6 +17,6 @@ const HeaderContainer = observer(() => {
       avatar={aboutMeStore.avatar}
     />
   )
-})
+}
 
-export default HeaderContainer
+export default observer(HeaderContainer)

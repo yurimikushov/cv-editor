@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 import { useAppPropsStore, useExperiencesStore } from '../stores'
 import ExperienceList from '../components/ExperienceList'
 
-const ExperienceListContainer = observer(() => {
+const ExperienceListContainer = () => {
   const appPropsStore = useAppPropsStore()
   const experiencesStore = useExperiencesStore()
 
@@ -13,6 +13,6 @@ const ExperienceListContainer = observer(() => {
       experiences={experiencesStore.experiences}
     />
   )
-})
+}
 
-export default ExperienceListContainer
+export default observer(ExperienceListContainer)

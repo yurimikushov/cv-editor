@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 import { useAppPropsStore, useAboutMeStore } from '../stores'
 import AboutMe from '../components/AboutMe'
 
-const AboutMeContainer = observer(() => {
+const AboutMeContainer = () => {
   const appPropsStore = useAppPropsStore()
   const aboutMeStore = useAboutMeStore()
 
@@ -14,6 +14,6 @@ const AboutMeContainer = observer(() => {
       setDescription={aboutMeStore.setDescription}
     />
   )
-})
+}
 
-export default AboutMeContainer
+export default observer(AboutMeContainer)

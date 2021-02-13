@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 import EditButton from '../components/EditButton'
 import { useAppPropsStore } from '../stores'
 
-const EditButtonContainer = observer(() => {
+const EditButtonContainer = () => {
   const appPropsStore = useAppPropsStore()
 
   return (
@@ -12,6 +12,6 @@ const EditButtonContainer = observer(() => {
       toggleShowPreview={appPropsStore.toggleShowPreview}
     />
   )
-})
+}
 
-export default EditButtonContainer
+export default observer(EditButtonContainer)

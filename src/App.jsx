@@ -6,7 +6,7 @@ import EditButton from './containers/EditButton'
 import CV from './containers/CV'
 import './App.css'
 
-const App = observer(() => {
+const App = () => {
   const appProps = useAppPropsStore()
 
   useEffect(() => {
@@ -20,6 +20,6 @@ const App = observer(() => {
       <CV />
     </>
   )
-})
+}
 
-export default App
+export default observer(App)
