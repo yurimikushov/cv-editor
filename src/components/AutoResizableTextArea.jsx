@@ -26,8 +26,12 @@ const AutoResizeTextArea = (props) => {
 
   let textAreaValue = text
 
-  if (!text && props.readOnly && props.readOnlyPlaceholder) {
-    textAreaValue = props.readOnlyPlaceholder
+  if (!text && props.readOnly) {
+    if (props.readOnlyPlaceholder) {
+      textAreaValue = props.readOnlyPlaceholder
+    } else if (props.placeholder) {
+      textAreaValue = props.placeholder
+    }
   }
 
   return (
