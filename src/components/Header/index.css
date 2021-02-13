@@ -14,11 +14,13 @@
 }
 
 .cv-header__name {
+  display: block;
   font-size: 2rem;
   font-weight: bold;
 }
 
 .cv-header__position {
+  display: block;
   font-size: 1.7rem;
 }
 

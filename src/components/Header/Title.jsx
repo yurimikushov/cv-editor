@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import FullName from './FullName'
-import Position from './Position'
+import InputField from '../InputField'
 
-const Title = ({
+const HeaderTitle = ({
   showPreview,
   fullName,
   position,
@@ -11,21 +10,24 @@ const Title = ({
   setPosition,
 }) => (
   <div className='cv-header__title'>
-    <FullName
-      showPreview={showPreview}
-      fullName={fullName}
-      setFullName={setFullName}
+    <InputField
+      className='cv-header__name'
+      value={fullName}
+      onChange={(e) => setFullName(e.target.value)}
+      readOnly={showPreview}
+      placeholder='Full name'
     />
-    <Position
+    <InputField
       className='cv-header__position'
-      showPreview={showPreview}
-      position={position}
-      setPosition={setPosition}
+      value={position}
+      onChange={(e) => setPosition(e.target.value)}
+      readOnly={showPreview}
+      placeholder='Position'
     />
   </div>
 )
 
-Title.propTypes = {
+HeaderTitle.propTypes = {
   showPreview: PropTypes.bool.isRequired,
   fullName: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
@@ -33,4 +35,4 @@ Title.propTypes = {
   setPosition: PropTypes.func.isRequired,
 }
 
-export default Title
+export default HeaderTitle
