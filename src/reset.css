@@ -20,6 +20,14 @@ button:focus {
   outline: 0;
 }
 
+input {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
 textarea {
   overflow: auto;
   border: none;

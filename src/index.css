@@ -39,14 +39,14 @@ button:hover {
   fill: var(--color-black);
 }
 
-input,
+input:not([readonly]),
 textarea:not([readonly]) {
   padding: 2px 4px;
   border: 1px solid rgba(21, 21, 21, 0.3);
   border-radius: 3px;
 }
 
-input:focus,
+input:not([readonly]):focus,
 textarea:not([readonly]):focus {
   box-shadow: 0 0 4px 0 #ddd;
   outline: none;
