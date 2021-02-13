@@ -1,36 +1,43 @@
 import React, { useRef, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-const MultilineInputField = (props) => {
+const MultilineInputField = ({
+  value,
+  onChange,
+  className = '',
+  placeholder = '',
+  readOnly = false,
+  readOnlyPlaceholder = '',
+}) => {
   const textAreaRef = useRef()
-  const [text, setText] = useState(props.value || '')
+  const [text, setText] = useState(value)
   const [textAreaHeight, setTextAreaHeight] = useState('auto')
 
   useEffect(() => {
     // FIXME: don't should remove the bottom padding in JS
-    const textAreaBottomPadding = !props.readOnly ? 4 : 0
+    const textAreaBottomPadding = !readOnly ? 4 : 0
 
     setTextAreaHeight(
       `${textAreaRef.current.scrollHeight - textAreaBottomPadding}px`
     )
-  }, [text, props.readOnly])
+  }, [text, readOnly])
 
   const onChangeHandler = (e) => {
     setText(e.target.value)
     setTextAreaHeight('auto')
 
-    if (props.onChange) {
-      props.onChange(e)
+    if (onChange) {
+      onChange(e)
     }
   }
 
   let textAreaValue = text
 
-  if (!text && props.readOnly) {
-    if (props.readOnlyPlaceholder) {
-      textAreaValue = props.readOnlyPlaceholder
-    } else if (props.placeholder) {
-      textAreaValue = props.placeholder
+  if (!text && readOnly) {
+    if (readOnlyPlaceholder) {
+      textAreaValue = readOnlyPlaceholder
+    } else if (placeholder) {
+      textAreaValue = placeholder
     }
   }
 
@@ -38,10 +45,10 @@ const MultilineInputField = (props) => {
     <div className='textarea-wrapper' style={{ height: textAreaHeight }}>
       <textarea
         ref={textAreaRef}
-        className={props.className}
+        className={className}
         value={textAreaValue}
-        placeholder={props.placeholder}
-        readOnly={props.readOnly}
+        placeholder={placeholder}
+        readOnly={readOnly}
         rows='1'
         style={{ height: textAreaHeight }}
         onChange={onChangeHandler}
@@ -51,9 +58,9 @@ const MultilineInputField = (props) => {
 }
 
 MultilineInputField.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   className: PropTypes.string,
-  value: PropTypes.string,
-  onChange: PropTypes.func,
   placeholder: PropTypes.string,
   readOnly: PropTypes.bool,
   readOnlyPlaceholder: PropTypes.string,
