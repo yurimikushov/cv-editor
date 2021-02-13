@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-const AutoResizeTextArea = (props) => {
+const MultilineInputField = (props) => {
   const textAreaRef = useRef()
-  const [text, setText] = useState(props.text || '')
+  const [text, setText] = useState(props.value || '')
   const [textAreaHeight, setTextAreaHeight] = useState('auto')
 
   useEffect(() => {
@@ -50,13 +50,13 @@ const AutoResizeTextArea = (props) => {
   )
 }
 
-AutoResizeTextArea.propTypes = {
+MultilineInputField.propTypes = {
   className: PropTypes.string,
-  text: PropTypes.string,
-  placeholder: PropTypes.string,
-  readOnlyPlaceholder: PropTypes.string,
-  readOnly: PropTypes.bool,
+  value: PropTypes.string,
   onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  readOnly: PropTypes.bool,
+  readOnlyPlaceholder: PropTypes.string,
 }
 
-export default AutoResizeTextArea
+export default MultilineInputField

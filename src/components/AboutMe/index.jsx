@@ -1,17 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import TextArea from '../AutoResizableTextArea'
+import MultilineInputField from '../MultilineInputField'
 import './index.css'
 
 const AboutMe = ({ showPreview, description, setDescription }) => (
   <div className='about-me item item_1'>
-    <TextArea
+    <MultilineInputField
       className='about-me__description'
-      text={description}
-      placeholder='Describe yourself'
-      readOnlyPlaceholder='Description of your qualities, knowledge and hobbies.'
-      readOnly={showPreview}
+      value={description}
       onChange={(e) => setDescription(e.target.value)}
+      placeholder='Describe yourself'
+      readOnly={showPreview}
+      readOnlyPlaceholder='Description of your qualities, knowledge and hobbies.'
     />
   </div>
 )
