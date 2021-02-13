@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Title = ({
+const InputField = ({
   value,
   onChange,
   className = '',
@@ -18,7 +18,7 @@ const Title = ({
   ></input>
 )
 
-Title.propTypes = {
+InputField.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   className: PropTypes.string,
@@ -26,4 +26,4 @@ Title.propTypes = {
   placeholder: PropTypes.string,
 }
 
-export default Title
+export default InputField
