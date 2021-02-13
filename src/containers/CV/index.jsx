@@ -2,21 +2,19 @@ import React from 'react'
 import { observer } from 'mobx-react-lite'
 import Header from '../Header'
 import {
-  useEducationsStore,
   useContactsStore,
   useTechnologiesStore,
   useLanguagesStore,
 } from '../../stores'
 import AboutMe from '../AboutMe'
 import ExperienceList from '../ExperienceList'
-import EducationList from '../../components/EducationList'
+import EducationList from '../EducationList'
 import ContactList from '../../components/ContactList'
 import TechnologyList from '../../components/TechnologyList'
 import LanguageList from '../../components/LanguageList'
 import './index.css'
 
 const CVContainer = observer(() => {
-  const educationsStore = useEducationsStore()
   const contactsStore = useContactsStore()
   const technologiesStore = useTechnologiesStore()
   const languagesStore = useLanguagesStore()
@@ -29,7 +27,7 @@ const CVContainer = observer(() => {
           <div className='cv-main-info'>
             <AboutMe />
             <ExperienceList />
-            <EducationList educations={educationsStore.educations} />
+            <EducationList />
           </div>
           <div className='cv-another-info'>
             <ContactList contacts={contactsStore.contacts} />
