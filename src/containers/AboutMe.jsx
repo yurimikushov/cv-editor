@@ -1,4 +1,5 @@
 import React from 'react'
+import { toJS } from 'mobx'
 import { observer } from 'mobx-react-lite'
 import { useAppProps, useAboutMe } from '../store'
 import AboutMe from '../components/AboutMe'
@@ -7,15 +8,11 @@ const AboutMeContainer = () => {
   const appProps = useAppProps()
   const aboutMe = useAboutMe()
 
-  return (
-    <AboutMe
-      showPreview={appProps.showPreview}
-      aboutMe={{
-        description: aboutMe.description,
-        setDescription: aboutMe.setDescription,
-      }}
-    />
-  )
+  // FIXME: should convert the observables to plain JS values or structures,
+  // if I want to pass observables to a component that isn't an observer.
+  toJS(aboutMe)
+
+  return <AboutMe showPreview={appProps.showPreview} aboutMe={aboutMe} />
 }
 
 export default observer(AboutMeContainer)
