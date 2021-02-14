@@ -10,6 +10,7 @@ const MultilineInputField = ({
   readOnlyPlaceholder = '',
 }) => {
   const textAreaRef = useRef()
+  const [text, setText] = useState(value)
   const [textAreaHeight, setTextAreaHeight] = useState('auto')
 
   useEffect(() => {
@@ -19,9 +20,10 @@ const MultilineInputField = ({
     } else {
       setTextAreaHeight(`${textAreaRef.current.scrollHeight}px`)
     }
-  }, [value, readOnly])
+  }, [text, readOnly])
 
   const onChangeHandler = (e) => {
+    setText(e.target.value)
     setTextAreaHeight('auto')
 
     if (onChange) {
@@ -29,9 +31,9 @@ const MultilineInputField = ({
     }
   }
 
-  let textAreaValue = value
+  let textAreaValue = text
 
-  if (!value && readOnly) {
+  if (!text && readOnly) {
     if (readOnlyPlaceholder) {
       textAreaValue = readOnlyPlaceholder
     } else if (placeholder) {
