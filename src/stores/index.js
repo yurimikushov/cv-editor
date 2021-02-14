@@ -9,13 +9,13 @@ import createContactsStore from './contactsStore'
 import createTechnologiesStore from './technologiesStore'
 import createLanguagesStore from './languagesStore'
 
-const AppPropsContext = createContext(null)
-const AboutMeContext = createContext(null)
-const ExperiencesContext = createContext(null)
-const EducationsContext = createContext(null)
-const ContactsContext = createContext(null)
-const TechnologiesContext = createContext(null)
-const LanguagesContext = createContext(null)
+const AppPropsContext = createContext()
+const AboutMeContext = createContext()
+const ExperiencesContext = createContext()
+const EducationsContext = createContext()
+const ContactsContext = createContext()
+const TechnologiesContext = createContext()
+const LanguagesContext = createContext()
 
 AppPropsContext.displayName = 'AppPropsStore'
 AboutMeContext.displayName = 'AboutMeStore'
