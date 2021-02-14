@@ -38,7 +38,16 @@ const Experience = ({ showPreview, experience }) => (
 
 Experience.propTypes = {
   showPreview: PropTypes.bool.isRequired,
-  experience: PropTypes.object.isRequired,
+  experience: PropTypes.shape({
+    position: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    duration: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    setPosition: PropTypes.func.isRequired,
+    setCompany: PropTypes.func.isRequired,
+    setDuration: PropTypes.func.isRequired,
+    setDescription: PropTypes.func.isRequired,
+  }),
 }
 
 export default Experience

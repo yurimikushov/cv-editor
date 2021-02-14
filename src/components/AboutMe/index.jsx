@@ -18,7 +18,7 @@ const AboutMe = ({ showPreview, aboutMe }) => (
 
 AboutMe.propTypes = {
   showPreview: PropTypes.bool.isRequired,
-  aboutMe: PropTypes.exact({
+  aboutMe: PropTypes.shape({
     description: PropTypes.string.isRequired,
     setDescription: PropTypes.func.isRequired,
   }),
