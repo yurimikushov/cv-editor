@@ -4,14 +4,16 @@ import { useAppPropsStore, useAboutMeStore } from '../stores'
 import AboutMe from '../components/AboutMe'
 
 const AboutMeContainer = () => {
-  const appPropsStore = useAppPropsStore()
-  const aboutMeStore = useAboutMeStore()
+  const appProps = useAppPropsStore()
+  const aboutMe = useAboutMeStore()
 
   return (
     <AboutMe
-      showPreview={appPropsStore.showPreview}
-      description={aboutMeStore.description}
-      setDescription={aboutMeStore.setDescription}
+      showPreview={appProps.showPreview}
+      aboutMe={{
+        description: aboutMe.description,
+        setDescription: aboutMe.setDescription,
+      }}
     />
   )
 }
