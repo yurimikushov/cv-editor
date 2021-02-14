@@ -9,7 +9,7 @@ const ExperienceList = ({ showPreview, experiences }) => (
       <Experience
         showPreview={showPreview}
         key={experience.id}
-        {...experience}
+        experience={experience}
       />
     ))}
   </div>
