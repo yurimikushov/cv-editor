@@ -1,4 +1,4 @@
-import createExperience from '../models/experience'
+import createExperience from './experience'
 
 let exapmleExperiences = [
   {

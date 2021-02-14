@@ -1,15 +1,15 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
 import EditButton from '../components/EditButton'
-import { useAppPropsStore } from '../stores'
+import { useAppProps } from '../store'
 
 const EditButtonContainer = () => {
-  const appPropsStore = useAppPropsStore()
+  const appProps = useAppProps()
 
   return (
     <EditButton
-      showPreview={appPropsStore.showPreview}
-      toggleShowPreview={appPropsStore.toggleShowPreview}
+      showPreview={appProps.showPreview}
+      toggleShowPreview={appProps.toggleShowPreview}
     />
   )
 }

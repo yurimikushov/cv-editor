@@ -1,20 +1,20 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
 import Header from '../components/Header'
-import { useAppPropsStore, useAboutMeStore } from '../stores'
+import { useAppProps, useAboutMe } from '../store'
 
 const HeaderContainer = () => {
-  const appPropsStore = useAppPropsStore()
-  const aboutMeStore = useAboutMeStore()
+  const appProps = useAppProps()
+  const aboutMe = useAboutMe()
 
   return (
     <Header
-      showPreview={appPropsStore.showPreview}
-      fullName={aboutMeStore.fullName}
-      position={aboutMeStore.position}
-      setFullName={aboutMeStore.setFullName}
-      setPosition={aboutMeStore.setPosition}
-      avatar={aboutMeStore.avatar}
+      showPreview={appProps.showPreview}
+      fullName={aboutMe.fullName}
+      position={aboutMe.position}
+      setFullName={aboutMe.setFullName}
+      setPosition={aboutMe.setPosition}
+      avatar={aboutMe.avatar}
     />
   )
 }

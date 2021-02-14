@@ -1,11 +1,11 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
-import { useAppPropsStore, useAboutMeStore } from '../stores'
+import { useAppProps, useAboutMe } from '../store'
 import AboutMe from '../components/AboutMe'
 
 const AboutMeContainer = () => {
-  const appProps = useAppPropsStore()
-  const aboutMe = useAboutMeStore()
+  const appProps = useAppProps()
+  const aboutMe = useAboutMe()
 
   return (
     <AboutMe

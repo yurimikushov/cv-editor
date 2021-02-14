@@ -1,11 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
 import Header from '../Header'
-import {
-  useContactsStore,
-  useTechnologiesStore,
-  useLanguagesStore,
-} from '../../stores'
+import { useContactList, useTechnologyList, useLanguageList } from '../../store'
 import AboutMe from '../AboutMe'
 import ExperienceList from '../ExperienceList'
 import EducationList from '../EducationList'
@@ -15,9 +11,9 @@ import LanguageList from '../../components/LanguageList'
 import './index.css'
 
 const CVContainer = () => {
-  const contactsStore = useContactsStore()
-  const technologiesStore = useTechnologiesStore()
-  const languagesStore = useLanguagesStore()
+  const contactList = useContactList()
+  const technologyList = useTechnologyList()
+  const languageList = useLanguageList()
 
   return (
     <div className='cv-wrapper'>
@@ -30,9 +26,9 @@ const CVContainer = () => {
             <EducationList />
           </div>
           <div className='cv-another-info'>
-            <ContactList contacts={contactsStore.contacts} />
-            <TechnologyList technologies={technologiesStore.technologies} />
-            <LanguageList languages={languagesStore.languages} />
+            <ContactList contacts={contactList.contacts} />
+            <TechnologyList technologies={technologyList.technologies} />
+            <LanguageList languages={languageList.languages} />
           </div>
         </main>
       </div>

@@ -1,16 +1,16 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
-import { useAppPropsStore, useExperiencesStore } from '../stores'
+import { useAppProps, useExperienceList } from '../store'
 import ExperienceList from '../components/ExperienceList'
 
 const ExperienceListContainer = () => {
-  const appPropsStore = useAppPropsStore()
-  const experiencesStore = useExperiencesStore()
+  const appProps = useAppProps()
+  const experienceList = useExperienceList()
 
   return (
     <ExperienceList
-      showPreview={appPropsStore.showPreview}
-      experiences={experiencesStore.experiences}
+      showPreview={appProps.showPreview}
+      experiences={experienceList.experiences}
     />
   )
 }
