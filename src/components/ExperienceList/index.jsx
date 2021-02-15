@@ -1,27 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { observer } from 'mobx-react-lite'
+import { useAppProps, useExperienceList } from '../../store'
 import Experience from './Experience'
 
-const ExperienceList = ({ showPreview, experiences }) => (
-  <div className='experiences item item_1'>
-    <div className='title title_0'>Experience</div>
-    {experiences.map((experience) => (
-      <Experience
-        showPreview={showPreview}
-        key={experience.id}
-        experience={experience}
-      />
-    ))}
-  </div>
-)
+const ExperienceList = () => {
+  const { editable } = useAppProps()
+  const { experiences } = useExperienceList()
 
-ExperienceList.propTypes = {
-  showPreview: PropTypes.bool.isRequired,
-  experiences: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    })
-  ),
+  return (
+    <div className='experiences item item_1'>
+      <div className='title title_0'>Experience</div>
+      {experiences.map((experience) => (
+        <Experience
+          key={experience.id}
+          editable={editable}
+          experience={experience}
+        />
+      ))}
+    </div>
+  )
 }
 
-export default ExperienceList
+export default observer(ExperienceList)

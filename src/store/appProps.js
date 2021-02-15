@@ -1,11 +1,11 @@
 const createAppPropsStore = () => ({
-  name: 'Curriculum vitae',
-  showPreview: false,
-  setAppName(name) {
-    this.name = name
+  title: 'Curriculum vitae',
+  editable: true,
+  setAppTitle(title) {
+    this.title = title
   },
-  toggleShowPreview() {
-    this.showPreview = !this.showPreview
+  toggleEditable() {
+    this.editable = !this.editable
   },
 })
 

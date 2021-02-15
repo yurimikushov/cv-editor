@@ -3,41 +3,41 @@ import PropTypes from 'prop-types'
 import InputField from '../InputField'
 import MultilineInputField from '../MultilineInputField'
 
-const Experience = ({ showPreview, experience }) => (
+const Experience = ({ editable, experience }) => (
   <div className='experience item item_2'>
     <InputField
       className='title title_1'
       value={experience.position}
       onChange={(e) => experience.setPosition(e.target.value)}
       placeholder='Position'
-      readOnly={showPreview}
+      readOnly={!editable}
     />
     <InputField
       className='title title_2'
       value={experience.company}
       onChange={(e) => experience.setCompany(e.target.value)}
       placeholder='Company'
-      readOnly={showPreview}
+      readOnly={!editable}
     />
     <InputField
       className='title title_4'
       value={experience.duration}
       onChange={(e) => experience.setDuration(e.target.value)}
       placeholder='Experience duration'
-      readOnly={showPreview}
+      readOnly={!editable}
     />
     <MultilineInputField
       className='description'
       value={experience.description}
       onChange={(e) => experience.setDescription(e.target.value)}
       placeholder='Experience description'
-      readOnly={showPreview}
+      readOnly={!editable}
     />
   </div>
 )
 
 Experience.propTypes = {
-  showPreview: PropTypes.bool.isRequired,
+  editable: PropTypes.bool.isRequired,
   experience: PropTypes.shape({
     position: PropTypes.string.isRequired,
     company: PropTypes.string.isRequired,

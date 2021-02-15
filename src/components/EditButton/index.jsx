@@ -1,16 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { observer } from 'mobx-react-lite'
+import { useAppProps } from '../../store'
 import './index.css'
 
-const EditButton = ({ showPreview, toggleShowPreview }) => (
-  <button className='edit-btn edit-btn_tr' onClick={toggleShowPreview}>
-    {showPreview ? 'Edit' : 'Preview'}
-  </button>
-)
+const EditButton = () => {
+  const { editable, toggleEditable } = useAppProps()
 
-EditButton.propTypes = {
-  showPreview: PropTypes.bool.isRequired,
-  toggleShowPreview: PropTypes.func.isRequired,
+  return (
+    <button className='edit-btn edit-btn_tr' onClick={toggleEditable}>
+      {!editable ? 'Edit' : 'Preview'}
+    </button>
+  )
 }
 
-export default EditButton
+export default observer(EditButton)
