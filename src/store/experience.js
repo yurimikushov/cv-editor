@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 
-const experience = (position, company, duration, description) => ({
+const createExperienceStore = (position, company, duration, description) => ({
   id: nanoid(),
   position,
   company,
@@ -20,4 +20,4 @@ const experience = (position, company, duration, description) => ({
   },
 })
 
-export default experience
+export default createExperienceStore
