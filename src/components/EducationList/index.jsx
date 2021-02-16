@@ -11,7 +11,11 @@ const EducationList = () => {
     <div className='educations item item_1'>
       <div className='title title_0'>Education</div>
       {educations.map((education) => (
-        <Education key={education.id} editable={editable} {...education} />
+        <Education
+          key={education.id}
+          editable={editable}
+          education={education}
+        />
       ))}
     </div>
   )
