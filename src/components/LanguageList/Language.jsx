@@ -1,12 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import InputField from '../InputField'
 
-const Language = ({ title }) => (
-  <div className='language description description_1'>{title}</div>
+const Language = ({ editable, language }) => (
+  <InputField
+    className='language description description_1'
+    value={language.title}
+    onChange={(e) => language.setTitle(e.target.value)}
+    placeholder='Language'
+    readOnly={!editable}
+  />
 )
 
 Language.propTypes = {
-  title: PropTypes.string.isRequired,
+  editable: PropTypes.bool.isRequired,
+  language: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    setTitle: PropTypes.func.isRequired,
+  }),
 }
 
 export default Language

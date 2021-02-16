@@ -1,22 +1,19 @@
-import { nanoid } from 'nanoid'
+import createLanguageStore from './language'
 
-const exapmleLanguages = [
-  { id: nanoid(), title: 'Russian' },
-  { id: nanoid(), title: 'English' },
-]
+let exapmleLanguages = [{ title: 'Russian' }, { title: 'English' }]
 
-const createLanguagesStore = () => ({
+exapmleLanguages = exapmleLanguages.map((language) =>
+  createLanguageStore(language.title)
+)
+
+const createLanguageListStore = () => ({
   languages: exapmleLanguages,
   addLanguage(title) {
-    this.languages.push({
-      id: nanoid(),
-      title,
-    })
-    this.languages = [...this.languages]
+    this.languages.push(createLanguageStore(title))
   },
   removeLanguage(id) {
     this.languages = this.languages.filter((language) => language.id !== id)
   },
 })
 
-export default createLanguagesStore
+export default createLanguageListStore
