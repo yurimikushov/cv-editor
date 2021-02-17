@@ -1,6 +1,6 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
-import { useContactList, useTechnologyList } from '../../store'
+import { useContactList } from '../../store'
 import EditButton from '../../components/EditButton'
 import Header from '../../components/Header'
 import AboutMe from '../../components/AboutMe'
@@ -13,7 +13,6 @@ import './index.css'
 
 const CV = () => {
   const { contacts } = useContactList()
-  const { technologies } = useTechnologyList()
 
   return (
     <>
@@ -29,7 +28,7 @@ const CV = () => {
             </div>
             <div className='cv-another-info'>
               <ContactList contacts={contacts} />
-              <TechnologyList technologies={technologies} />
+              <TechnologyList />
               <LanguageList />
             </div>
           </main>
