@@ -44,6 +44,7 @@ textarea:not([readonly]) {
   padding: 2px 4px;
   border: 1px solid rgba(21, 21, 21, 0.4);
   border-radius: 3px;
+  color: var(--color-black) !important;
 }
 
 input:not([readonly]):focus,
