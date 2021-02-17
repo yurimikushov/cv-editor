@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { observer } from 'mobx-react-lite'
 import InputField from '../InputField'
 import MultilineInputField from '../MultilineInputField'
 
@@ -50,4 +51,4 @@ Experience.propTypes = {
   }),
 }
 
-export default Experience
+export default observer(Experience)
