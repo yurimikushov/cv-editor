@@ -98,6 +98,7 @@ textarea:not([readonly]):focus {
 }
 
 .description.description_1 {
+  margin: 2px 0;
   color: var(--color-gray-1);
   font-size: 0.85rem;
 }
