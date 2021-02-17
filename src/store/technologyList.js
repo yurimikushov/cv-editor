@@ -1,11 +1,11 @@
 const exapmleTechnologies =
   'HTML5, CSS3, SCSS, JS, React, React Hooks, Redux, MobX, Git'
 
-const createTechnologiesStore = () => ({
-  technologies: exapmleTechnologies,
-  setTechnologies(technologies) {
-    this.technologies = technologies
+const createTechnologyListStore = () => ({
+  description: exapmleTechnologies,
+  setDescription(description) {
+    this.description = description
   },
 })
 
-export default createTechnologiesStore
+export default createTechnologyListStore
