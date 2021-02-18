@@ -7,7 +7,7 @@ import Button from '../Button'
 const Language = ({ editable, language, removeLanguage }) => (
   <div className='language' style={{ display: 'flex', alignItems: 'center' }}>
     <InputField
-      className='description description_1'
+      className='language__title description description_1'
       value={language.title}
       onChange={(e) => language.setTitle(e.target.value)}
       placeholder='Language'
@@ -15,6 +15,7 @@ const Language = ({ editable, language, removeLanguage }) => (
     />
     {editable && (
       <Button
+        className='language__remove-btn'
         title='x'
         style={{ marginLeft: '5px' }}
         onClick={() => removeLanguage(language.id)}
