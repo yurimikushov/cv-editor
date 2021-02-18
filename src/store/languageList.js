@@ -8,8 +8,8 @@ exapmleLanguages = exapmleLanguages.map((language) =>
 
 const createLanguageListStore = () => ({
   languages: exapmleLanguages,
-  addLanguage(title) {
-    this.languages.push(createLanguageStore(title))
+  addLanguage() {
+    this.languages.push(createLanguageStore())
   },
   removeLanguage(id) {
     this.languages = this.languages.filter((language) => language.id !== id)

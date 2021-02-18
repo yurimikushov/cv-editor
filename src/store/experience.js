@@ -1,6 +1,11 @@
 import { nanoid } from 'nanoid'
 
-const createExperienceStore = (position, company, duration, description) => ({
+const createExperienceStore = (
+  position = '',
+  company = '',
+  duration = '',
+  description = ''
+) => ({
   id: nanoid(),
   position,
   company,

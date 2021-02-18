@@ -19,10 +19,10 @@ exapmleEducations = exapmleEducations.map((edu) =>
 
 const createEducationListStore = () => ({
   educations: exapmleEducations,
-  addEducations(degree, university, duration) {
-    this.educations.push(createEducationStore(degree, university, duration))
+  addEducation() {
+    this.educations.push(createEducationStore())
   },
-  removeEducations(id) {
+  removeEducation(id) {
     this.educations = this.educations.filter((education) => education.id !== id)
   },
 })

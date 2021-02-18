@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 
-const createEducationStore = (degree, university, duration) => ({
+const createEducationStore = (degree = '', university = '', duration = '') => ({
   id: nanoid(),
   degree,
   university,

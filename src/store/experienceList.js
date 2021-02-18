@@ -35,10 +35,8 @@ exapmleExperiences = exapmleExperiences.map((experience) =>
 
 const createExperienceListStore = () => ({
   experiences: exapmleExperiences,
-  addExperience(position, company, duration, description) {
-    this.experiences.push(
-      createExperienceStore(position, company, duration, description)
-    )
+  addExperience() {
+    this.experiences.push(createExperienceStore())
   },
   removeExperience(id) {
     this.experiences.filter((experience) => experience.id !== id)

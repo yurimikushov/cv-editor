@@ -2,10 +2,11 @@ import React from 'react'
 import { observer } from 'mobx-react-lite'
 import { useAppProps, useEducationList } from '../../store'
 import Education from './Education'
+import Button from '../Button'
 
 const EducationList = () => {
   const { editable } = useAppProps()
-  const { educations } = useEducationList()
+  const { educations, addEducation } = useEducationList()
 
   return (
     <div className='educations item item_1'>
@@ -17,6 +18,7 @@ const EducationList = () => {
           education={education}
         />
       ))}
+      <Button title='Add' onClick={addEducation} />
     </div>
   )
 }
