@@ -6,15 +6,20 @@ import Button from '../Button'
 
 const LanguageList = () => {
   const { editable } = useAppProps()
-  const { languages, addLanguage } = useLanguageList()
+  const { languages, addLanguage, removeLanguage } = useLanguageList()
 
   return (
     <div className='languages item item_1'>
       <div className='title title_3'>Languages</div>
       {languages.map((language) => (
-        <Language key={language.id} editable={editable} language={language} />
+        <Language
+          key={language.id}
+          editable={editable}
+          language={language}
+          removeLanguage={removeLanguage}
+        />
       ))}
-      <Button title='Add' onClick={addLanguage} />
+      {editable && <Button title='Add' onClick={addLanguage} />}
     </div>
   )
 }
