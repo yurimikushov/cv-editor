@@ -18,7 +18,7 @@ const ExperienceList = () => {
           experience={experience}
         />
       ))}
-      <Button title='Add' onClick={addExperience} />
+      {editable && <Button title='Add' onClick={addExperience} />}
     </div>
   )
 }

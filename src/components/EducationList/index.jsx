@@ -18,7 +18,7 @@ const EducationList = () => {
           education={education}
         />
       ))}
-      <Button title='Add' onClick={addEducation} />
+      {editable && <Button title='Add' onClick={addEducation} />}
     </div>
   )
 }
