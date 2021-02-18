@@ -1,0 +1,17 @@
+.experience[data-editable=true] {
+  position: relative;
+  padding: 2px 4px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  transition: box-shadow 0.2s ease-out;
+}
+
+.experience[data-editable=true]:hover {
+  box-shadow: 0 0 4px 0 #a7a7a7;
+}
+
+.experience__remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

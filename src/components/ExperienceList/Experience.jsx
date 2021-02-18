@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import { observer } from 'mobx-react-lite'
 import InputField from '../InputField'
 import MultilineInputField from '../MultilineInputField'
+import Button from '../Button'
+import './index.css'
 
-const Experience = ({ editable, experience }) => (
-  <div className='experience item item_2'>
+const Experience = ({ editable, experience, removeExperience }) => (
+  <div className='experience item item_2' data-editable={editable}>
     <InputField
       className='title title_1'
       value={experience.position}
@@ -34,12 +36,20 @@ const Experience = ({ editable, experience }) => (
       placeholder='Experience description'
       readOnly={!editable}
     />
+    {editable && (
+      <Button
+        className='experience__remove-btn'
+        title='x'
+        onClick={() => removeExperience(experience.id)}
+      />
+    )}
   </div>
 )
 
 Experience.propTypes = {
   editable: PropTypes.bool.isRequired,
   experience: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
     company: PropTypes.string.isRequired,
     duration: PropTypes.string.isRequired,
@@ -49,6 +59,7 @@ Experience.propTypes = {
     setDuration: PropTypes.func.isRequired,
     setDescription: PropTypes.func.isRequired,
   }),
+  removeExperience: PropTypes.func.isRequired,
 }
 
 export default observer(Experience)

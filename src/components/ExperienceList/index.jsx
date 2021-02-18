@@ -6,7 +6,7 @@ import Button from '../Button'
 
 const ExperienceList = () => {
   const { editable } = useAppProps()
-  const { experiences, addExperience } = useExperienceList()
+  const { experiences, addExperience, removeExperience } = useExperienceList()
 
   return (
     <div className='experiences item item_1'>
@@ -16,6 +16,7 @@ const ExperienceList = () => {
           key={experience.id}
           editable={editable}
           experience={experience}
+          removeExperience={removeExperience}
         />
       ))}
       {editable && <Button title='Add' onClick={addExperience} />}
