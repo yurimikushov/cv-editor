@@ -39,7 +39,9 @@ const createExperienceListStore = () => ({
     this.experiences.push(createExperienceStore())
   },
   removeExperience(id) {
-    this.experiences.filter((experience) => experience.id !== id)
+    this.experiences = this.experiences.filter(
+      (experience) => experience.id !== id
+    )
   },
 })
 
