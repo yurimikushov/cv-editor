@@ -1,7 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
 import { useAppProps, useAboutMe } from '../../store'
-import MultilineInputField from '../MultilineInputField'
+import MultilineInputField from '../Common/MultilineInputField'
 import './index.css'
 
 const AboutMe = () => {

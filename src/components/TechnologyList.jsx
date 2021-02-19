@@ -1,7 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
 import { useAppProps, useTechnologyList } from '../store'
-import MultilineInputField from './MultilineInputField'
+import MultilineInputField from './Common/MultilineInputField'
 
 const TechnologyList = () => {
   const { editable } = useAppProps()

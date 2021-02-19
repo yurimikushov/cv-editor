@@ -2,7 +2,7 @@ import React from 'react'
 import { observer } from 'mobx-react-lite'
 import { useAppProps, useExperienceList } from '../../store'
 import Experience from './Experience'
-import Button from '../Button'
+import Button from '../Common/Button'
 
 const ExperienceList = () => {
   const { editable } = useAppProps()
@@ -19,7 +19,13 @@ const ExperienceList = () => {
           removeExperience={removeExperience}
         />
       ))}
-      {editable && <Button className='experiences__add-btn' title='Add' onClick={addExperience} />}
+      {editable && (
+        <Button
+          className='experiences__add-btn'
+          title='Add'
+          onClick={addExperience}
+        />
+      )}
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { observer } from 'mobx-react-lite'
 import { useAppProps, useLanguageList } from '../../store'
 import Language from './Language'
-import Button from '../Button'
+import Button from '../Common/Button'
 import './index.css'
 
 const LanguageList = () => {

@@ -2,7 +2,7 @@ import React from 'react'
 import { observer } from 'mobx-react-lite'
 import { useAppProps, useEducationList } from '../../store'
 import Education from './Education'
-import Button from '../Button'
+import Button from '../Common/Button'
 
 const EducationList = () => {
   const { editable } = useAppProps()

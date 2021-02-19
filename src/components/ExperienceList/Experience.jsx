@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { observer } from 'mobx-react-lite'
-import InputField from '../InputField'
-import MultilineInputField from '../MultilineInputField'
-import Button from '../Button'
+import InputField from '../Common/InputField'
+import MultilineInputField from '../Common/MultilineInputField'
+import Button from '../Common/Button'
 import './index.css'
 
 const Experience = ({ editable, experience, removeExperience }) => (

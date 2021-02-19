@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { observer } from 'mobx-react-lite'
-import InputField from '../InputField'
-import Button from '../Button'
+import InputField from '../Common/InputField'
+import Button from '../Common/Button'
 
 const Language = ({ editable, language, removeLanguage }) => (
   <div className='language' style={{ display: 'flex', alignItems: 'center' }}>
