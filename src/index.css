@@ -44,7 +44,7 @@ button:hover {
 input:not([readonly]),
 textarea:not([readonly]) {
   padding: 2px 4px;
-  border: 1px solid rgba(21, 21, 21, 0.4);
+  border: 1px solid #989898;
   border-radius: 3px;
   color: var(--color-black) !important;
 }
@@ -113,4 +113,15 @@ textarea:not([readonly]):focus {
 
 .item.item_2:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.card[data-editable=true] {
+  padding: 2px 4px;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  transition: box-shadow 0.2s ease-out;
+}
+
+.card[data-editable=true]:hover {
+  box-shadow: 0 0 10px 0 #c7c7c7;
 }

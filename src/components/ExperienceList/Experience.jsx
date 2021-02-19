@@ -7,7 +7,7 @@ import Button from '../Button'
 import './index.css'
 
 const Experience = ({ editable, experience, removeExperience }) => (
-  <div className='experience item item_2' data-editable={editable}>
+  <div className='experience card item item_2' data-editable={editable}>
     <InputField
       className='title title_1'
       value={experience.position}
