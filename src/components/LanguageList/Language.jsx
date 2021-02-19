@@ -17,7 +17,7 @@ const Language = ({ editable, language, removeLanguage }) => (
       <Button
         className='language__remove-btn'
         title='x'
-        style={{ marginLeft: '5px' }}
+        style={{ marginLeft: '-12px' }}
         onClick={() => removeLanguage(language.id)}
       />
     )}
