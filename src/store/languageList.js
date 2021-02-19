@@ -13,6 +13,10 @@ const createLanguageListStore = () => ({
   },
   removeLanguage(id) {
     this.languages = this.languages.filter((language) => language.id !== id)
+
+    if (this.languages.length === 0) {
+      this.languages.push(createLanguageStore())
+    }
   },
 })
 

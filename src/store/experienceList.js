@@ -42,6 +42,10 @@ const createExperienceListStore = () => ({
     this.experiences = this.experiences.filter(
       (experience) => experience.id !== id
     )
+    
+    if (this.experiences.length === 0) {
+      this.experiences.push(createExperienceStore())
+    }
   },
 })
 
