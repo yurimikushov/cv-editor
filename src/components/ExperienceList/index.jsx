@@ -19,7 +19,7 @@ const ExperienceList = () => {
           removeExperience={removeExperience}
         />
       ))}
-      {editable && <Button title='Add' onClick={addExperience} />}
+      {editable && <Button className='experiences__add-btn' title='Add' onClick={addExperience} />}
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite'
 import { useAppProps, useLanguageList } from '../../store'
 import Language from './Language'
 import Button from '../Button'
+import './index.css'
 
 const LanguageList = () => {
   const { editable } = useAppProps()
@@ -19,7 +20,13 @@ const LanguageList = () => {
           removeLanguage={removeLanguage}
         />
       ))}
-      {editable && <Button title='Add' onClick={addLanguage} />}
+      {editable && (
+        <Button
+          className='languages__add-btn'
+          title='Add'
+          onClick={addLanguage}
+        />
+      )}
     </div>
   )
 }

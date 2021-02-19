@@ -19,7 +19,13 @@ const EducationList = () => {
           removeEducation={removeEducation}
         />
       ))}
-      {editable && <Button title='Add' onClick={addEducation} />}
+      {editable && (
+        <Button
+          className='educations__add-btn'
+          title='Add'
+          onClick={addEducation}
+        />
+      )}
     </div>
   )
 }
