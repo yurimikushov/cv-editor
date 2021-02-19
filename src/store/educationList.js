@@ -24,6 +24,10 @@ const createEducationListStore = () => ({
   },
   removeEducation(id) {
     this.educations = this.educations.filter((education) => education.id !== id)
+
+    if (this.educations.length === 0) {
+      this.educations.push(createEducationStore())
+    }
   },
 })
 

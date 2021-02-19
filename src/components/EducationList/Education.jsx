@@ -2,9 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { observer } from 'mobx-react-lite'
 import InputField from '../InputField'
+import Button from '../Button'
+import './index.css'
 
-const Education = ({ editable, education }) => (
-  <div className='education item item_2'>
+const Education = ({ editable, education, removeEducation }) => (
+  <div className='education card item item_2' data-editable={editable}>
     <InputField
       className='title title_1'
       value={education.degree}
@@ -26,12 +28,20 @@ const Education = ({ editable, education }) => (
       placeholder='Education duration'
       readOnly={!editable}
     />
+    {editable && (
+      <Button
+        className='education__remove-btn'
+        title='x'
+        onClick={() => removeEducation(education.id)}
+      />
+    )}
   </div>
 )
 
 Education.propTypes = {
   editable: PropTypes.bool.isRequired,
   education: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     degree: PropTypes.string.isRequired,
     university: PropTypes.string.isRequired,
     duration: PropTypes.string.isRequired,
@@ -39,6 +49,7 @@ Education.propTypes = {
     setUniversity: PropTypes.func.isRequired,
     setDuration: PropTypes.func.isRequired,
   }),
+  removeEducation: PropTypes.func.isRequired,
 }
 
 export default observer(Education)

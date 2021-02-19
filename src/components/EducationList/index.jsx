@@ -6,7 +6,7 @@ import Button from '../Button'
 
 const EducationList = () => {
   const { editable } = useAppProps()
-  const { educations, addEducation } = useEducationList()
+  const { educations, addEducation, removeEducation } = useEducationList()
 
   return (
     <div className='educations item item_1'>
@@ -16,6 +16,7 @@ const EducationList = () => {
           key={education.id}
           editable={editable}
           education={education}
+          removeEducation={removeEducation}
         />
       ))}
       {editable && <Button title='Add' onClick={addEducation} />}

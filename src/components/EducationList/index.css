@@ -1,0 +1,9 @@
+.education {
+  position: relative;
+}
+
+.education__remove-btn {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
