@@ -1,11 +1,15 @@
 .cv-header {
   display: flex;
-  height: var(--header-height);
+  align-items: center;
   justify-content: space-between;
 }
 
-.cv-header__title {
+.cv-header__left-side {
   width: 70%;
+}
+
+.cv-header__right-side {
+  width: 20%;
 }
 
 .cv-header__title > * {
@@ -21,14 +25,4 @@
 
 .cv-header__position {
   font-size: 1.7rem;
-}
-
-.avatar-wrapper {
-  width: 20%;
-}
-
-.avatar {
-  width: var(--header-height);
-  height: var(--header-height);
-  border-radius: 50%;
 }

@@ -1,0 +1,51 @@
+.avatar {
+  position: relative;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+}
+
+.avatar[data-editable=true]::before {
+  position: absolute;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  background-color: var(--color-white);
+  border-radius: 50%;
+  content: '';
+  opacity: 0.9;
+  transform: scale(0);
+  transition: transform 0.2s;
+}
+
+.avatar:hover::before {
+  transform: scale(1);
+}
+
+.avatar__presenter {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+}
+
+.avatar__load-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--color-gray-3);
+  font-size: 1.3rem;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+}
+
+.avatar__load-btn:hover {
+  color: var(--color-gray-3);
+}
+
+.avatar:hover > .avatar__load-btn {
+  opacity: 1;
+}

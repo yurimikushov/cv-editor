@@ -7,18 +7,33 @@ import './index.css'
 
 export const Header = () => {
   const { editable } = useAppProps()
-  const { fullName, position, setFullName, setPosition, avatar } = useAboutMe()
+  const {
+    fullName,
+    position,
+    setFullName,
+    setPosition,
+    avatar,
+    setAvatar,
+  } = useAboutMe()
 
   return (
     <header className='cv-header'>
-      <Title
-        editable={editable}
-        fullName={fullName}
-        position={position}
-        setFullName={setFullName}
-        setPosition={setPosition}
-      />
-      <Avatar src={avatar} />
+      <div className='cv-header__left-side'>
+        <Title
+          editable={editable}
+          fullName={fullName}
+          position={position}
+          setFullName={setFullName}
+          setPosition={setPosition}
+        />
+      </div>
+      <div className='cv-header__right-side'>
+        <Avatar
+          editable={editable}
+          avatar={avatar}
+          setAvatar={setAvatar}
+          />
+      </div>
     </header>
   )
 }
