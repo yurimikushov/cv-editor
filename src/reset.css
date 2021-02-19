@@ -21,6 +21,7 @@ button:focus {
 }
 
 input {
+  box-sizing: border-box;
   border: none;
 }
 
@@ -30,6 +31,7 @@ input:focus {
 
 textarea {
   overflow: hidden;
+  box-sizing: border-box;
   border: none;
   box-shadow: none;
   outline: none;

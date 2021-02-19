@@ -13,12 +13,7 @@ const MultilineInputField = ({
   const [textAreaHeight, setTextAreaHeight] = useState('auto')
 
   useEffect(() => {
-    // FIXME: don't should remove the bottom padding in JS
-    if (!readOnly) {
-      setTextAreaHeight(`calc(${textAreaRef.current.scrollHeight}px - 0.3rem)`)
-    } else {
-      setTextAreaHeight(`${textAreaRef.current.scrollHeight}px`)
-    }
+    setTextAreaHeight(`${textAreaRef.current.scrollHeight}px`)
   }, [value, readOnly])
 
   const onChangeHandler = (e) => {
