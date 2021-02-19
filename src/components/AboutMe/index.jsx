@@ -14,9 +14,8 @@ const AboutMe = () => {
         className='about-me__description'
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        placeholder='Describe yourself'
+        placeholder='Tell about your qualities, knowledge and hobbies.'
         readOnly={!editable}
-        readOnlyPlaceholder='Description of your qualities, knowledge and hobbies.'
       />
     </div>
   )
