@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 
-const createExperienceStore = (
+const createExperience = (
   position = '',
   company = '',
   duration = '',
@@ -25,4 +25,4 @@ const createExperienceStore = (
   },
 })
 
-export default createExperienceStore
+export default createExperience

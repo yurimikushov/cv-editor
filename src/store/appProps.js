@@ -1,4 +1,4 @@
-const createAppPropsStore = () => ({
+const createAppProps = () => ({
   title: 'Curriculum vitae',
   editable: true,
   setAppTitle(title) {
@@ -9,4 +9,4 @@ const createAppPropsStore = () => ({
   },
 })
 
-export default createAppPropsStore
+export default createAppProps

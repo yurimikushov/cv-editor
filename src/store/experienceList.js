@@ -1,4 +1,4 @@
-import createExperienceStore from './experience'
+import createExperience from './experience'
 
 let exapmleExperiences = [
   {
@@ -25,7 +25,7 @@ let exapmleExperiences = [
 ]
 
 exapmleExperiences = exapmleExperiences.map((experience) =>
-  createExperienceStore(
+  createExperience(
     experience.position,
     experience.company,
     experience.duration,
@@ -33,10 +33,10 @@ exapmleExperiences = exapmleExperiences.map((experience) =>
   )
 )
 
-const createExperienceListStore = () => ({
+const createExperienceList = () => ({
   experiences: exapmleExperiences,
   addExperience() {
-    this.experiences.push(createExperienceStore())
+    this.experiences.push(createExperience())
   },
   removeExperience(id) {
     this.experiences = this.experiences.filter(
@@ -44,9 +44,9 @@ const createExperienceListStore = () => ({
     )
     
     if (this.experiences.length === 0) {
-      this.experiences.push(createExperienceStore())
+      this.experiences.push(createExperience())
     }
   },
 })
 
-export default createExperienceListStore
+export default createExperienceList

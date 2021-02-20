@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 
-const createEducationStore = (degree = '', university = '', duration = '') => ({
+const createEducation = (degree = '', university = '', duration = '') => ({
   id: nanoid(),
   degree,
   university,
@@ -16,4 +16,4 @@ const createEducationStore = (degree = '', university = '', duration = '') => ({
   },
 })
 
-export default createEducationStore
+export default createEducation

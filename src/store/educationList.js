@@ -1,4 +1,4 @@
-import createEducationStore from './education'
+import createEducation from './education'
 
 let exapmleEducations = [
   {
@@ -14,21 +14,21 @@ let exapmleEducations = [
 ]
 
 exapmleEducations = exapmleEducations.map((edu) =>
-  createEducationStore(edu.degree, edu.university, edu.duration)
+  createEducation(edu.degree, edu.university, edu.duration)
 )
 
-const createEducationListStore = () => ({
+const createEducationList = () => ({
   educations: exapmleEducations,
   addEducation() {
-    this.educations.push(createEducationStore())
+    this.educations.push(createEducation())
   },
   removeEducation(id) {
     this.educations = this.educations.filter((education) => education.id !== id)
 
     if (this.educations.length === 0) {
-      this.educations.push(createEducationStore())
+      this.educations.push(createEducation())
     }
   },
 })
 
-export default createEducationListStore
+export default createEducationList

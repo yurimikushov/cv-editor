@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 
-const createLanguageStore = (title = '') => ({
+const createLanguage = (title = '') => ({
   id: nanoid(),
   title,
   setTitle(title) {
@@ -8,4 +8,4 @@ const createLanguageStore = (title = '') => ({
   },
 })
 
-export default createLanguageStore
+export default createLanguage

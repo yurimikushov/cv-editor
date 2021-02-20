@@ -17,14 +17,6 @@ const ContactListContext = createContext()
 const TechnologyListContext = createContext()
 const LanguageListContext = createContext()
 
-AppPropsContext.displayName = 'AppProps'
-AboutMeContext.displayName = 'AboutMe'
-ExperienceListContext.displayName = 'ExperienceList'
-EducationListContext.displayName = 'EducationList'
-ContactListContext.displayName = 'ContactList'
-TechnologyListContext.displayName = 'TechnologyList'
-LanguageListContext.displayName = 'LanguageList'
-
 const StoreProvider = ({ children }) => {
   const appProps = useLocalObservable(crecreateAppProps)
   const aboutMe = useLocalObservable(createAboutMe)

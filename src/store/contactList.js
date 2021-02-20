@@ -11,7 +11,7 @@ exapmleContacts = exapmleContacts.map((contact) =>
   createContact(contact.title, contact.href)
 )
 
-const createContactsStore = () => ({
+const createContacts = () => ({
   contacts: exapmleContacts,
   addContact() {
     this.contacts.push(createContact())
@@ -25,4 +25,4 @@ const createContactsStore = () => ({
   },
 })
 
-export default createContactsStore
+export default createContacts
