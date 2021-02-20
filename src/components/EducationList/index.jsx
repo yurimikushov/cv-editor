@@ -10,7 +10,9 @@ const EducationList = () => {
 
   return (
     <div className='educations item item_1'>
-      <div className='title title_0'>Education</div>
+      <div className='educations__title title title_0 item item_2'>
+        Education
+      </div>
       {educations.map((education) => (
         <Education
           key={education.id}

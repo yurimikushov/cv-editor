@@ -1,0 +1,43 @@
+.title {
+  display: block;
+  color: var(--color-black);
+  font-family: var(--font-family);
+  font-size: 1.15rem;
+  line-height: 1.4rem;
+}
+
+.title.title_0 {
+  color: var(--color-gray-3);
+  font-size: 0.7rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+}
+
+.title.title_1 {
+  font-weight: bold;
+  letter-spacing: 0.07rem;
+}
+
+.title.title_2 {
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.title.title_3 {
+  color: var(--color-gray-3);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.title.title_4 {
+  color: var(--color-gray-3);
+  font-size: 0.85rem;
+  line-height: 1.2rem;
+}
+
+.title.title_5 {
+  color: var(--color-gray-3);
+  font-size: 0.77rem;
+  font-weight: 100;
+  line-height: 1rem;
+}

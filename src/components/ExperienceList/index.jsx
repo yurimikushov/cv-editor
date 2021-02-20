@@ -10,7 +10,9 @@ const ExperienceList = () => {
 
   return (
     <div className='experiences item item_1'>
-      <div className='title title_0'>Experience</div>
+      <div className='experiences___title title title_0 item item_2'>
+        Experience
+      </div>
       {experiences.map((experience) => (
         <Experience
           key={experience.id}

@@ -1,5 +1,5 @@
 .languages__add-btn {
-  margin: 5px auto 0;
+  margin: 0 auto;
 }
 
 .language {
@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.language > input {
+.language > .language__title {
   min-width: 100%;
 }
 

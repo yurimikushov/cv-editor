@@ -11,7 +11,7 @@ const AboutMe = () => {
   return (
     <div className='about-me item item_1'>
       <MultilineInputField
-        className='about-me__description'
+        className='about-me__description title title_2'
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder='Tell about your qualities, knowledge and hobbies.'

@@ -1,7 +1,8 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
-import { useAppProps, useTechnologyList } from '../store'
-import MultilineInputField from './Common/MultilineInputField'
+import { useAppProps, useTechnologyList } from '../../store'
+import MultilineInputField from '../Common/MultilineInputField'
+import './index.css'
 
 const TechnologyList = () => {
   const { editable } = useAppProps()
@@ -9,9 +10,11 @@ const TechnologyList = () => {
 
   return (
     <div className='technologies item item_1'>
-      <div className='title title_3'>Technologies</div>
+      <div className='technologies__title title title_3 item item_3'>
+        Technologies
+      </div>
       <MultilineInputField
-        className='technology description description_1'
+        className='technologies__list title title_4'
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder='Technology stack'

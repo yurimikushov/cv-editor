@@ -1,0 +1,11 @@
+.item.item_1:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.item.item_2:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.item.item_3:not(:last-child) {
+  margin-bottom: 4px;
+}

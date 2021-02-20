@@ -2,10 +2,18 @@
   position: relative;
 }
 
+.experience > *:not(button) {
+  margin: 5px 0;
+}
+
+.experience__description {
+  width: 100%;
+}
+
 .experience__remove-btn {
   position: absolute;
-  top: 3px;
-  right: 5px;
+  top: 0.3rem;
+  right: 0.5rem;
 }
 
 .experiences__add-btn {

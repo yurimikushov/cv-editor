@@ -11,7 +11,9 @@ const LanguageList = () => {
 
   return (
     <div className='languages item item_1'>
-      <div className='title title_3'>Languages</div>
+      <div className='languages__title title title_3 item item_3'>
+        Languages
+      </div>
       {languages.map((language) => (
         <Language
           key={language.id}

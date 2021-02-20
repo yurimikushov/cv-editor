@@ -9,13 +9,13 @@ const Contact = ({ editable, contact, removeContact }) => (
     {editable && (
       <>
         <InputField
-          className='contact__title description description_1'
+          className='contact__title title title_4'
           value={contact.title}
           placeholder='Title'
           onChange={(e) => contact.setTitle(e.target.value)}
         />
         <InputField
-          className='contact__href description description_1'
+          className='contact__href title title_4'
           value={contact.href}
           placeholder='Link'
           onChange={(e) => contact.setHref(e.target.value)}
@@ -29,7 +29,7 @@ const Contact = ({ editable, contact, removeContact }) => (
     )}
     {!editable && (
       <a
-        className='contact__title description description_1'
+        className='contact__title title title_4'
         href={contact.href}
         target='_blank'
         rel='noreferrer'

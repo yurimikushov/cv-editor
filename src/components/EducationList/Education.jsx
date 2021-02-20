@@ -6,23 +6,23 @@ import Button from '../Common/Button'
 import './index.css'
 
 const Education = ({ editable, education, removeEducation }) => (
-  <div className='education card item item_2' data-editable={editable}>
+  <div className='education card card_1 item item_2' data-editable={editable}>
     <InputField
-      className='title title_1'
+      className='education__degree title title_1'
       value={education.degree}
       onChange={(e) => education.setDegree(e.target.value)}
       placeholder='Degree'
       readOnly={!editable}
     />
     <InputField
-      className='title title_2'
+      className='education__university title title_2'
       value={education.university}
       onChange={(e) => education.setUniversity(e.target.value)}
       placeholder='University'
       readOnly={!editable}
     />
     <InputField
-      className='title title_4'
+      className='education__duration title title_5'
       value={education.duration}
       onChange={(e) => education.setDuration(e.target.value)}
       placeholder='Education duration'

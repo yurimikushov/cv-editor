@@ -2,10 +2,14 @@
   position: relative;
 }
 
+.education > *:not(button) {
+  margin: 5px 0;
+}
+
 .education__remove-btn {
   position: absolute;
-  top: 3px;
-  right: 5px;
+  top: 0.3rem;
+  right: 0.5rem;
 }
 
 .educations__add-btn {

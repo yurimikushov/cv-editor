@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 const MultilineInputField = ({
   value,
   onChange,
-  className = '',
   placeholder = '',
   readOnly = false,
   ...props
@@ -34,15 +33,14 @@ const MultilineInputField = ({
 
   return (
     <textarea
+      {...props}
       ref={textAreaRef}
-      className={className}
       value={textAreaValue}
       placeholder={placeholder}
       readOnly={readOnly}
       rows='1'
       style={{ height: textAreaHeight }}
       onChange={onChangeHandler}
-      {...props}
     />
   )
 }
@@ -50,7 +48,6 @@ const MultilineInputField = ({
 MultilineInputField.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  className: PropTypes.string,
   placeholder: PropTypes.string,
   readOnly: PropTypes.bool,
 }

@@ -1,4 +1,7 @@
-@import url(./reset.css);
+@import url(./styles/reset.css);
+@import url(./styles/title.css);
+@import url(./styles/card.css);
+@import url(./styles/item.css);
 
 :root {
   --color-white: #fff;
@@ -55,83 +58,4 @@ input:not([readonly]):focus,
 textarea:not([readonly]):focus {
   box-shadow: 0 0 4px 0 var(--color-gray-1);
   outline: none;
-}
-
-.title {
-  display: block;
-  margin: 5px 0;
-  color: var(--color-black);
-  font-size: 1.15rem;
-}
-
-.title.title_0 {
-  color: var(--color-gray-3);
-  font-size: 0.7rem;
-  letter-spacing: 0.15rem;
-  line-height: 1.4rem;
-  text-transform: uppercase;
-}
-
-.title.title_1 {
-  font-weight: bold;
-  letter-spacing: 0.07rem;
-}
-
-.title.title_2 {
-  font-size: 1rem;
-  font-weight: 100;
-}
-
-.title.title_3 {
-  color: var(--color-gray-3);
-  font-size: 0.92rem;
-  font-weight: 700;
-}
-
-.title.title_4 {
-  color: var(--color-gray-3);
-  font-size: 0.77rem;
-  font-weight: 100;
-}
-
-.description {
-  width: 100%;
-  color: var(--color-black);
-  font-family: var(--font-family);
-  font-size: 1rem;
-  line-height: 1.4rem;
-}
-
-.description.description_1 {
-  margin: 2px 0;
-  color: var(--color-gray-3);
-  font-size: 0.85rem;
-  line-height: 1.2rem;
-}
-
-.item.item_1:not(:last-child) {
-  margin-bottom: 14px;
-}
-
-.item.item_2:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.item.item_3:not(:last-child) {
-  margin-bottom: 4px;
-}
-
-.card[data-editable=true] {
-  padding: 6px 8px;
-  border: 1px solid var(--color-gray-2);
-  border-radius: 5px;
-  transition: box-shadow 0.2s ease-out;
-}
-
-.card[data-editable=true].card_2 {
-  padding: 3px 4px;
-}
-
-.card[data-editable=true]:hover {
-  box-shadow: 0 0 10px 0 var(--color-gray-1);
 }

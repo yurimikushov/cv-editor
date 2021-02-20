@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 const InputField = ({
   value,
   onChange,
-  className = '',
   readOnly = false,
   placeholder = '',
   ...props
@@ -23,15 +22,14 @@ const InputField = ({
 
   return (
     <input
+      {...props}
       ref={inputRef}
-      className={className}
       type='text'
       value={!value && readOnly && placeholder ? placeholder : value}
       placeholder={placeholder}
       readOnly={readOnly}
       style={{ width: inputWidth, maxWidth: '100%' }}
       onChange={onChangeHandler}
-      {...props}
     />
   )
 }

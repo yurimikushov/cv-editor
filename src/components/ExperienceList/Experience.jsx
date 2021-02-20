@@ -7,30 +7,30 @@ import Button from '../Common/Button'
 import './index.css'
 
 const Experience = ({ editable, experience, removeExperience }) => (
-  <div className='experience card item item_2' data-editable={editable}>
+  <div className='experience card card_1 item item_2' data-editable={editable}>
     <InputField
-      className='title title_1'
+      className='experience__position title title_1'
       value={experience.position}
       onChange={(e) => experience.setPosition(e.target.value)}
       placeholder='Position'
       readOnly={!editable}
     />
     <InputField
-      className='title title_2'
+      className='experience__company title title_2'
       value={experience.company}
       onChange={(e) => experience.setCompany(e.target.value)}
       placeholder='Company'
       readOnly={!editable}
     />
     <InputField
-      className='title title_4'
+      className='experience__duration title title_5'
       value={experience.duration}
       onChange={(e) => experience.setDuration(e.target.value)}
       placeholder='Experience duration'
       readOnly={!editable}
     />
     <MultilineInputField
-      className='description'
+      className='experience__description title title_2'
       value={experience.description}
       onChange={(e) => experience.setDescription(e.target.value)}
       placeholder='Experience description'

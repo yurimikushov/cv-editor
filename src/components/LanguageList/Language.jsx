@@ -5,9 +5,9 @@ import InputField from '../Common/InputField'
 import Button from '../Common/Button'
 
 const Language = ({ editable, language, removeLanguage }) => (
-  <div className='language'>
+  <div className='language item item_3'>
     <InputField
-      className='language__title description description_1'
+      className='language__title title title_4'
       value={language.title}
       onChange={(e) => language.setTitle(e.target.value)}
       placeholder='Language'
