@@ -7,6 +7,10 @@
   align-items: center;
 }
 
+.language > input {
+  min-width: 100%;
+}
+
 .language__remove-btn {
-  margin-left: -12px;
+  margin-left: -1rem;
 }
