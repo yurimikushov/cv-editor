@@ -7,6 +7,7 @@ const InputField = ({
   className = '',
   readOnly = false,
   placeholder = '',
+  ...props
 }) => {
   const inputRef = useRef()
   const [inputWidth, setInputWidth] = useState('auto')
@@ -30,6 +31,7 @@ const InputField = ({
       readOnly={readOnly}
       style={{ width: inputWidth, maxWidth: '100%' }}
       onChange={onChangeHandler}
+      {...props}
     />
   )
 }

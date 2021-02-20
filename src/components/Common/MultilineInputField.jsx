@@ -7,7 +7,7 @@ const MultilineInputField = ({
   className = '',
   placeholder = '',
   readOnly = false,
-  readOnlyPlaceholder = '',
+  ...props
 }) => {
   const textAreaRef = useRef()
   const [textAreaHeight, setTextAreaHeight] = useState('auto')
@@ -28,12 +28,8 @@ const MultilineInputField = ({
 
   let textAreaValue = value
 
-  if (!value && readOnly) {
-    if (readOnlyPlaceholder) {
-      textAreaValue = readOnlyPlaceholder
-    } else if (placeholder) {
-      textAreaValue = placeholder
-    }
+  if (!value && readOnly && placeholder) {
+    textAreaValue = placeholder
   }
 
   return (
@@ -46,6 +42,7 @@ const MultilineInputField = ({
       rows='1'
       style={{ height: textAreaHeight }}
       onChange={onChangeHandler}
+      {...props}
     />
   )
 }
@@ -56,7 +53,6 @@ MultilineInputField.propTypes = {
   className: PropTypes.string,
   placeholder: PropTypes.string,
   readOnly: PropTypes.bool,
-  readOnlyPlaceholder: PropTypes.string,
 }
 
 export default MultilineInputField
