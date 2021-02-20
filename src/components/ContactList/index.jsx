@@ -1,18 +1,34 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { observer } from 'mobx-react-lite'
+import { useAppProps, useContactList } from '../../store'
 import Contact from './Contact'
+import Button from '../Common/Button'
+import './index.css'
 
-const ContactList = ({ contacts }) => (
-  <div className='contacts item item_1'>
-    <div className='title title_3'>Contacts</div>
-    {contacts.map((contact) => (
-      <Contact key={contact.id} href={contact.href} title={contact.title} />
-    ))}
-  </div>
-)
+const ContactList = () => {
+  const { editable } = useAppProps()
+  const { contacts, addContact, removeContact } = useContactList()
 
-ContactList.propTypes = {
-  contacts: PropTypes.array.isRequired,
+  return (
+    <div className='contacts item item_1'>
+      <div className='title title_3'>Contacts</div>
+      {contacts.map((contact) => (
+        <Contact
+          key={contact.id}
+          editable={editable}
+          contact={contact}
+          removeContact={removeContact}
+        />
+      ))}
+      {editable && (
+        <Button
+          className='languages__add-btn'
+          title='Add'
+          onClick={addContact}
+        />
+      )}
+    </div>
+  )
 }
 
-export default ContactList
+export default observer(ContactList)

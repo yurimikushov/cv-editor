@@ -1,24 +1,27 @@
-import { nanoid } from 'nanoid'
+import createContact from './contact'
 
-const exapmleContacts = [
-  { id: nanoid(), title: 'email', href: '/' },
-  { id: nanoid(), title: 'telephone', href: '/' },
-  { id: nanoid(), title: 'github.com', href: '/' },
-  { id: nanoid(), title: 'location', href: '/' },
+let exapmleContacts = [
+  { title: 'email', href: '#' },
+  { title: 'telephone', href: '#' },
+  { title: 'github.com', href: '#' },
+  { title: 'location', href: '#' },
 ]
+
+exapmleContacts = exapmleContacts.map((contact) =>
+  createContact(contact.title, contact.href)
+)
 
 const createContactsStore = () => ({
   contacts: exapmleContacts,
-  addContact(title, href) {
-    this.contacts.push({
-      id: nanoid(),
-      title,
-      href,
-    })
-    this.contacts = [...this.contacts]
+  addContact() {
+    this.contacts.push(createContact())
   },
   removeContact(id) {
     this.contacts = this.contacts.filter((contact) => contact.id !== id)
+
+    if (this.contacts.length === 0) {
+      this.contacts.push(createContact())
+    }
   },
 })
 
