@@ -1,31 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { observer } from 'mobx-react-lite'
 import InputField from '../Common/InputField'
 import Button from '../Common/Button'
+import LinkEditor from '../Common/LinkEditor'
 
-const Contact = ({ editable, contact, removeContact }) => (
-  <div className='contact description description_1'>
-    {editable && (
-      <>
-        <InputField
-          className='description description_1'
-          value={contact.title}
-          placeholder='Contact'
-          onFocus={() => console.log('link editor opening')}
-          onChange={() => {}}
-          style={{ width: '100%' }}
-        />
-        <Button
-          className='language__remove-btn'
-          title='x'
-          onClick={() => removeContact(contact.id)}
-        />
-      </>
-    )}
-    {!editable && <a href={contact.href}>{contact.title || 'contact'}</a>}
-  </div>
-)
+const Contact = ({ editable, contact, removeContact }) => {
+  const [openLinkEditor, setOpenLinkEditor] = useState(false)
+
+  const saveHandler = (title, href) => {
+    contact.setTitle(title)
+    contact.setHref(href)
+  }
+
+  return (
+    <div className='contact description description_1'>
+      {editable && (
+        <>
+          <InputField
+            className='description description_1'
+            value={contact.title}
+            placeholder='Contact'
+            onFocus={() => setOpenLinkEditor(true)}
+            onChange={() => {}}
+          />
+          <Button
+            className='language__remove-btn'
+            title='x'
+            onClick={() => removeContact(contact.id)}
+          />
+          {openLinkEditor && (
+            <LinkEditor
+              title={contact.title}
+              href={contact.href}
+              onSave={saveHandler}
+              onClose={() => setOpenLinkEditor(false)}
+            />
+          )}
+        </>
+      )}
+      {!editable && (
+        <a href={contact.href} target='_blank' rel='noreferrer'>
+          {contact.title || 'contact'}
+        </a>
+      )}
+    </div>
+  )
+}
 
 Contact.propTypes = {
   editable: PropTypes.bool.isRequired,
@@ -33,6 +54,8 @@ Contact.propTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     href: PropTypes.string.isRequired,
+    setTitle: PropTypes.func.isRequired,
+    setHref: PropTypes.func.isRequired,
   }),
   removeContact: PropTypes.func.isRequired,
 }

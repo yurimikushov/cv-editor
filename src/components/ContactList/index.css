@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.contact > input {
+  width: 100%;
+}
+
 .contact__remove-btn {
   position: absolute;
   margin-left: -12px;
