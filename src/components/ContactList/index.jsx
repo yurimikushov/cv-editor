@@ -22,7 +22,7 @@ const ContactList = () => {
       ))}
       {editable && (
         <Button
-          className='languages__add-btn'
+          className='contacts__add-btn'
           title='Add'
           onClick={addContact}
         />

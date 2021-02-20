@@ -1,18 +1,18 @@
 .contacts__add-btn {
-  margin: 0 auto;
+  margin: 5px auto 0;
 }
 
 .contact {
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
-.contact > input {
-  width: 100%;
+.contact > .contact__title,
+.contact > .contact__href {
+  min-width: 100%;
 }
 
 .contact__remove-btn {
   position: absolute;
-  margin-left: -12px;
+  top: 0.5rem;
+  right: 0.7rem;
 }

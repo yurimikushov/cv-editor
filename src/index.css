@@ -117,11 +117,19 @@ textarea:not([readonly]):focus {
   margin-bottom: 10px;
 }
 
+.item.item_3:not(:last-child) {
+  margin-bottom: 4px;
+}
+
 .card[data-editable=true] {
   padding: 6px 8px;
   border: 1px solid var(--color-gray-2);
   border-radius: 5px;
   transition: box-shadow 0.2s ease-out;
+}
+
+.card[data-editable=true].card_2 {
+  padding: 3px 4px;
 }
 
 .card[data-editable=true]:hover {
