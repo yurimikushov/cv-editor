@@ -30,9 +30,9 @@ export const Header = () => {
       <div className='cv-header__right-side'>
         <Avatar
           editable={editable}
-          avatar={avatar}
-          setAvatar={setAvatar}
-          />
+          src={avatar}
+          loadAvatar={setAvatar}
+        />
       </div>
     </header>
   )

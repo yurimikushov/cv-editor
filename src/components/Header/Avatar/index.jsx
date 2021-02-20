@@ -1,49 +1,43 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import Button from '../../Common/Button'
 import './index.css'
 
-const Avatar = ({ editable, avatar, setAvatar }) => {
-  const createImageInput = () => {
-    const imageInput = document.createElement('input')
+const Avatar = ({ editable, src, loadAvatar }) => {
+  const avatarInputrRef = useRef()
 
-    imageInput.type = 'file'
-    imageInput.accept = '.png, .jpg, .jpeg'
-    imageInput.style.display = 'none'
-
-    return imageInput
-  }
-
-  const loadAvatar = () => {
-    const avatarInput = createImageInput()
-
-    document.body.appendChild(avatarInput)
+  const loadAvatarHandler = () => {
+    const { current: avatarInput } = avatarInputrRef
 
     avatarInput.addEventListener('change', () => {
       if (avatarInput.files && avatarInput.files[0]) {
         const reader = new FileReader()
-        reader.addEventListener('load', (e) => setAvatar(e.target.result))
+        reader.addEventListener('load', (e) => loadAvatar(e.target.result))
         reader.readAsDataURL(avatarInput.files[0])
       }
     })
 
     avatarInput.click()
-    avatarInput.remove()
   }
 
   return (
     <div className='avatar' data-editable={editable}>
-      <img
-        className='avatar__presenter'
-        src={avatar}
-        alt='Avatar'
-      />
+      <img className='avatar__presenter' src={src} alt='Avatar' />
       {editable && (
-        <Button
-          className='avatar__load-btn'
-          title='+'
-          onClick={loadAvatar}
-        />
+        <>
+          <Button
+            className='avatar__load-btn'
+            title='+'
+            onClick={loadAvatarHandler}
+          />
+          <input
+            ref={avatarInputrRef}
+            className='avatar__input'
+            type='file'
+            accept='.png, .jpg, .jpeg'
+            style={{ display: 'none' }}
+          />
+        </>
       )}
     </div>
   )
@@ -51,8 +45,8 @@ const Avatar = ({ editable, avatar, setAvatar }) => {
 
 Avatar.propTypes = {
   editable: PropTypes.bool.isRequired,
-  avatar: PropTypes.string.isRequired,
-  setAvatar: PropTypes.func.isRequired,
+  src: PropTypes.string.isRequired,
+  loadAvatar: PropTypes.func.isRequired,
 }
 
 export default Avatar
