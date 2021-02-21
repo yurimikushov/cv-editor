@@ -65,7 +65,7 @@ const useSaveCV = () => {
   }
 }
 
-const useLoadExample = () => {
+const useLoadExampleCV = () => {
   const { loadAboutMe } = useAboutMe()
   const { loadExperiencies } = useExperienceList()
   const { loadEducations } = useEducationList()
@@ -99,4 +99,4 @@ const useLoadExample = () => {
   }
 }
 
-export { useLoadCV, useSaveCV, useLoadExample }
+export { useLoadCV, useSaveCV, useLoadExampleCV }

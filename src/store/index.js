@@ -1,7 +1,7 @@
 import React, { createContext, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { useLocalObservable } from 'mobx-react-lite'
-import { useLoadCV, useSaveCV, useLoadExample } from './storeManager'
+import { useLoadCV, useSaveCV, useLoadExampleCV } from './storeManager'
 import createAppProps from './appProps'
 import createAboutMe from './aboutMe'
 import createExperienceList from './experienceList'
@@ -65,7 +65,7 @@ export {
   StoreProvider as default,
   useLoadCV,
   useSaveCV,
-  useLoadExample,
+  useLoadExampleCV,
   useAppProps,
   useAboutMe,
   useExperienceList,

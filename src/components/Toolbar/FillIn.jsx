@@ -1,10 +1,10 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
-import { useLoadExample } from '../../store'
+import { useLoadExampleCV } from '../../store'
 import Button from '../Common/Button'
 
 const FillIn = () => {
-  const loadExample = useLoadExample()
+  const loadExampleCV = useLoadExampleCV()
 
   return (
     <div className='toolbar__fill-in item item_2'>
@@ -16,7 +16,7 @@ const FillIn = () => {
           <Button
             className='toolbar__fill-in-example-btn'
             title='Example'
-            onClick={loadExample}
+            onClick={loadExampleCV}
           />
         </li>
       </ul>
