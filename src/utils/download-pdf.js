@@ -10,4 +10,4 @@ const downloadPDF = (filename, fromSelecotor) => {
     .save()
 }
 
-export default downloadPDF
+export { downloadPDF }
