@@ -25,7 +25,7 @@ const EducationList = () => {
         <Button
           className='educations__add-btn'
           title='Add'
-          onClick={addEducation}
+          onClick={() => addEducation()}
         />
       )}
     </div>

@@ -25,7 +25,7 @@ const ExperienceList = () => {
         <Button
           className='experiences__add-btn'
           title='Add'
-          onClick={addExperience}
+          onClick={() => addExperience()}
         />
       )}
     </div>
