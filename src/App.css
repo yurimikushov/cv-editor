@@ -1,4 +1,5 @@
 .app {
+  position: relative;
   width: var(--page-width);
   min-height: var(--page-min-height);
   margin: 10px auto;
