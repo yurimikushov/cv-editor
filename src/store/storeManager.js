@@ -1,5 +1,6 @@
 import { getCV, saveCV, getCVExample } from '../api'
 import {
+  useAppProps,
   useAboutMe,
   useExperienceList,
   useEducationList,
@@ -16,33 +17,30 @@ const useLoadCV = () => {
   const { loadTechnologies } = useTechnologyList()
   const { loadLanguages } = useLanguageList()
 
-  return () => {
-    getCV()
-      .then(
-        ({
-          fullName,
-          position,
-          avatar,
-          aboutMe,
-          experiences,
-          educations,
-          contacts,
-          technologies,
-          languages,
-        }) => {
-          loadAboutMe(fullName, position, avatar, aboutMe)
-          loadExperiencies(experiences)
-          loadEducations(educations)
-          loadContacts(contacts)
-          loadTechnologies(technologies)
-          loadLanguages(languages)
-        }
-      )
-      .catch((err) => console.error(err))
+  return async () => {
+    const {
+      fullName,
+      position,
+      avatar,
+      aboutMe,
+      experiences,
+      educations,
+      contacts,
+      technologies,
+      languages,
+    } = await getCV()
+
+    loadAboutMe(fullName, position, avatar, aboutMe)
+    loadExperiencies(experiences)
+    loadEducations(educations)
+    loadContacts(contacts)
+    loadTechnologies(technologies)
+    loadLanguages(languages)
   }
 }
 
 const useSaveCV = () => {
+  const { getShowExampleCV } = useAppProps()
   const { getFullName, getPosition, getAvatar, getAboutMe } = useAboutMe()
   const { getExperiences } = useExperienceList()
   const { getEducations } = useEducationList()
@@ -50,8 +48,12 @@ const useSaveCV = () => {
   const { getTechnologies } = useTechnologyList()
   const { getLanguages } = useLanguageList()
 
-  return () => {
-    saveCV({
+  return async () => {
+    if (getShowExampleCV()) {
+      return
+    }
+
+    await saveCV({
       fullName: getFullName(),
       position: getPosition(),
       avatar: getAvatar(),
@@ -61,11 +63,12 @@ const useSaveCV = () => {
       contacts: getContacts(),
       technologies: getTechnologies(),
       languages: getLanguages(),
-    }).catch((err) => console.error(err))
+    })
   }
 }
 
 const useLoadExampleCV = () => {
+  const saveCV = useSaveCV()
   const { loadAboutMe } = useAboutMe()
   const { loadExperiencies } = useExperienceList()
   const { loadEducations } = useEducationList()
@@ -73,29 +76,27 @@ const useLoadExampleCV = () => {
   const { loadTechnologies } = useTechnologyList()
   const { loadLanguages } = useLanguageList()
 
-  return () => {
-    getCVExample()
-      .then(
-        ({
-          fullName,
-          position,
-          avatar,
-          aboutMe,
-          experiences,
-          educations,
-          contacts,
-          technologies,
-          languages,
-        }) => {
-          loadAboutMe(fullName, position, avatar, aboutMe)
-          loadExperiencies(experiences)
-          loadEducations(educations)
-          loadContacts(contacts)
-          loadTechnologies(technologies)
-          loadLanguages(languages)
-        }
-      )
-      .catch((err) => console.error(err))
+  return async () => {
+    await saveCV()
+
+    const {
+      fullName,
+      position,
+      avatar,
+      aboutMe,
+      experiences,
+      educations,
+      contacts,
+      technologies,
+      languages,
+    } = await getCVExample()
+
+    loadAboutMe(fullName, position, avatar, aboutMe)
+    loadExperiencies(experiences)
+    loadEducations(educations)
+    loadContacts(contacts)
+    loadTechnologies(technologies)
+    loadLanguages(languages)
   }
 }
 
