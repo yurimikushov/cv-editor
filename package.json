@@ -11,6 +11,7 @@
     "stylelint": "stylelint \"**/*.css\""
   },
   "dependencies": {
+    "html2pdf.js": "^0.9.2",
     "mobx": "^6.1.5",
     "mobx-react-lite": "^3.2.0",
     "nanoid": "^3.1.20",
