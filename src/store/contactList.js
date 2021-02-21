@@ -12,12 +12,9 @@ const createContacts = () => ({
       this.contacts.push(createContact())
     }
   },
-  fillInExample() {
+  loadContacts(contacts) {
     this.contacts = []
-    this.addContact('mikushov.yu@gmail.com', 'mailto:mikushov.yu@gmail.com')
-    this.addContact('79999999999', 'tel:79999999999')
-    this.addContact('github.com', 'https://github.com/yurimikushov')
-    this.addContact('Yoshkar-Ola', 'https://yandex.ru/maps/41/yoshkar-ola')
+    contacts.forEach(({ title, href }) => this.addContact(title, href))
   },
 })
 

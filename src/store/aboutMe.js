@@ -15,13 +15,11 @@ const createAboutMe = () => ({
   setDescription(description) {
     this.description = description
   },
-  fillInExample() {
-    this.setFullName('Yuri Mikushov')
-    this.setPosition('Frontend develover')
-    this.setAvatar('/img/avatar-example-100x100.png')
-    this.setDescription(
-      `I've been developing and supporting a software products running on the 1C:Enterprise platform for about 3 years. I've a lot of interest in creating and programming an user interfaces. Now I'm trying to start developing a frontend apps professionally.`
-    )
+  loadAboutMe(fullName, position, avatar, description) {
+    this.setFullName(fullName)
+    this.setPosition(position)
+    this.setAvatar(avatar)
+    this.setDescription(description)
   },
 })
 

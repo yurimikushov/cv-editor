@@ -12,10 +12,9 @@ const createLanguageList = () => ({
       this.languages.push(createLanguage())
     }
   },
-  fillInExample() {
+  loadLanguages(languages) {
     this.languages = []
-    this.addLanguage('Russian')
-    this.addLanguage('English')
+    languages.forEach(({ language }) => this.addLanguage(language))
   },
 })
 

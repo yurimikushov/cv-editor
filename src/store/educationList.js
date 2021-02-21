@@ -12,10 +12,11 @@ const createEducationList = () => ({
       this.educations.push(createEducation())
     }
   },
-  fillInExample() {
+  loadEducations(experiences) {
     this.educations = []
-    this.addEducation('Degree name', 'University name', 'Education duration')
-    this.addEducation('Degree name', 'University name', 'Education duration')
+    experiences.forEach(({ degree, university, duration }) => {
+      this.addEducation(degree, university, duration)
+    })
   },
 })
 

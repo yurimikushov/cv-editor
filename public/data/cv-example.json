@@ -1,0 +1,59 @@
+{
+  "fullName": "Yuri Mikushov",
+  "position": "Frontend develover",
+  "avatar": "/img/avatar-example-100x100.png",
+  "aboutMe": "I've been developing and supporting a software products running on the 1C:Enterprise platform for about 3 years. I've a lot of interest in creating and programming an user interfaces. Now I'm trying to start developing a frontend apps professionally.",
+  "experiences": [
+    {
+      "position": "Position name",
+      "company": "Company name",
+      "duration": "Experience duration",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?"
+    },
+    {
+      "position": "Position name",
+      "company": "Company name",
+      "duration": "Experience duration",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?"
+    }
+  ],
+  "educations": [
+    {
+      "degree": "Degree name",
+      "university": "University name",
+      "duration": "Education duration"
+    },
+    {
+      "degree": "Degree name",
+      "university": "University name",
+      "duration": "Education duration"
+    }
+  ],
+  "contacts": [
+    {
+      "title": "mikushov.yu@gmail.com",
+      "href": "mailto:mikushov.yu@gmail.com"
+    },
+    {
+      "title": "79999999999",
+      "href": "tel:79999999999"
+    },
+    {
+      "title": "github.com",
+      "href": "https://github.com/yurimikushov"
+    },
+    {
+      "title": "Yoshkar-Ola",
+      "href": "https://yandex.ru/maps/41/yoshkar-ola"
+    }
+  ],
+  "technologies": "HTML5, CSS3, SCSS, JS, Git, React, React Hooks, Redux, MobX",
+  "languages": [
+    {
+      "language": "Russia"
+    },
+    {
+      "language": "English"
+    }
+  ]
+}

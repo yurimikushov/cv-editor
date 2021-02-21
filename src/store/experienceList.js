@@ -16,20 +16,11 @@ const createExperienceList = () => ({
       this.experiences.push(createExperience())
     }
   },
-  fillInExample() {
+  loadExperiencies(experiences) {
     this.experiences = []
-    this.addExperience(
-      'Position name',
-      'Company name',
-      'Experience duration',
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?'
-    )
-    this.addExperience(
-      'Position name',
-      'Company name',
-      'Experience duration',
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?'
-    )
+    experiences.forEach(({ position, company, duration, description }) => {
+      this.addExperience(position, company, duration, description)
+    })
   },
 })
 

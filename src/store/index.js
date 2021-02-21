@@ -1,7 +1,8 @@
 import React, { createContext, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { useLocalObservable } from 'mobx-react-lite'
-import crecreateAppProps from './appProps'
+import { useLoadExample } from './storeManager'
+import createAppProps from './appProps'
 import createAboutMe from './aboutMe'
 import createExperienceList from './experienceList'
 import createEducationList from './educationList'
@@ -18,7 +19,7 @@ const TechnologyListContext = createContext()
 const LanguageListContext = createContext()
 
 const StoreProvider = ({ children }) => {
-  const appProps = useLocalObservable(crecreateAppProps)
+  const appProps = useLocalObservable(createAppProps)
   const aboutMe = useLocalObservable(createAboutMe)
   const experienceList = useLocalObservable(createExperienceList)
   const educationList = useLocalObservable(createEducationList)
@@ -62,6 +63,7 @@ const useLanguageList = () => useContext(LanguageListContext)
 
 export {
   StoreProvider as default,
+  useLoadExample,
   useAppProps,
   useAboutMe,
   useExperienceList,
