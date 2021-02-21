@@ -21,6 +21,11 @@ const createExperienceList = () => ({
   },
   loadExperiencies(experiences) {
     this.experiences = []
+
+    if (experiences.length === 0) {
+      experiences = [createExperience()]
+    }
+
     experiences.forEach(({ position, company, duration, description }) => {
       this.addExperience(position, company, duration, description)
     })

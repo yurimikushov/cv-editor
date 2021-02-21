@@ -17,7 +17,14 @@ const createContacts = () => ({
   },
   loadContacts(contacts) {
     this.contacts = []
-    contacts.forEach(({ title, href }) => this.addContact(title, href))
+
+    if (contacts.length === 0) {
+      contacts = [createContact()]
+    }
+
+    contacts.forEach(({ title, href }) => {
+      this.addContact(title, href)
+    })
   },
 })
 

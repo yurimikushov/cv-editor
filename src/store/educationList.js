@@ -15,9 +15,14 @@ const createEducationList = () => ({
       this.educations.push(createEducation())
     }
   },
-  loadEducations(experiences) {
+  loadEducations(educations) {
     this.educations = []
-    experiences.forEach(({ degree, university, duration }) => {
+
+    if (educations.length === 0) {
+      educations = [createEducation()]
+    }
+
+    educations.forEach(({ degree, university, duration }) => {
       this.addEducation(degree, university, duration)
     })
   },

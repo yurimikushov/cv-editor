@@ -1,7 +1,9 @@
+const avatarPlaceholder = '/img/avatar-placeholder-100x100.png'
+
 const createAboutMe = () => ({
   fullName: '',
   position: '',
-  avatar: '/img/avatar-placeholder-100x100.png',
+  avatar: avatarPlaceholder,
   aboutMe: '',
   setFullName(fullName) {
     this.fullName = fullName
@@ -30,7 +32,7 @@ const createAboutMe = () => ({
   loadAboutMe(fullName, position, avatar, aboutMe) {
     this.setFullName(fullName)
     this.setPosition(position)
-    this.setAvatar(avatar)
+    this.setAvatar(avatar || avatarPlaceholder)
     this.setAboutMe(aboutMe)
   },
 })

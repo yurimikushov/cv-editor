@@ -17,6 +17,11 @@ const createLanguageList = () => ({
   },
   loadLanguages(languages) {
     this.languages = []
+
+    if (languages.length === 0) {
+      languages = [createLanguage()]
+    }
+
     languages.forEach(({ language }) => this.addLanguage(language))
   },
 })
