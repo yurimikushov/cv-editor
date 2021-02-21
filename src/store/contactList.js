@@ -1,20 +1,9 @@
 import createContact from './contact'
 
-let exapmleContacts = [
-  { title: 'email', href: '#' },
-  { title: 'telephone', href: '#' },
-  { title: 'github.com', href: '#' },
-  { title: 'location', href: '#' },
-]
-
-exapmleContacts = exapmleContacts.map((contact) =>
-  createContact(contact.title, contact.href)
-)
-
 const createContacts = () => ({
-  contacts: exapmleContacts,
-  addContact() {
-    this.contacts.push(createContact())
+  contacts: [createContact()],
+  addContact(title = '', href = '') {
+    this.contacts.push(createContact(title, href))
   },
   removeContact(id) {
     this.contacts = this.contacts.filter((contact) => contact.id !== id)
@@ -22,6 +11,13 @@ const createContacts = () => ({
     if (this.contacts.length === 0) {
       this.contacts.push(createContact())
     }
+  },
+  fillInExample() {
+    this.contacts = []
+    this.addContact('mikushov.yu@gmail.com', 'mailto:mikushov.yu@gmail.com')
+    this.addContact('79999999999', 'tel:79999999999')
+    this.addContact('github.com', 'https://github.com/yurimikushov')
+    this.addContact('Yoshkar-Ola', 'https://yandex.ru/maps/41/yoshkar-ola')
   },
 })
 

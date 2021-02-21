@@ -1,11 +1,8 @@
-const exapmleDescription =
-  'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto laborum dolores eos deleniti inventore delectus omnis, velit repudiandae qui nobis vel consequatur quisquam. Doloremque incidunt magnam quasi autem mollitia est praesentium voluptate voluptatem, harum, similique temporibus architecto eum cupiditate eligendi enim ab iste, alias ea. Veritatis id harum dolores unde.'
-
 const createAboutMe = () => ({
-  fullName: 'Full name',
-  position: 'Frontend developer',
+  fullName: '',
+  position: '',
   avatar: 'https://i.ibb.co/KF2jBLd/image.jpg',
-  description: exapmleDescription,
+  description: '',
   setFullName(fullName) {
     this.fullName = fullName
   },
@@ -17,6 +14,14 @@ const createAboutMe = () => ({
   },
   setDescription(description) {
     this.description = description
+  },
+  fillInExample() {
+    this.setFullName('Yuri Mikushov')
+    this.setPosition('Frontend develover')
+    this.setAvatar('/img/avatar-example.png')
+    this.setDescription(
+      `I've been developing and supporting a software products running on the 1C:Enterprise platform for about 3 years. I've a lot of interest in creating and programming an user interfaces. Now I'm trying to start developing a frontend apps professionally.`
+    )
   },
 })
 

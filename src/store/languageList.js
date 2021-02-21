@@ -1,15 +1,9 @@
 import createLanguage from './language'
 
-let exapmleLanguages = [{ title: 'Russian' }, { title: 'English' }]
-
-exapmleLanguages = exapmleLanguages.map((language) =>
-  createLanguage(language.title)
-)
-
 const createLanguageList = () => ({
-  languages: exapmleLanguages,
-  addLanguage() {
-    this.languages.push(createLanguage())
+  languages: [createLanguage()],
+  addLanguage(language = '') {
+    this.languages.push(createLanguage(language))
   },
   removeLanguage(id) {
     this.languages = this.languages.filter((language) => language.id !== id)
@@ -17,6 +11,11 @@ const createLanguageList = () => ({
     if (this.languages.length === 0) {
       this.languages.push(createLanguage())
     }
+  },
+  fillInExample() {
+    this.languages = []
+    this.addLanguage('Russian')
+    this.addLanguage('English')
   },
 })
 

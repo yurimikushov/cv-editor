@@ -1,26 +1,9 @@
 import createEducation from './education'
 
-let exapmleEducations = [
-  {
-    degree: 'Degree name',
-    university: 'University name',
-    duration: 'Education duration',
-  },
-  {
-    degree: 'Degree name',
-    university: 'University name',
-    duration: 'Education duration',
-  },
-]
-
-exapmleEducations = exapmleEducations.map((edu) =>
-  createEducation(edu.degree, edu.university, edu.duration)
-)
-
 const createEducationList = () => ({
-  educations: exapmleEducations,
-  addEducation() {
-    this.educations.push(createEducation())
+  educations: [createEducation()],
+  addEducation(degree = '', university = '', duration = '') {
+    this.educations.push(createEducation(degree, university, duration))
   },
   removeEducation(id) {
     this.educations = this.educations.filter((education) => education.id !== id)
@@ -28,6 +11,11 @@ const createEducationList = () => ({
     if (this.educations.length === 0) {
       this.educations.push(createEducation())
     }
+  },
+  fillInExample() {
+    this.educations = []
+    this.addEducation('Degree name', 'University name', 'Education duration')
+    this.addEducation('Degree name', 'University name', 'Education duration')
   },
 })
 
