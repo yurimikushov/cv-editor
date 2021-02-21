@@ -1,7 +1,7 @@
 const createAboutMe = () => ({
   fullName: '',
   position: '',
-  avatar: 'https://i.ibb.co/KF2jBLd/image.jpg',
+  avatar: '/img/avatar-placeholder-100x100.png',
   description: '',
   setFullName(fullName) {
     this.fullName = fullName
