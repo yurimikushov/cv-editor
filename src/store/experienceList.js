@@ -2,6 +2,9 @@ import createExperience from './experience'
 
 const createExperienceList = () => ({
   experiences: [createExperience()],
+  getExperiences() {
+    return this.experiences
+  },
   addExperience(position = '', company = '', duration = '', description = '') {
     this.experiences.push(
       createExperience(position, company, duration, description)

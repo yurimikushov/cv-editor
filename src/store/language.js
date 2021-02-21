@@ -1,10 +1,10 @@
 import { nanoid } from 'nanoid'
 
-const createLanguage = (title = '') => ({
+const createLanguage = (language = '') => ({
   id: nanoid(),
-  title,
-  setTitle(title) {
-    this.title = title
+  language,
+  setLanguage(language) {
+    this.language = language
   },
 })
 

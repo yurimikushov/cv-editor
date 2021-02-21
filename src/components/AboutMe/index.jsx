@@ -6,14 +6,14 @@ import './index.css'
 
 const AboutMe = () => {
   const { editable } = useAppProps()
-  const { description, setDescription } = useAboutMe()
+  const { aboutMe, setAboutMe } = useAboutMe()
 
   return (
     <div className='about-me item item_1'>
       <MultilineInputField
         className='about-me__description title title_2'
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
+        value={aboutMe}
+        onChange={(e) => setAboutMe(e.target.value)}
         placeholder='Tell about your qualities, knowledge and hobbies.'
         readOnly={!editable}
       />

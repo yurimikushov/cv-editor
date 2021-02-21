@@ -8,8 +8,8 @@ const Language = ({ editable, language, removeLanguage }) => (
   <div className='language item item_3'>
     <InputField
       className='language__title title title_4'
-      value={language.title}
-      onChange={(e) => language.setTitle(e.target.value)}
+      value={language.language}
+      onChange={(e) => language.setLanguage(e.target.value)}
       placeholder='Language'
       readOnly={!editable}
       style={{ width: '100%' }}
@@ -28,8 +28,8 @@ Language.propTypes = {
   editable: PropTypes.bool.isRequired,
   language: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    setTitle: PropTypes.func.isRequired,
+    language: PropTypes.string.isRequired,
+    setLanguage: PropTypes.func.isRequired,
   }),
   removeLanguage: PropTypes.func.isRequired,
 }

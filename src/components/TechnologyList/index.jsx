@@ -6,7 +6,7 @@ import './index.css'
 
 const TechnologyList = () => {
   const { editable } = useAppProps()
-  const { description, setDescription } = useTechnologyList()
+  const { technologies, setTechnologies } = useTechnologyList()
 
   return (
     <div className='technologies item item_1'>
@@ -15,8 +15,8 @@ const TechnologyList = () => {
       </div>
       <MultilineInputField
         className='technologies__list title title_4'
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
+        value={technologies}
+        onChange={(e) => setTechnologies(e.target.value)}
         placeholder='Technology stack'
         readOnly={!editable}
       />

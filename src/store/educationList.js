@@ -2,6 +2,9 @@ import createEducation from './education'
 
 const createEducationList = () => ({
   educations: [createEducation()],
+  getEducations() {
+    return this.educations
+  },
   addEducation(degree = '', university = '', duration = '') {
     this.educations.push(createEducation(degree, university, duration))
   },

@@ -2,6 +2,9 @@ import createContact from './contact'
 
 const createContacts = () => ({
   contacts: [createContact()],
+  getContacts() {
+    return this.contacts
+  },
   addContact(title = '', href = '') {
     this.contacts.push(createContact(title, href))
   },

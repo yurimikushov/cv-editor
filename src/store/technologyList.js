@@ -1,10 +1,13 @@
 const createTechnologyList = () => ({
-  description: '',
-  setDescription(description) {
-    this.description = description
+  technologies: '',
+  setTechnologies(technologies) {
+    this.technologies = technologies
   },
-  loadTechnologies(description) {
-    this.setDescription(description)
+  getTechnologies() {
+    return this.technologies
+  },
+  loadTechnologies(technologies) {
+    this.setTechnologies(technologies)
   },
 })
 

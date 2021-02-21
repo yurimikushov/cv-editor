@@ -4,7 +4,7 @@ import { useLoadExample } from '../../store'
 import Button from '../Common/Button'
 
 const FillIn = () => {
-  const { loadExample } = useLoadExample()
+  const loadExample = useLoadExample()
 
   return (
     <div className='toolbar__fill-in item item_2'>

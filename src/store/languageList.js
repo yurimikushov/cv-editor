@@ -2,6 +2,9 @@ import createLanguage from './language'
 
 const createLanguageList = () => ({
   languages: [createLanguage()],
+  getLanguages() {
+    return this.languages
+  },
   addLanguage(language = '') {
     this.languages.push(createLanguage(language))
   },
