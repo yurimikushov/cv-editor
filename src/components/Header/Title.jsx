@@ -16,6 +16,7 @@ const HeaderTitle = ({
       onChange={(e) => setFullName(e.target.value)}
       readOnly={!editable}
       placeholder='Full name'
+      autoFocus={true}
     />
     <InputField
       className='cv-header__position'
