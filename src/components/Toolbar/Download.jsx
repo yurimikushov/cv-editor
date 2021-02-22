@@ -29,20 +29,6 @@ const Download = () => {
             onClick={downloadPDFHandler}
           />
         </li>
-        <li className='toolbar__download-html item item_3'>
-          <Button
-            className='toolbar__download-html-btn'
-            title='HTML'
-            onClick={() => alert('Not implemented yet')}
-          />
-        </li>
-        <li className='toolbar__download-json item item_3'>
-          <Button
-            className='toolbar__download-json-btn'
-            title='JSON'
-            onClick={() => alert('Not implemented yet')}
-          />
-        </li>
       </ul>
     </div>
   )
