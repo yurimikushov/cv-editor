@@ -26,7 +26,7 @@ const LanguageList = () => {
         <Button
           className='languages__add-btn'
           title='Add'
-          onClick={addLanguage}
+          onClick={() => addLanguage()}
         />
       )}
     </div>

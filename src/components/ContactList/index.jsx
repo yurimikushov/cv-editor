@@ -24,7 +24,7 @@ const ContactList = () => {
         <Button
           className='contacts__add-btn'
           title='Add'
-          onClick={addContact}
+          onClick={() => addContact()}
         />
       )}
     </div>
