@@ -23,6 +23,9 @@ const createAboutMe = () => ({
   getAvatar() {
     return this.avatar
   },
+  removeAvatar() {
+    this.avatar = avatarPlaceholder
+  },
   setAboutMe(aboutMe) {
     this.aboutMe = aboutMe
   },

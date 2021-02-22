@@ -3,21 +3,27 @@ import PropTypes from 'prop-types'
 import Button from '../../Common/Button'
 import './index.css'
 
-const Avatar = ({ editable, src, loadAvatar }) => {
+const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
   const avatarInputrRef = useRef()
 
-  const loadAvatarHandler = () => {
+  const uploadAvatarHandler = () => {
     const { current: avatarInput } = avatarInputrRef
 
     avatarInput.addEventListener('change', () => {
       if (avatarInput.files && avatarInput.files[0]) {
         const reader = new FileReader()
-        reader.addEventListener('load', (e) => loadAvatar(e.target.result))
+        reader.addEventListener('load', (e) => setAvatar(e.target.result))
         reader.readAsDataURL(avatarInput.files[0])
       }
     })
 
     avatarInput.click()
+  }
+
+  const removeAvatarHandler = () => {
+    if (window.confirm('Are you sure you wanna delete the photo?')) {
+      removeAvatar()
+    }
   }
 
   return (
@@ -26,9 +32,9 @@ const Avatar = ({ editable, src, loadAvatar }) => {
       {editable && (
         <>
           <Button
-            className='avatar__load-btn'
+            className='avatar__upload-btn'
             title='+'
-            onClick={loadAvatarHandler}
+            onClick={uploadAvatarHandler}
             tabIndex='-1'
           />
           <input
@@ -37,6 +43,12 @@ const Avatar = ({ editable, src, loadAvatar }) => {
             type='file'
             accept='.png, .jpg, .jpeg'
             style={{ display: 'none' }}
+          />
+          <Button
+            className='avatar__remove-btn'
+            title='x'
+            onClick={removeAvatarHandler}
+            tabIndex='-1'
           />
         </>
       )}
@@ -47,7 +59,8 @@ const Avatar = ({ editable, src, loadAvatar }) => {
 Avatar.propTypes = {
   editable: PropTypes.bool.isRequired,
   src: PropTypes.string.isRequired,
-  loadAvatar: PropTypes.func.isRequired,
+  setAvatar: PropTypes.func.isRequired,
+  removeAvatar: PropTypes.func.isRequired,
 }
 
 export default Avatar

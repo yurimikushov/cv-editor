@@ -14,6 +14,7 @@ export const Header = () => {
     setPosition,
     avatar,
     setAvatar,
+    removeAvatar,
   } = useAboutMe()
 
   return (
@@ -31,7 +32,8 @@ export const Header = () => {
         <Avatar
           editable={editable}
           src={avatar}
-          loadAvatar={setAvatar}
+          setAvatar={setAvatar}
+          removeAvatar={removeAvatar}
         />
       </div>
     </header>
