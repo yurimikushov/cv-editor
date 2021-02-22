@@ -18,7 +18,7 @@ const useSetAppPropsToState = () => {
   }
 }
 
-const useGetAppPropsToState = () => {
+const useGetAppPropsFromState = () => {
   const { getEditable } = useAppProps()
 
   return () => ({
@@ -82,7 +82,7 @@ const useLoadAppProps = () => {
 }
 
 const useSaveAppProps = () => {
-  const getAppProps = useGetAppPropsToState()
+  const getAppProps = useGetAppPropsFromState()
 
   return async () => await saveAppProps(getAppProps())
 }
