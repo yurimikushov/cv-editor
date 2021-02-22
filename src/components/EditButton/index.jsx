@@ -5,7 +5,11 @@ import Button from '../Common/Button'
 import './index.css'
 
 const EditButton = () => {
-  const { editable, toggleEditable } = useAppProps()
+  const { editable, showExampleCV, toggleEditable } = useAppProps()
+
+  if (showExampleCV) {
+    return null
+  }
 
   return (
     <Button
