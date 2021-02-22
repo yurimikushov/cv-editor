@@ -1,15 +1,15 @@
 const getCV = () => {
   return new Promise((resolve) => {
     resolve({
-      fullName: localStorage.getItem('fullName') || '',
-      position: localStorage.getItem('position') || '',
-      avatar: localStorage.getItem('avatar') || '',
-      aboutMe: localStorage.getItem('aboutMe') || '',
-      experiences: JSON.parse(localStorage.getItem('experiences')) || [],
-      educations: JSON.parse(localStorage.getItem('educations')) || [],
-      contacts: JSON.parse(localStorage.getItem('contacts')) || [],
-      technologies: JSON.parse(localStorage.getItem('technologies')) || '',
-      languages: JSON.parse(localStorage.getItem('languages')) || [],
+      fullName: localStorage.getItem('cv/fullName') || '',
+      position: localStorage.getItem('cv/position') || '',
+      avatar: localStorage.getItem('cv/avatar') || '',
+      aboutMe: localStorage.getItem('cv/aboutMe') || '',
+      experiences: JSON.parse(localStorage.getItem('cv/experiences')) || [],
+      educations: JSON.parse(localStorage.getItem('cv/educations')) || [],
+      contacts: JSON.parse(localStorage.getItem('cv/contacts')) || [],
+      technologies: JSON.parse(localStorage.getItem('cv/technologies')) || '',
+      languages: JSON.parse(localStorage.getItem('cv/languages')) || [],
     })
   })
 }
@@ -26,15 +26,15 @@ const saveCV = ({
   languages,
 }) => {
   return new Promise((resolve) => {
-    localStorage.setItem('fullName', fullName)
-    localStorage.setItem('position', position)
-    localStorage.setItem('avatar', avatar)
-    localStorage.setItem('aboutMe', aboutMe)
-    localStorage.setItem('experiences', JSON.stringify(experiences))
-    localStorage.setItem('educations', JSON.stringify(educations))
-    localStorage.setItem('contacts', JSON.stringify(contacts))
-    localStorage.setItem('technologies', JSON.stringify(technologies))
-    localStorage.setItem('languages', JSON.stringify(languages))
+    localStorage.setItem('cv/fullName', fullName)
+    localStorage.setItem('cv/position', position)
+    localStorage.setItem('cv/avatar', avatar)
+    localStorage.setItem('cv/aboutMe', aboutMe)
+    localStorage.setItem('cv/experiences', JSON.stringify(experiences))
+    localStorage.setItem('cv/educations', JSON.stringify(educations))
+    localStorage.setItem('cv/contacts', JSON.stringify(contacts))
+    localStorage.setItem('cv/technologies', JSON.stringify(technologies))
+    localStorage.setItem('cv/languages', JSON.stringify(languages))
 
     resolve({ status: 'ok' })
   })
