@@ -24,7 +24,7 @@ const LanguageList = () => {
       ))}
       {editable && (
         <Button
-          className='languages__add-btn'
+          className='languages__add-btn flex-center-center'
           title='Add'
           onClick={() => addLanguage()}
         />

@@ -23,7 +23,7 @@ const EducationList = () => {
       ))}
       {editable && (
         <Button
-          className='educations__add-btn'
+          className='educations__add-btn flex-center-center'
           title='Add'
           onClick={() => addEducation()}
         />

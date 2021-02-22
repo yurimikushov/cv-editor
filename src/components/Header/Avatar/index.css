@@ -33,7 +33,6 @@
   left: 50%;
   width: var(--avatar-size);
   height: var(--avatar-size);
-  justify-content: center;
   border-radius: 50%;
   color: var(--color-gray-3);
   font-size: 1.3rem;

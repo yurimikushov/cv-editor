@@ -23,7 +23,7 @@ const ExperienceList = () => {
       ))}
       {editable && (
         <Button
-          className='experiences__add-btn'
+          className='experiences__add-btn flex-center-center'
           title='Add'
           onClick={() => addExperience()}
         />

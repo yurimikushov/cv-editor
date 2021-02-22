@@ -35,8 +35,6 @@ a:hover {
 }
 
 button {
-  display: flex;
-  align-items: center;
   color: var(--color-gray-3);
   fill: var(--color-gray-3);
 }
@@ -58,4 +56,10 @@ input:not([readonly]):focus,
 textarea:not([readonly]):focus {
   box-shadow: 0 0 4px 0 var(--color-gray-1);
   outline: none;
+}
+
+.flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
