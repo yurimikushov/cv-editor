@@ -1,7 +1,12 @@
 import React, { createContext, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { useLocalObservable } from 'mobx-react-lite'
-import { useLoadCV, useSaveCV, useLoadExampleCV } from './storeManager'
+import {
+  useLoadAppData,
+  useSaveAppData,
+  useLoadCV,
+  useLoadExampleCV,
+} from './storeManager'
 import createAppProps from './appProps'
 import createAboutMe from './aboutMe'
 import createExperienceList from './experienceList'
@@ -63,8 +68,9 @@ const useLanguageList = () => useContext(LanguageListContext)
 
 export {
   StoreProvider as default,
+  useLoadAppData,
+  useSaveAppData,
   useLoadCV,
-  useSaveCV,
   useLoadExampleCV,
   useAppProps,
   useAboutMe,

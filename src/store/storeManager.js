@@ -1,4 +1,5 @@
-import { getCV, saveCV, getCVExample } from '../api'
+import { useEffect } from 'react'
+import { getAppProps, saveAppProps, getCV, saveCV, getCVExample } from '../api'
 import {
   useAppProps,
   useAboutMe,
@@ -8,6 +9,22 @@ import {
   useTechnologyList,
   useLanguageList,
 } from '../store'
+
+const useSetAppPropsToState = () => {
+  const { setEditable } = useAppProps()
+
+  return ({ editable }) => {
+    setEditable(editable)
+  }
+}
+
+const useGetAppPropsToState = () => {
+  const { getEditable } = useAppProps()
+
+  return () => ({
+    editable: getEditable(),
+  })
+}
 
 const useSetCVToState = () => {
   const { loadAboutMe } = useAboutMe()
@@ -58,6 +75,18 @@ const useGetCVFromState = () => {
   })
 }
 
+const useLoadAppProps = () => {
+  const setAppProps = useSetAppPropsToState()
+
+  return async () => setAppProps(await getAppProps())
+}
+
+const useSaveAppProps = () => {
+  const getAppProps = useGetAppPropsToState()
+
+  return async () => await saveAppProps(getAppProps())
+}
+
 const useLoadCV = () => {
   const setCV = useSetCVToState()
 
@@ -77,6 +106,31 @@ const useSaveCV = () => {
   }
 }
 
+const useLoadAppData = () => {
+  const loadAppProps = useLoadAppProps()
+  const loadCV = useLoadCV()
+
+  useEffect(() => {
+    loadAppProps()
+    loadCV()
+  }, [])
+}
+
+const useSaveAppData = () => {
+  const saveAppProps = useSaveAppProps()
+  const saveCV = useSaveCV()
+
+  useEffect(() => {
+    const saveAppData = () => {
+      saveAppProps()
+      saveCV()
+    }
+
+    window.addEventListener('beforeunload', saveAppData)
+    return () => window.removeEventListener('beforeunload', saveAppData)
+  }, [])
+}
+
 const useLoadExampleCV = () => {
   const saveCV = useSaveCV()
   const setCV = useSetCVToState()
@@ -87,4 +141,4 @@ const useLoadExampleCV = () => {
   }
 }
 
-export { useLoadCV, useSaveCV, useLoadExampleCV }
+export { useLoadAppData, useSaveAppData, useLoadCV, useLoadExampleCV }
