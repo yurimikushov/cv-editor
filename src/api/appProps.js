@@ -1,7 +1,9 @@
 const getAppProps = () => {
   return new Promise((resolve) => {
+    const editable = localStorage.getItem('app/editable')
+
     resolve({
-      editable: localStorage.getItem('app/editable') === 'true',
+      editable: editable !== null ? editable === 'true' : true,
     })
   })
 }
