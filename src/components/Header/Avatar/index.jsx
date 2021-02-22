@@ -29,6 +29,7 @@ const Avatar = ({ editable, src, loadAvatar }) => {
             className='avatar__load-btn'
             title='+'
             onClick={loadAvatarHandler}
+            tabIndex='-1'
           />
           <input
             ref={avatarInputrRef}

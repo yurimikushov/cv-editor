@@ -12,6 +12,7 @@ const EditButton = () => {
       className='edit-btn edit-btn_tr'
       title={!editable ? 'Edit' : 'Preview'}
       onClick={toggleEditable}
+      tabIndex='-1'
     />
   )
 }

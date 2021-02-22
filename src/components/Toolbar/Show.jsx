@@ -21,6 +21,7 @@ const Show = () => {
                 loadCV()
                 toggleShowExampleCV()
               }}
+              tabIndex='-1'
             />
           </li>
         )}
@@ -33,6 +34,7 @@ const Show = () => {
                 loadExampleCV()
                 toggleShowExampleCV()
               }}
+              tabIndex='-1'
             />
           </li>
         )}

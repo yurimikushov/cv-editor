@@ -27,6 +27,7 @@ const Download = () => {
             className='toolbar__download-pdf-btn'
             title='PDF'
             onClick={downloadPDFHandler}
+            tabIndex='-1'
           />
         </li>
       </ul>
