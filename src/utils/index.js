@@ -1,2 +1,2 @@
-export { textToHtml } from './textToHtml'
+export { plainTextToHtml } from './plainTextToHtml'
 export { downloadPDF } from './downloadPDF'

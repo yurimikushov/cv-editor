@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import parse from 'html-react-parser'
-import { textToHtml } from '../../../utils'
+import htmlToReactElements from 'html-react-parser'
+import { plainTextToHtml } from '../../../utils'
 
 const ReadOnlyTextArea = ({ text, ...props }) => (
   <div className='read-only-textarea' {...props}>
-    {parse(textToHtml(text))}
+    {htmlToReactElements(plainTextToHtml(text))}
   </div>
 )
 
