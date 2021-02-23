@@ -1,19 +1,17 @@
-const getAppProps = () => {
-  return new Promise((resolve) => {
-    const editable = localStorage.getItem('app/editable')
+const getAppProps = async () => {
+  const editable = localStorage.getItem('app/editable')
 
-    resolve({
-      editable: editable !== null ? editable === 'true' : true,
-    })
-  })
+  return {
+    editable: editable !== null ? editable === 'true' : true,
+  }
 }
 
-const saveAppProps = ({ editable }) => {
-  return new Promise((resolve) => {
-    localStorage.setItem('app/editable', editable)
+const saveAppProps = async ({ editable }) => {
+  localStorage.setItem('app/editable', editable)
 
-    resolve({ status: 'ok' })
-  })
+  return {
+    status: 'ok',
+  }
 }
 
 export { getAppProps, saveAppProps }
