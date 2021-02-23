@@ -21,7 +21,12 @@ const CV = () => {
 
   return (
     <>
-      <EditButton />
+      {!appProps.showExampleCV && (
+        <EditButton
+          editable={appProps.editable}
+          toggleEditable={appProps.toggleEditable}
+        />
+      )}
       <div className='cv-wrapper'>
         <div className='cv'>
           <Header />
