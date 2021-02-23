@@ -1,59 +1,49 @@
 {
-  "fullName": "Yuri Mikushov",
-  "position": "Frontend develover",
+  "fullName": "Daniel Gan",
+  "position": "Frontend developer",
   "avatar": "/img/avatar-example-100x100.png",
-  "aboutMe": "I've been developing and supporting a software products running on the 1C:Enterprise platform for about 3 years. I've a lot of interest in creating and programming an user interfaces. Now I'm trying to start developing a frontend apps professionally.",
+  "aboutMe": "Innovative Frontend developer with 5 years experience building and maintaining responsive websites in the recruiting industry. Proficient in HTML, CSS, jQuery, JavaScript and Angualr; plus modern libraries and frameworks. Passionate about usability and possess working knowledge of Adobe Photoshop & Sketch.",
   "experiences": [
     {
-      "position": "Position name",
-      "company": "Company name",
-      "duration": "Experience duration",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?"
-    },
-    {
-      "position": "Position name",
-      "company": "Company name",
-      "duration": "Experience duration",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam officia soluta et eius delectus neque eveniet quod temporibus adipisci?"
+      "position": "Frontend developer",
+      "company": "TEKsystems, NY",
+      "duration": "October 2015 — Present",
+      "description": "TEKsystems is a leading IT staffing, IT talent management and IT services firm.\n\nMy core activities include:\n• Building stable and maintainable codebases using React.\n • Recommending solutions for a streamlined, user-friendly interface.\n • Performing bug fixes and code reviews. Technical debt reduced by 32%.\n• Creating modular, responsive templates using modern CSS and JS libraries.\n• Ensuring proper documentation and reports in all stages of product life cycles.\n• Conducting A/B testing to identify bugs and UI improvements."
     }
   ],
   "educations": [
     {
-      "degree": "Degree name",
-      "university": "University name",
-      "duration": "Education duration"
+      "degree": "Bachelor's Degree in Computer Science",
+      "university": "New York University",
+      "duration": "2012 - 2016"
     },
     {
-      "degree": "Degree name",
-      "university": "University name",
-      "duration": "Education duration"
+      "degree": "Principles of UX and Usability",
+      "university": "Interaction Design Foundation",
+      "duration": "May 2011 — June 2011"
     }
   ],
   "contacts": [
     {
-      "title": "mikushov.yu@gmail.com",
-      "href": "mailto:mikushov.yu@gmail.com"
+      "title": "daniel.gan@gmail.com",
+      "href": "mailto:daniel.gan@gmail.com"
     },
     {
-      "title": "79999999999",
-      "href": "tel:79999999999"
+      "title": "890-555-0401",
+      "href": "tel:890-555-0401"
     },
     {
-      "title": "github.com",
-      "href": "https://github.com/yurimikushov"
-    },
-    {
-      "title": "Yoshkar-Ola",
-      "href": "https://yandex.ru/maps/41/yoshkar-ola"
+      "title": "New York",
+      "href": "https://www.google.com/maps/place/New+York,+USA/@40.6971494,-74.2598655,10z/data=!3m1!4b1!4m5!3m4!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62!8m2!3d40.7127753!4d-74.0059728"
     }
   ],
-  "technologies": "HTML5, CSS3, SCSS, JS, Git, React, React Hooks, Redux, MobX",
+  "technologies": "HTML5, CSS3, JS, React, Redux, Angular, JQuery, Adobe Photoshop, Sketch",
   "languages": [
     {
-      "language": "Russia"
+      "language": "English"
     },
     {
-      "language": "English"
+      "language": "Korean"
     }
   ]
 }
