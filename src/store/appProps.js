@@ -3,6 +3,7 @@ const createAppProps = () => ({
   editable: true,
   showExampleCV: false,
   isLoading: false,
+  lang: 'en',
   setAppTitle(title) {
     this.title = title
   },
@@ -27,12 +28,17 @@ const createAppProps = () => ({
   setIsLoading(isLoading) {
     this.isLoading = isLoading
   },
-  setAll(editable) {
+  setLang(lang) {
+    this.lang = lang
+  },
+  setAll(editable, lang) {
     this.editable = editable
+    this.setLang(lang)
   },
   getAll() {
     return {
       editable: this.editable,
+      lang: this.lang,
     }
   },
 })

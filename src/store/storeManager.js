@@ -5,8 +5,8 @@ import { useStore } from '../store'
 const useSetAppPropsToState = () => {
   const { appProps } = useStore()
 
-  return ({ editable }) => {
-    appProps.setAll(editable)
+  return ({ editable, lang }) => {
+    appProps.setAll(editable, lang)
   }
 }
 

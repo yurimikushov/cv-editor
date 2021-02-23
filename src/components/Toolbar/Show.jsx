@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { observer } from 'mobx-react-lite'
 import { useStore, useLoadCV, useLoadExampleCV } from '../../store'
 import Button from '../Common/Button'
@@ -7,16 +8,19 @@ const Show = () => {
   const { appProps } = useStore()
   const loadCV = useLoadCV()
   const loadExampleCV = useLoadExampleCV()
+  const { t } = useTranslation()
 
   return (
     <div className='toolbar__show item item_2'>
-      <div className='toolbar__show-title title title_3 item item_3'>Show</div>
-      <ul className='toolbar__show-commands'>
+      <div className='toolbar__show-title title title_3 item item_3'>
+        {t('Show')}
+      </div>
+      <ul className='toolbar__show-actions'>
         {appProps.showExampleCV && (
           <li className='toolbar__show-my-cv item item_3'>
             <Button
               className='toolbar__show-my-cv-btn'
-              title='My CV'
+              title={t('My CV')}
               onClick={() => {
                 loadCV()
                 appProps.toggleShowExampleCV()
@@ -29,7 +33,7 @@ const Show = () => {
           <li className='toolbar__show-example-cv item item_3'>
             <Button
               className='toolbar__show-example-cv-btn'
-              title='Example'
+              title={t('Example')}
               onClick={() => {
                 loadExampleCV()
                 appProps.toggleShowExampleCV()

@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { observer } from 'mobx-react-lite'
 import { useLoadAppData, useSaveAppData, useStore } from './store'
+import Loader from './components/Common/Loader'
 import TopLine from './components/TopLine'
 import Toolbar from './components/Toolbar'
 import CV from './pages/CV'
@@ -17,11 +18,11 @@ const App = () => {
   }, [appProps.title])
 
   return (
-    <>
+    <Suspense fallback={<Loader className='cv-loader' />}>
       <TopLine />
       <Toolbar />
       <CV />
-    </>
+    </Suspense>
   )
 }
 

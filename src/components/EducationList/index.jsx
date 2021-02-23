@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '../../store'
 import Education from './Education'
@@ -6,11 +7,12 @@ import Button from '../Common/Button'
 
 const EducationList = () => {
   const { appProps, educationList } = useStore()
+  const { t } = useTranslation()
 
   return (
     <div className='educations item item_1'>
       <div className='educations__title title title_0 item item_2'>
-        Education
+        {t('Education')}
       </div>
       {educationList.educations.map((education) => (
         <Education
@@ -23,7 +25,7 @@ const EducationList = () => {
       {appProps.editable && (
         <Button
           className='educations__add-btn flex-center-center'
-          title='Add'
+          title={t('Add')}
           onClick={() => educationList.addEducation()}
         />
       )}

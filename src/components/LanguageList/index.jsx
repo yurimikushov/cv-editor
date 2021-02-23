@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '../../store'
 import Language from './Language'
@@ -7,11 +8,12 @@ import './index.css'
 
 const LanguageList = () => {
   const { appProps, languageList } = useStore()
+  const { t } = useTranslation()
 
   return (
     <div className='languages item item_1'>
       <div className='languages__title title title_3 item item_3'>
-        Languages
+        {t('Languages')}
       </div>
       {languageList.languages.map((language) => (
         <Language
@@ -24,7 +26,7 @@ const LanguageList = () => {
       {appProps.editable && (
         <Button
           className='languages__add-btn flex-center-center'
-          title='Add'
+          title={t('Add')}
           onClick={() => languageList.addLanguage()}
         />
       )}
