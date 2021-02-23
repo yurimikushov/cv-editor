@@ -2,9 +2,6 @@ import createLanguage from './language'
 
 const createLanguageList = () => ({
   languages: [createLanguage()],
-  getLanguages() {
-    return this.languages
-  },
   addLanguage(language = '') {
     this.languages.push(createLanguage(language))
   },
@@ -15,7 +12,7 @@ const createLanguageList = () => ({
       this.languages.push(createLanguage())
     }
   },
-  loadLanguages(languages) {
+  setAll(languages) {
     this.languages = []
 
     if (languages.length === 0) {
@@ -23,6 +20,11 @@ const createLanguageList = () => ({
     }
 
     languages.forEach(({ language }) => this.addLanguage(language))
+  },
+  getAll() {
+    return {
+      languages: this.languages,
+    }
   },
 })
 

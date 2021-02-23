@@ -6,7 +6,7 @@ import Avatar from './Avatar'
 import './index.css'
 
 export const Header = () => {
-  const { appProps, aboutMe } = useStore()
+  const { appProps, aboutMe, avatar } = useStore()
 
   return (
     <header className='cv-header'>
@@ -22,9 +22,9 @@ export const Header = () => {
       <div className='cv-header__right-side'>
         <Avatar
           editable={appProps.editable}
-          src={aboutMe.avatar}
-          setAvatar={aboutMe.setAvatar}
-          removeAvatar={aboutMe.removeAvatar}
+          src={avatar.avatar}
+          setAvatar={avatar.setAvatar}
+          removeAvatar={avatar.removeAvatar}
         />
       </div>
     </header>

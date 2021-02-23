@@ -3,11 +3,13 @@ const createTechnologyList = () => ({
   setTechnologies(technologies) {
     this.technologies = technologies
   },
-  getTechnologies() {
-    return this.technologies
-  },
-  loadTechnologies(technologies) {
+  setAll(technologies) {
     this.setTechnologies(technologies)
+  },
+  getAll() {
+    return {
+      technologies: this.technologies,
+    }
   },
 })
 

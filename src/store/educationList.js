@@ -2,9 +2,6 @@ import createEducation from './education'
 
 const createEducationList = () => ({
   educations: [createEducation()],
-  getEducations() {
-    return this.educations
-  },
   addEducation(degree = '', university = '', duration = '') {
     this.educations.push(createEducation(degree, university, duration))
   },
@@ -15,7 +12,7 @@ const createEducationList = () => ({
       this.educations.push(createEducation())
     }
   },
-  loadEducations(educations) {
+  setAll(educations) {
     this.educations = []
 
     if (educations.length === 0) {
@@ -25,6 +22,11 @@ const createEducationList = () => ({
     educations.forEach(({ degree, university, duration }) => {
       this.addEducation(degree, university, duration)
     })
+  },
+  getAll() {
+    return {
+      educations: this.educations,
+    }
   },
 })
 

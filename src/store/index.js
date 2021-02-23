@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useLocalObservable } from 'mobx-react-lite'
 import createAppProps from './appProps'
 import createAboutMe from './aboutMe'
+import createAvatar from './avatar'
 import createExperienceList from './experienceList'
 import createEducationList from './educationList'
 import createContactList from './contactList'
@@ -15,6 +16,7 @@ const StoreProvider = ({ children }) => {
   const storeContextValue = {
     appProps: useLocalObservable(createAppProps),
     aboutMe: useLocalObservable(createAboutMe),
+    avatar: useLocalObservable(createAvatar),
     experienceList: useLocalObservable(createExperienceList),
     educationList: useLocalObservable(createEducationList),
     contactList: useLocalObservable(createContactList),

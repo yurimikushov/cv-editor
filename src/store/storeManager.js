@@ -6,7 +6,7 @@ const useSetAppPropsToState = () => {
   const { appProps } = useStore()
 
   return ({ editable }) => {
-    appProps.setEditable(editable)
+    appProps.setAll(editable)
   }
 }
 
@@ -14,13 +14,14 @@ const useGetAppPropsFromState = () => {
   const { appProps } = useStore()
 
   return () => ({
-    editable: appProps.getEditable(),
+    ...appProps.getAll(),
   })
 }
 
 const useSetCVToState = () => {
   const {
     aboutMe,
+    avatar,
     experienceList,
     educationList,
     contactList,
@@ -31,7 +32,7 @@ const useSetCVToState = () => {
   return ({
     fullName,
     position,
-    avatar,
+    avatar: avatarSrc,
     aboutMe: description,
     experiences,
     educations,
@@ -39,18 +40,20 @@ const useSetCVToState = () => {
     technologies,
     languages,
   }) => {
-    aboutMe.loadAboutMe(fullName, position, avatar, description)
-    experienceList.loadExperiencies(experiences)
-    educationList.loadEducations(educations)
-    contactList.loadContacts(contacts)
-    technologyList.loadTechnologies(technologies)
-    languageList.loadLanguages(languages)
+    aboutMe.setAll(fullName, position, description)
+    avatar.setAll(avatarSrc)
+    experienceList.setAll(experiences)
+    educationList.setAll(educations)
+    contactList.setAll(contacts)
+    technologyList.setAll(technologies)
+    languageList.setAll(languages)
   }
 }
 
 const useGetCVFromState = () => {
   const {
     aboutMe,
+    avatar,
     experienceList,
     educationList,
     contactList,
@@ -59,15 +62,13 @@ const useGetCVFromState = () => {
   } = useStore()
 
   return () => ({
-    fullName: aboutMe.getFullName(),
-    position: aboutMe.getPosition(),
-    avatar: aboutMe.getAvatar(),
-    aboutMe: aboutMe.getDescription(),
-    experiences: experienceList.getExperiences(),
-    educations: educationList.getEducations(),
-    contacts: contactList.getContacts(),
-    technologies: technologyList.getTechnologies(),
-    languages: languageList.getLanguages(),
+    ...aboutMe.getAll(),
+    ...avatar.getAll(),
+    ...experienceList.getAll(),
+    ...educationList.getAll(),
+    ...contactList.getAll(),
+    ...technologyList.getAll(),
+    ...languageList.getAll(),
   })
 }
 

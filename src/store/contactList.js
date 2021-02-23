@@ -2,9 +2,6 @@ import createContact from './contact'
 
 const createContacts = () => ({
   contacts: [createContact()],
-  getContacts() {
-    return this.contacts
-  },
   addContact(title = '', href = '') {
     this.contacts.push(createContact(title, href))
   },
@@ -15,7 +12,7 @@ const createContacts = () => ({
       this.contacts.push(createContact())
     }
   },
-  loadContacts(contacts) {
+  setAll(contacts) {
     this.contacts = []
 
     if (contacts.length === 0) {
@@ -25,6 +22,11 @@ const createContacts = () => ({
     contacts.forEach(({ title, href }) => {
       this.addContact(title, href)
     })
+  },
+  getAll() {
+    return {
+      contacts: this.contacts,
+    }
   },
 })
 

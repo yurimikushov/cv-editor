@@ -2,9 +2,6 @@ import createExperience from './experience'
 
 const createExperienceList = () => ({
   experiences: [createExperience()],
-  getExperiences() {
-    return this.experiences
-  },
   addExperience(position = '', company = '', duration = '', description = '') {
     this.experiences.push(
       createExperience(position, company, duration, description)
@@ -19,7 +16,7 @@ const createExperienceList = () => ({
       this.experiences.push(createExperience())
     }
   },
-  loadExperiencies(experiences) {
+  setAll(experiences) {
     this.experiences = []
 
     if (experiences.length === 0) {
@@ -29,6 +26,11 @@ const createExperienceList = () => ({
     experiences.forEach(({ position, company, duration, description }) => {
       this.addExperience(position, company, duration, description)
     })
+  },
+  getAll() {
+    return {
+      experiences: this.experiences,
+    }
   },
 })
 

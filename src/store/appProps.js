@@ -6,12 +6,6 @@ const createAppProps = () => ({
   setAppTitle(title) {
     this.title = title
   },
-  setEditable(editable) {
-    this.editable = editable
-  },
-  getEditable() {
-    return this.editable
-  },
   toggleEditable() {
     if (this.showExampleCV) {
       this.editable = false
@@ -32,6 +26,14 @@ const createAppProps = () => ({
   },
   setIsLoading(isLoading) {
     this.isLoading = isLoading
+  },
+  setAll(editable) {
+    this.editable = editable
+  },
+  getAll() {
+    return {
+      editable: this.editable,
+    }
   },
 })
 
