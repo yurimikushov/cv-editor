@@ -103,12 +103,17 @@ const useSaveCV = () => {
 }
 
 const useLoadAppData = () => {
+  const { appProps } = useStore()
   const loadAppProps = useLoadAppProps()
   const loadCV = useLoadCV()
 
   useEffect(() => {
+    appProps.setIsLoading(true)
+
     loadAppProps()
     loadCV()
+
+    appProps.setIsLoading(false)
   }, [])
 }
 
@@ -128,12 +133,17 @@ const useSaveAppData = () => {
 }
 
 const useLoadExampleCV = () => {
+  const { appProps } = useStore()
   const saveCV = useSaveCV()
   const setCV = useSetCVToState()
 
   return async () => {
+    appProps.setIsLoading(true)
+
     await saveCV()
     setCV(await getCVExample())
+
+    appProps.setIsLoading(false)
   }
 }
 
