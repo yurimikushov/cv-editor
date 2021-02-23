@@ -1,19 +1,18 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
-import { useAppProps, useAboutMe } from '../../store'
+import { useStore } from '../../store'
 import { downloadPDF } from '../../utils'
 import Button from '../Common/Button'
 
 const Download = () => {
-  const { editable, toggleEditable } = useAppProps()
-  const { fullName } = useAboutMe()
+  const { appProps, aboutMe } = useStore()
 
   const downloadPDFHandler = () => {
-    if (editable) {
-      toggleEditable()
+    if (appProps.editable) {
+      appProps.toggleEditable()
     }
 
-    downloadPDF(`CV. ${fullName}.pdf`, '.cv')
+    downloadPDF(`CV. ${aboutMe.fullName}.pdf`, '.cv')
   }
 
   return (

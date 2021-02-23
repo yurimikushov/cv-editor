@@ -1,21 +1,21 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
-import { useAppProps } from '../../store'
+import { useStore } from '../../store'
 import Button from '../Common/Button'
 import './index.css'
 
 const EditButton = () => {
-  const { editable, showExampleCV, toggleEditable } = useAppProps()
+  const { appProps } = useStore()
 
-  if (showExampleCV) {
+  if (appProps.showExampleCV) {
     return null
   }
 
   return (
     <Button
       className='edit-btn edit-btn_tr'
-      title={!editable ? 'Edit' : 'Preview'}
-      onClick={toggleEditable}
+      title={!appProps.editable ? 'Edit' : 'Preview'}
+      onClick={appProps.toggleEditable}
       tabIndex='-1'
     />
   )

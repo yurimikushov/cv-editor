@@ -4,7 +4,7 @@ const createAboutMe = () => ({
   fullName: '',
   position: '',
   avatar: avatarPlaceholder,
-  aboutMe: '',
+  description: '',
   setFullName(fullName) {
     this.fullName = fullName
   },
@@ -26,17 +26,17 @@ const createAboutMe = () => ({
   removeAvatar() {
     this.avatar = avatarPlaceholder
   },
-  setAboutMe(aboutMe) {
-    this.aboutMe = aboutMe
+  setDescription(description) {
+    this.description = description
   },
-  getAboutMe() {
-    return this.aboutMe
+  getDescription() {
+    return this.description
   },
-  loadAboutMe(fullName, position, avatar, aboutMe) {
+  loadAboutMe(fullName, position, avatar, description) {
     this.setFullName(fullName)
     this.setPosition(position)
     this.setAvatar(avatar || avatarPlaceholder)
-    this.setAboutMe(aboutMe)
+    this.setDescription(description)
   },
 })
 

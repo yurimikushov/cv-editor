@@ -1,77 +1,73 @@
 import { useEffect } from 'react'
 import { getAppProps, saveAppProps, getCV, saveCV, getCVExample } from '../api'
-import {
-  useAppProps,
-  useAboutMe,
-  useExperienceList,
-  useEducationList,
-  useContactList,
-  useTechnologyList,
-  useLanguageList,
-} from '../store'
+import { useStore } from '../store'
 
 const useSetAppPropsToState = () => {
-  const { setEditable } = useAppProps()
+  const { appProps } = useStore()
 
   return ({ editable }) => {
-    setEditable(editable)
+    appProps.setEditable(editable)
   }
 }
 
 const useGetAppPropsFromState = () => {
-  const { getEditable } = useAppProps()
+  const { appProps } = useStore()
 
   return () => ({
-    editable: getEditable(),
+    editable: appProps.getEditable(),
   })
 }
 
 const useSetCVToState = () => {
-  const { loadAboutMe } = useAboutMe()
-  const { loadExperiencies } = useExperienceList()
-  const { loadEducations } = useEducationList()
-  const { loadContacts } = useContactList()
-  const { loadTechnologies } = useTechnologyList()
-  const { loadLanguages } = useLanguageList()
+  const {
+    aboutMe,
+    experienceList,
+    educationList,
+    contactList,
+    technologyList,
+    languageList,
+  } = useStore()
 
   return ({
     fullName,
     position,
     avatar,
-    aboutMe,
+    aboutMe: description,
     experiences,
     educations,
     contacts,
     technologies,
     languages,
   }) => {
-    loadAboutMe(fullName, position, avatar, aboutMe)
-    loadExperiencies(experiences)
-    loadEducations(educations)
-    loadContacts(contacts)
-    loadTechnologies(technologies)
-    loadLanguages(languages)
+    aboutMe.loadAboutMe(fullName, position, avatar, description)
+    experienceList.loadExperiencies(experiences)
+    educationList.loadEducations(educations)
+    contactList.loadContacts(contacts)
+    technologyList.loadTechnologies(technologies)
+    languageList.loadLanguages(languages)
   }
 }
 
 const useGetCVFromState = () => {
-  const { getFullName, getPosition, getAvatar, getAboutMe } = useAboutMe()
-  const { getExperiences } = useExperienceList()
-  const { getEducations } = useEducationList()
-  const { getContacts } = useContactList()
-  const { getTechnologies } = useTechnologyList()
-  const { getLanguages } = useLanguageList()
+  const {
+    aboutMe,
+    experienceList,
+    educationList,
+    contactList,
+    technologyList,
+    languageList,
+  } = useStore()
 
   return () => ({
-    fullName: getFullName(),
-    position: getPosition(),
-    avatar: getAvatar(),
-    aboutMe: getAboutMe(),
-    experiences: getExperiences(),
-    educations: getEducations(),
-    contacts: getContacts(),
-    technologies: getTechnologies(),
-    languages: getLanguages(),
+    fullName: aboutMe.getFullName(),
+    position: aboutMe.getPosition(),
+    avatar: aboutMe.getAvatar(),
+    aboutMe: aboutMe.getDescription(),
+    experiences: experienceList.getExperiences(),
+    educations: educationList.getEducations(),
+    contacts: contactList.getContacts(),
+    technologies: technologyList.getTechnologies(),
+    languages: languageList.getLanguages(),
   })
 }
 
@@ -94,11 +90,11 @@ const useLoadCV = () => {
 }
 
 const useSaveCV = () => {
-  const { getShowExampleCV } = useAppProps()
+  const { appProps } = useStore()
   const getCV = useGetCVFromState()
 
   return async () => {
-    if (getShowExampleCV()) {
+    if (appProps.getShowExampleCV()) {
       return
     }
 

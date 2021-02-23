@@ -1,30 +1,29 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
-import { useAppProps, useContactList } from '../../store'
+import { useStore } from '../../store'
 import Contact from './Contact'
 import Button from '../Common/Button'
 import './index.css'
 
 const ContactList = () => {
-  const { editable } = useAppProps()
-  const { contacts, addContact, removeContact } = useContactList()
+  const { appProps, contactList } = useStore()
 
   return (
     <div className='contacts item item_1'>
       <div className='contacts__title title title_3 item item_3'>Contacts</div>
-      {contacts.map((contact) => (
+      {contactList.contacts.map((contact) => (
         <Contact
           key={contact.id}
-          editable={editable}
+          editable={appProps.editable}
           contact={contact}
-          removeContact={removeContact}
+          removeContact={contactList.removeContact}
         />
       ))}
-      {editable && (
+      {appProps.editable && (
         <Button
           className='contacts__add-btn flex-center-center'
           title='Add'
-          onClick={() => addContact()}
+          onClick={() => contactList.addContact()}
         />
       )}
     </div>

@@ -1,12 +1,6 @@
 import React, { createContext, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { useLocalObservable } from 'mobx-react-lite'
-import {
-  useLoadAppData,
-  useSaveAppData,
-  useLoadCV,
-  useLoadExampleCV,
-} from './storeManager'
 import createAppProps from './appProps'
 import createAboutMe from './aboutMe'
 import createExperienceList from './experienceList'
@@ -15,39 +9,23 @@ import createContactList from './contactList'
 import createTechnologyList from './technologyList'
 import createLanguageList from './languageList'
 
-const AppPropsContext = createContext()
-const AboutMeContext = createContext()
-const ExperienceListContext = createContext()
-const EducationListContext = createContext()
-const ContactListContext = createContext()
-const TechnologyListContext = createContext()
-const LanguageListContext = createContext()
+const StoreContext = createContext()
 
 const StoreProvider = ({ children }) => {
-  const appProps = useLocalObservable(createAppProps)
-  const aboutMe = useLocalObservable(createAboutMe)
-  const experienceList = useLocalObservable(createExperienceList)
-  const educationList = useLocalObservable(createEducationList)
-  const contactList = useLocalObservable(createContactList)
-  const technologyList = useLocalObservable(createTechnologyList)
-  const languageList = useLocalObservable(createLanguageList)
+  const storeContextValue = {
+    appProps: useLocalObservable(createAppProps),
+    aboutMe: useLocalObservable(createAboutMe),
+    experienceList: useLocalObservable(createExperienceList),
+    educationList: useLocalObservable(createEducationList),
+    contactList: useLocalObservable(createContactList),
+    technologyList: useLocalObservable(createTechnologyList),
+    languageList: useLocalObservable(createLanguageList),
+  }
 
   return (
-    <AppPropsContext.Provider value={appProps}>
-      <AboutMeContext.Provider value={aboutMe}>
-        <ExperienceListContext.Provider value={experienceList}>
-          <EducationListContext.Provider value={educationList}>
-            <ContactListContext.Provider value={contactList}>
-              <TechnologyListContext.Provider value={technologyList}>
-                <LanguageListContext.Provider value={languageList}>
-                  {children}
-                </LanguageListContext.Provider>
-              </TechnologyListContext.Provider>
-            </ContactListContext.Provider>
-          </EducationListContext.Provider>
-        </ExperienceListContext.Provider>
-      </AboutMeContext.Provider>
-    </AppPropsContext.Provider>
+    <StoreContext.Provider value={storeContextValue}>
+      {children}
+    </StoreContext.Provider>
   )
 }
 
@@ -58,25 +36,13 @@ StoreProvider.propTypes = {
   ]),
 }
 
-const useAppProps = () => useContext(AppPropsContext)
-const useAboutMe = () => useContext(AboutMeContext)
-const useExperienceList = () => useContext(ExperienceListContext)
-const useEducationList = () => useContext(EducationListContext)
-const useContactList = () => useContext(ContactListContext)
-const useTechnologyList = () => useContext(TechnologyListContext)
-const useLanguageList = () => useContext(LanguageListContext)
+const useStore = () => useContext(StoreContext)
+
+export { StoreProvider as default, useStore }
 
 export {
-  StoreProvider as default,
   useLoadAppData,
   useSaveAppData,
   useLoadCV,
   useLoadExampleCV,
-  useAppProps,
-  useAboutMe,
-  useExperienceList,
-  useEducationList,
-  useContactList,
-  useTechnologyList,
-  useLanguageList,
-}
+} from './storeManager'

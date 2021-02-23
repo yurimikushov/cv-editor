@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { observer } from 'mobx-react-lite'
-import { useLoadAppData, useSaveAppData, useAppProps } from './store'
+import { useLoadAppData, useSaveAppData, useStore } from './store'
 import TopLine from './components/TopLine'
 import Toolbar from './components/Toolbar'
 import CV from './pages/CV'
@@ -10,11 +10,11 @@ const App = () => {
   useLoadAppData()
   useSaveAppData()
 
-  const { title } = useAppProps()
+  const { appProps } = useStore()
 
   useEffect(() => {
-    document.title = title
-  }, [title])
+    document.title = appProps.title
+  }, [appProps.title])
 
   return (
     <>
