@@ -14,7 +14,7 @@ const Download = () => {
       appProps.toggleEditable()
     }
 
-    downloadPDF(`CV. ${aboutMe.fullName}.pdf`, '.cv')
+    downloadPDF(`CV. ${aboutMe.fullName}`, '.cv')
   }
 
   return (
