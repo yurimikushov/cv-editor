@@ -1,6 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '../../store'
+import Loader from '../../components/Common/Loader'
 import EditButton from '../../components/EditButton'
 import Header from '../../components/Header'
 import AboutMe from '../../components/AboutMe'
@@ -9,7 +10,6 @@ import EducationList from '../../components/EducationList'
 import ContactList from '../../components/ContactList'
 import TechnologyList from '../../components/TechnologyList'
 import LanguageList from '../../components/LanguageList'
-import Loader from '../../components/Loader'
 import './index.css'
 
 const CV = () => {
