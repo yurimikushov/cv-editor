@@ -9,12 +9,18 @@ const Download = () => {
   const { appProps, aboutMe } = useStore()
   const { t } = useTranslation()
 
-  const downloadPDFHandler = () => {
+  const downloadPDFHandler = async () => {
+    const prevEditable = appProps.editable
+
     if (appProps.editable) {
       appProps.toggleEditable()
     }
 
-    downloadPDF(`CV. ${aboutMe.fullName}`, '.cv')
+    await downloadPDF(`CV. ${aboutMe.fullName}`, '.cv')
+
+    if (prevEditable !== appProps.editable) {
+      appProps.toggleEditable()
+    }
   }
 
   return (

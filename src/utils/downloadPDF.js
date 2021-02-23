@@ -8,7 +8,7 @@ const downloadPDF = (filename, fromSelecotor) => {
     jsPDF: { orientation: 'p', unit: 'mm', format: 'a4' },
   }
 
-  html2pdf().set(opt).from(document.querySelector(fromSelecotor)).save()
+  return html2pdf().set(opt).from(document.querySelector(fromSelecotor)).save()
 }
 
 export { downloadPDF }
