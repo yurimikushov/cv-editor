@@ -28,7 +28,11 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
 
   return (
     <div className='avatar' data-editable={editable}>
-      <img className='avatar__presenter' src={src} alt='Avatar' />
+      <img
+        className='avatar__presenter'
+        src={src || '/img/avatar-placeholder-100x100.png'}
+        alt='Avatar'
+      />
       {editable && (
         <>
           <Button

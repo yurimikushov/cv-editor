@@ -1,15 +1,13 @@
-const avatarPlaceholder = '/img/avatar-placeholder-100x100.png'
-
 const createAvatar = () => ({
-  avatar: avatarPlaceholder,
+  avatar: '',
   setAvatar(src) {
     this.avatar = src
   },
   removeAvatar() {
-    this.avatar = avatarPlaceholder
+    this.avatar = ''
   },
   setAll(avatar) {
-    this.setAvatar(avatar || avatarPlaceholder)
+    this.setAvatar(avatar)
   },
   getAll() {
     return {
