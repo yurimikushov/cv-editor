@@ -48,12 +48,14 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
             accept='.png, .jpg, .jpeg'
             style={{ display: 'none' }}
           />
-          <Button
-            className='avatar__remove-btn'
-            title='x'
-            onClick={removeAvatarHandler}
-            tabIndex='-1'
-          />
+          {src && (
+            <Button
+              className='avatar__remove-btn'
+              title='x'
+              onClick={removeAvatarHandler}
+              tabIndex='-1'
+            />
+          )}
         </>
       )}
     </div>
