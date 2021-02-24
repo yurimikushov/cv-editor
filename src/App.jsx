@@ -18,7 +18,7 @@ const App = () => {
   }, [appProps.title])
 
   return (
-    <Suspense fallback={<Loader className='cv-loader' />}>
+    <Suspense fallback={<Loader className='app-loader' />}>
       <TopLine />
       <Toolbar />
       <CV />
