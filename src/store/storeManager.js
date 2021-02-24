@@ -109,12 +109,12 @@ const useLoadAppData = () => {
   const loadCV = useLoadCV()
 
   useEffect(() => {
-    appProps.setIsLoading(true)
+    appProps.setIsCVLoading(true)
 
     loadAppProps()
     loadCV()
 
-    appProps.setIsLoading(false)
+    appProps.setIsCVLoading(false)
   }, [])
 }
 
@@ -139,12 +139,12 @@ const useLoadExampleCV = () => {
   const setCV = useSetCVToState()
 
   return async () => {
-    appProps.setIsLoading(true)
+    appProps.setIsCVLoading(true)
 
     await saveCV()
     setCV(await getCVExample())
 
-    appProps.setIsLoading(false)
+    appProps.setIsCVLoading(false)
   }
 }
 

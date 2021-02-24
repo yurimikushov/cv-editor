@@ -15,7 +15,7 @@ import './index.css'
 const CV = () => {
   const { appProps } = useStore()
 
-  if (appProps.isLoading) {
+  if (appProps.isCVLoading) {
     return <Loader className='cv-loader' />
   }
 

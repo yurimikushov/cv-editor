@@ -2,7 +2,7 @@ const createAppProps = () => ({
   title: 'Curriculum vitae',
   editable: true,
   showExampleCV: false,
-  isLoading: false,
+  isCVLoading: false,
   lang: 'en',
   setAppTitle(title) {
     this.title = title
@@ -25,8 +25,8 @@ const createAppProps = () => ({
       this.editable = false
     }
   },
-  setIsLoading(isLoading) {
-    this.isLoading = isLoading
+  setIsCVLoading(isLoading) {
+    this.isCVLoading = isLoading
   },
   setLang(lang) {
     this.lang = lang
