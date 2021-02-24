@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { observer } from 'mobx-react-lite'
 import { useStore, useLoadCV, useLoadExampleCV } from '../../store'
@@ -9,6 +9,24 @@ const Show = () => {
   const loadCV = useLoadCV()
   const loadExampleCV = useLoadExampleCV()
   const { t } = useTranslation()
+
+  const prevEditableRef = useRef(appProps.editable)
+
+  const showMyCVHandler = () => {
+    loadCV()
+    appProps.toggleShowExampleCV()
+
+    if (prevEditableRef.current !== appProps.editable) {
+      appProps.toggleEditable()
+    }
+  }
+
+  const showExampleCVHandler = () => {
+    prevEditableRef.current = appProps.editable
+
+    loadExampleCV()
+    appProps.toggleShowExampleCV()
+  }
 
   return (
     <div className='toolbar__show item item_2'>
@@ -21,10 +39,7 @@ const Show = () => {
             <Button
               className='toolbar__show-my-cv-btn'
               title={t('My CV')}
-              onClick={() => {
-                loadCV()
-                appProps.toggleShowExampleCV()
-              }}
+              onClick={showMyCVHandler}
               tabIndex='-1'
             />
           </li>
@@ -34,10 +49,7 @@ const Show = () => {
             <Button
               className='toolbar__show-example-cv-btn'
               title={t('Example')}
-              onClick={() => {
-                loadExampleCV()
-                appProps.toggleShowExampleCV()
-              }}
+              onClick={showExampleCVHandler}
               tabIndex='-1'
             />
           </li>
