@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
+import { fileToBase64 } from '../../../utils'
 import Button from '../../Common/Button'
 import './index.css'
 
@@ -9,11 +10,9 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
   const uploadAvatarHandler = () => {
     const { current: avatarInput } = avatarInputrRef
 
-    avatarInput.addEventListener('change', () => {
+    avatarInput.addEventListener('change', async () => {
       if (avatarInput.files && avatarInput.files[0]) {
-        const reader = new FileReader()
-        reader.addEventListener('load', (e) => setAvatar(e.target.result))
-        reader.readAsDataURL(avatarInput.files[0])
+        setAvatar(await fileToBase64(avatarInput.files[0]))
       }
     })
 
