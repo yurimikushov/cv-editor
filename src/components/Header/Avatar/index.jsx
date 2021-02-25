@@ -1,11 +1,13 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
+import { useTranslation } from 'react-i18next'
 import { fileToBase64 } from '../../../utils'
 import Button from '../../Common/Button'
 import './index.css'
 
 const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
   const avatarInputrRef = useRef()
+  const { t } = useTranslation()
 
   const uploadAvatarHandler = () => {
     const { current: avatarInput } = avatarInputrRef
@@ -20,7 +22,7 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
   }
 
   const removeAvatarHandler = () => {
-    if (window.confirm('Are you sure you wanna delete the photo?')) {
+    if (window.confirm(t('Are you sure you wanna delete the photo?'))) {
       removeAvatar()
     }
   }
