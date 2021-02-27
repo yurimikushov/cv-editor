@@ -1,11 +1,11 @@
-const createAppProps = () => ({
-  title: 'Curriculum vitae',
+const createAppProps = (initTitle = 'CV editor') => ({
+  title: initTitle,
   editable: true,
   showExampleCV: false,
   isCVLoading: false,
   lang: 'en',
-  setAppTitle(title) {
-    this.title = title
+  setTitle(title) {
+    this.title = title ? `CV: ${title}` : initTitle
   },
   toggleEditable() {
     this.editable = !this.editable
