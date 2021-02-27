@@ -1,10 +1,32 @@
-# Curriculum vitae editor
+# CV editor
 
-Soon..
+Simple and easy CV editor: `write` -> `download` -> `send to a HR` -> `receive a dream offer`.
 
 ![CV editor preview](docs/img/preview.png)
 
-# Usage
+# Features
+
+🔽 **Download in PDF**
+
+You can download your CV in a PDF format. To do this, use `PDF` button on the toolbar.
+
+💾 **Auto saving in a browser**
+
+You can finish your CV later. All changes in your CV are automatically saved in your browser (in localstorage).
+
+👀 **Look an example**
+
+You can see a CV example. To see one, use `example` button on the toolbar.
+
+👌 **Supporting English and Russian langs**
+
+You can make CV with English or Russian section titles. To toggle language, use `en` or `ru` buttons on the toolbar.
+
+🔗 **Use md refs in your text**
+
+You can add a ref in your text. To do this, use md ref syntax directly in any multiline text input field. For example, `[My GitHub profile](https://github.com/yurimikushov)` will convert to [My GitHub profile](https://github.com/yurimikushov).
+
+# For developers
 
 Installs the project
 
