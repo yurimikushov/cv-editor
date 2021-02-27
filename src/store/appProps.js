@@ -8,11 +8,6 @@ const createAppProps = () => ({
     this.title = title
   },
   toggleEditable() {
-    if (this.showExampleCV) {
-      this.editable = false
-      return
-    }
-
     this.editable = !this.editable
   },
   getShowExampleCV() {
@@ -20,10 +15,6 @@ const createAppProps = () => ({
   },
   toggleShowExampleCV() {
     this.showExampleCV = !this.showExampleCV
-
-    if (this.showExampleCV) {
-      this.editable = false
-    }
   },
   setIsCVLoading(isLoading) {
     this.isCVLoading = isLoading

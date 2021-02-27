@@ -24,6 +24,10 @@ const Show = () => {
   const showExampleCVHandler = () => {
     prevEditableRef.current = appProps.editable
 
+    if (appProps.editable) {
+      appProps.toggleEditable()
+    }
+
     loadExampleCV()
     appProps.toggleShowExampleCV()
   }
@@ -34,7 +38,7 @@ const Show = () => {
         {t('Show')}
       </div>
       <ul className='toolbar__show-actions'>
-        {appProps.showExampleCV && (
+        {appProps.showExampleCV ? (
           <li className='toolbar__show-my-cv item item_3'>
             <Button
               className='toolbar__show-my-cv-btn'
@@ -43,8 +47,7 @@ const Show = () => {
               tabIndex='-1'
             />
           </li>
-        )}
-        {!appProps.showExampleCV && (
+        ) : (
           <li className='toolbar__show-example-cv item item_3'>
             <Button
               className='toolbar__show-example-cv-btn'

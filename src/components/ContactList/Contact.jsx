@@ -10,7 +10,7 @@ const Contact = ({ editable, contact, removeContact }) => {
 
   return (
     <div className='contact card card_2 item item_3' data-editable={editable}>
-      {editable && (
+      {editable ? (
         <>
           <InputField
             className='contact__title title title_4'
@@ -30,8 +30,7 @@ const Contact = ({ editable, contact, removeContact }) => {
             onClick={() => removeContact(contact.id)}
           />
         </>
-      )}
-      {!editable && (
+      ) : (
         <a
           className='contact__title title title_4'
           href={contact.href}
