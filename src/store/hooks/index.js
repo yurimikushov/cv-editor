@@ -1,3 +1,4 @@
+export { useUpdateAppTitle } from './useUpdateAppTitle'
 export { useLoadAppData } from './useLoadAppData'
 export { useSaveAppData } from './useSaveAppData'
 export { useLoadCV } from './useLoadCV'
