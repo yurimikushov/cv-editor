@@ -16,7 +16,7 @@ You can finish your CV later. All changes in your CV are automatically saved in 
 
 👀 **Look an example**
 
-You can see a CV example. To see one, use `example` button on the toolbar.
+You can see a CV example. To see one, use `Example` button on the toolbar.
 
 👌 **Supporting English and Russian langs**
 
