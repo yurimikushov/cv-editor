@@ -2,6 +2,8 @@
 
 Soon..
 
+![CV editor preview](docs/img/preview.png)
+
 # Usage
 
 Installs the project
