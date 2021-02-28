@@ -31,7 +31,6 @@ AutoResizeTextArea.propTypes = {
   text: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
-  readOnly: PropTypes.bool,
 }
 
 export default AutoResizeTextArea
