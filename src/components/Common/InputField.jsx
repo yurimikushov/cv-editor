@@ -15,6 +15,12 @@ const InputField = ({
     setInputWidth(`${inputRef.current.scrollWidth}px`)
   }, [value])
 
+  let inputValue = value
+
+  if (!value && readOnly && placeholder) {
+    inputValue = placeholder
+  }
+
   const onChangeHandler = (e) => {
     setInputWidth('auto')
     onChange(e)
@@ -25,7 +31,7 @@ const InputField = ({
       {...props}
       ref={inputRef}
       type='text'
-      value={!value && readOnly && placeholder ? placeholder : value}
+      value={inputValue}
       placeholder={placeholder}
       readOnly={readOnly}
       style={{ width: inputWidth, maxWidth: '100%' }}
