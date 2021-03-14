@@ -1,25 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-const InputField = ({
-  value,
-  onChange,
-  readOnly = false,
-  placeholder = '',
-  ...props
-}) => {
+const AutoResizeInput = ({ value, onChange, placeholder = '', ...props }) => {
   const inputRef = useRef()
   const [inputWidth, setInputWidth] = useState('auto')
 
   useEffect(() => {
     setInputWidth(`${inputRef.current.scrollWidth}px`)
   }, [value])
-
-  let inputValue = value
-
-  if (!value && readOnly && placeholder) {
-    inputValue = placeholder
-  }
 
   const onChangeHandler = (e) => {
     setInputWidth('auto')
@@ -31,21 +19,18 @@ const InputField = ({
       {...props}
       ref={inputRef}
       type='text'
-      value={inputValue}
+      value={value}
       placeholder={placeholder}
-      readOnly={readOnly}
       style={{ width: inputWidth, maxWidth: '100%' }}
       onChange={onChangeHandler}
     />
   )
 }
 
-InputField.propTypes = {
+AutoResizeInput.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  className: PropTypes.string,
-  readOnly: PropTypes.bool,
   placeholder: PropTypes.string,
 }
 
-export default InputField
+export default AutoResizeInput
