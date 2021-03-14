@@ -10,19 +10,15 @@ const MultilineInputField = ({
   readOnly = false,
   ...props
 }) => {
-  let textAreaValue = value
-
-  if (!value && readOnly && placeholder) {
-    textAreaValue = placeholder
-  }
-
   if (readOnly) {
-    return <ReadOnlyTextArea text={textAreaValue} {...props} />
+    return (
+      <ReadOnlyTextArea value={value} placeholder={placeholder} {...props} />
+    )
   }
 
   return (
     <AutoResizeTextArea
-      text={textAreaValue}
+      value={value}
       onChange={onChange}
       placeholder={placeholder}
       {...props}

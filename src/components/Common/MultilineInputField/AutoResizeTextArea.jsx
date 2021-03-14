@@ -1,13 +1,18 @@
 import React, { useRef, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-const AutoResizeTextArea = ({ text, onChange, placeholder = '', ...props }) => {
+const AutoResizeTextArea = ({
+  value,
+  onChange,
+  placeholder = '',
+  ...props
+}) => {
   const textAreaRef = useRef()
   const [textAreaHeight, setTextAreaHeight] = useState('auto')
 
   useEffect(() => {
     setTextAreaHeight(`${textAreaRef.current.scrollHeight}px`)
-  }, [text])
+  }, [value])
 
   const onChangeHandler = (e) => {
     setTextAreaHeight('auto')
@@ -18,7 +23,7 @@ const AutoResizeTextArea = ({ text, onChange, placeholder = '', ...props }) => {
     <textarea
       {...props}
       ref={textAreaRef}
-      value={text}
+      value={value}
       placeholder={placeholder}
       rows='1'
       style={{ height: textAreaHeight }}
@@ -28,7 +33,7 @@ const AutoResizeTextArea = ({ text, onChange, placeholder = '', ...props }) => {
 }
 
 AutoResizeTextArea.propTypes = {
-  text: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
 }
