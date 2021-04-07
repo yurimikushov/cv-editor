@@ -7,7 +7,6 @@ import {
   useSaveAppData,
 } from './store'
 import Loader from './components/Common/Loader'
-import TopLine from './components/TopLine'
 import Toolbar from './components/Toolbar'
 import CV from './pages/CV'
 import './App.css'
@@ -20,7 +19,6 @@ const App = () => {
 
   return (
     <Suspense fallback={<Loader className='app-loader' />}>
-      <TopLine />
       <Toolbar />
       <CV />
     </Suspense>

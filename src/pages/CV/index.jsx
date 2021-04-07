@@ -1,6 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '../../store'
+import TopLine from '../../components/TopLine'
 import Loader from '../../components/Common/Loader'
 import EditButton from '../../components/EditButton'
 import Header from '../../components/Header'
@@ -21,6 +22,7 @@ const CV = () => {
 
   return (
     <>
+      <TopLine />
       {!appProps.showExampleCV && (
         <EditButton
           editable={appProps.editable}
