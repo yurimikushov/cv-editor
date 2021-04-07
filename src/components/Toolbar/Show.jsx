@@ -12,15 +12,6 @@ const Show = () => {
 
   const prevEditableRef = useRef(appProps.editable)
 
-  const showMyCVHandler = () => {
-    loadCV()
-    appProps.toggleShowExampleCV()
-
-    if (prevEditableRef.current !== appProps.editable) {
-      appProps.toggleEditable()
-    }
-  }
-
   const showExampleCVHandler = () => {
     prevEditableRef.current = appProps.editable
 
@@ -30,6 +21,15 @@ const Show = () => {
 
     loadExampleCV()
     appProps.toggleShowExampleCV()
+  }
+
+  const showMyCVHandler = () => {
+    loadCV()
+    appProps.toggleShowExampleCV()
+
+    if (prevEditableRef.current !== appProps.editable) {
+      appProps.toggleEditable()
+    }
   }
 
   return (
