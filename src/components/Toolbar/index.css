@@ -14,6 +14,6 @@
   display: flex;
 }
 
-.toolbar__languages-actions > * {
+.toolbar__languages-actions > .toolbar__language {
   margin: 0 2px;
 }

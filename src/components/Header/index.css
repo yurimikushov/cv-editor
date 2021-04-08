@@ -12,12 +12,6 @@
   width: 20%;
 }
 
-.cv-header__title > * {
-  display: block;
-  margin: 5px 0;
-  color: var(--color-black);
-}
-
 .cv-header__name {
   font-size: 2rem;
   font-weight: bold;
@@ -25,4 +19,11 @@
 
 .cv-header__position {
   font-size: 1.7rem;
+}
+
+.cv-header__title > .cv-header__name,
+.cv-header__title > .cv-header__position {
+  display: block;
+  margin: 5px 0;
+  color: var(--color-black);
 }

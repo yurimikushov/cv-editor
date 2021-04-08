@@ -27,17 +27,17 @@ const Languages = () => {
         {t('Languages')}
       </div>
       <ul className='toolbar__languages-actions'>
-        <li className='toolbar__languages-en item item_3'>
+        <li className='toolbar__language item item_3'>
           <Button
-            className={'toolbar__languages-en-btn' + setActiveBtnClass('en')}
+            className={'toolbar__language-btn' + setActiveBtnClass('en')}
             title={t('EN')}
             onClick={() => changeLanguage('en')}
             tabIndex='-1'
           />
         </li>
-        <li className='toolbar__languages-ru item item_3'>
+        <li className='toolbar__language item item_3'>
           <Button
-            className={'toolbar__languages-ru-btn' + setActiveBtnClass('ru')}
+            className={'toolbar__language-btn' + setActiveBtnClass('ru')}
             title={t('RU')}
             onClick={() => changeLanguage('ru')}
             tabIndex='-1'

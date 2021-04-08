@@ -2,12 +2,15 @@
   position: relative;
 }
 
-.experience > *:not(button) {
-  margin: 5px 0;
-}
-
 .experience__description {
   width: 100%;
+}
+
+.experience > .experience__position,
+.experience > .experience__company,
+.experience > .experience__duration,
+.experience > .experience__description {
+  margin: 5px 0;
 }
 
 .experience__remove-btn {
