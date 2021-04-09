@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 import { fileToBase64 } from '../../../utils'
@@ -9,16 +9,24 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
   const avatarInputrRef = useRef()
   const { t } = useTranslation()
 
-  const uploadAvatarHandler = () => {
+  useEffect(() => {
     const { current: avatarInput } = avatarInputrRef
 
-    avatarInput.addEventListener('change', async () => {
+    const clickAvatarHandler = async () => {
       if (avatarInput.files && avatarInput.files[0]) {
         setAvatar(await fileToBase64(avatarInput.files[0]))
       }
-    })
+    }
 
-    avatarInput.click()
+    avatarInput.addEventListener('change', clickAvatarHandler)
+
+    return () => {
+      avatarInput.removeEventListener('change', clickAvatarHandler)
+    }
+  }, [])
+
+  const uploadAvatarHandler = () => {
+    avatarInputrRef.current.click()
   }
 
   const removeAvatarHandler = () => {
