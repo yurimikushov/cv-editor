@@ -10,6 +10,10 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
   const { t } = useTranslation()
 
   useEffect(() => {
+    if (!editable) {
+      return
+    }
+
     const { current: avatarInput } = avatarInputrRef
 
     const clickAvatarHandler = async () => {
