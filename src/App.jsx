@@ -3,9 +3,9 @@ import { observer } from 'mobx-react-lite'
 import {
   useUpdateAppTitle,
   useUpdateHtmlLangAttr,
-  useLoadAppData,
   useSaveAppData,
 } from './store'
+import { useLoadAppData } from './hooks'
 import Loader from './components/Common/Loader'
 import Toolbar from './components/Toolbar'
 import CV from './pages/CV'

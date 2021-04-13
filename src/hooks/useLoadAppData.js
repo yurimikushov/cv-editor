@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useStore } from '../StoreProvider'
+import { useStore } from '../store'
 import { useLoadCV } from './useLoadCV'
 import { useLoadAppProps } from './useLoadAppProps'
 

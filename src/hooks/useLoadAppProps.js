@@ -1,5 +1,5 @@
-import { useSetAppPropsToState } from './useSetAppPropsToState'
-import { getAppProps } from '../../api'
+import { getAppProps } from '../api'
+import { useSetAppPropsToState } from '../store'
 
 const useLoadAppProps = () => {
   const setAppProps = useSetAppPropsToState()

@@ -1,5 +1,5 @@
-import { useSetCVToState } from './useSetCVToState'
-import { getCV } from '../../api'
+import { getCV } from '../api'
+import { useSetCVToState } from '../store'
 
 const useLoadCV = () => {
   const setCV = useSetCVToState()
