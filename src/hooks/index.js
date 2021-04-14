@@ -1,2 +1,5 @@
 export { useLoadAppData } from './useLoadAppData'
 export { useLoadCV } from './useLoadCV'
+export { useLoadExampleCV } from './useLoadExampleCV'
+export { useSaveAppData } from './useSaveAppData'
+export { useSaveCV } from './useSaveCV'

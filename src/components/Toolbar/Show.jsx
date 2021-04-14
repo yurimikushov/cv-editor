@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { observer } from 'mobx-react-lite'
-import { useStore, useLoadExampleCV } from '../../store'
-import { useLoadCV } from '../../hooks'
+import { useStore } from '../../store'
+import { useLoadCV, useLoadExampleCV } from '../../hooks'
 import Button from '../Common/Button'
 
 const Show = () => {

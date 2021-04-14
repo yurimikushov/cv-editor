@@ -1,5 +1,5 @@
-import { useGetAppPropsFromState } from './useGetAppPropsFromState'
-import { saveAppProps } from '../../api'
+import { saveAppProps } from '../api'
+import { useGetAppPropsFromState } from '../store'
 
 const useSaveAppProps = () => {
   const getAppProps = useGetAppPropsFromState()

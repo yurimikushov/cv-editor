@@ -1,7 +1,6 @@
-import { useStore } from '../StoreProvider'
-import { useSetCVToState } from './useSetCVToState'
+import { getCVExample } from '../api'
+import { useStore, useSetCVToState } from '../store'
 import { useSaveCV } from './useSaveCV'
-import { getCVExample } from '../../api'
 
 const useLoadExampleCV = () => {
   const { appProps } = useStore()
