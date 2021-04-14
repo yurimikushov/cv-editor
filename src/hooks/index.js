@@ -1,3 +1,5 @@
+export { useUpdateAppTitle } from './useUpdateAppTitle'
+export { useUpdateHtmlLangAttr } from './useUpdateHtmlLangAttr'
 export { useLoadAppData } from './useLoadAppData'
 export { useLoadCV } from './useLoadCV'
 export { useLoadExampleCV } from './useLoadExampleCV'

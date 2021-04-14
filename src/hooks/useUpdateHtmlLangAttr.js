@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { reaction } from 'mobx'
-import { useStore } from '../../store'
+import { useStore } from '../store'
 
 const useUpdateHtmlLangAttr = () => {
   const { appProps } = useStore()

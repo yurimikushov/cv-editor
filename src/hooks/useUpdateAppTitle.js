@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useStore } from '../StoreProvider'
+import { useStore } from '../store'
 
 const useUpdateAppTitle = () => {
   const { appProps, aboutMe } = useStore()

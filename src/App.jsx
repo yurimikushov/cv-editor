@@ -1,7 +1,11 @@
 import React, { Suspense } from 'react'
 import { observer } from 'mobx-react-lite'
-import { useUpdateAppTitle, useUpdateHtmlLangAttr } from './store'
-import { useLoadAppData, useSaveAppData } from './hooks'
+import {
+  useUpdateAppTitle,
+  useUpdateHtmlLangAttr,
+  useLoadAppData,
+  useSaveAppData,
+} from './hooks'
 import Loader from './components/Common/Loader'
 import Toolbar from './components/Toolbar'
 import CV from './pages/CV'
