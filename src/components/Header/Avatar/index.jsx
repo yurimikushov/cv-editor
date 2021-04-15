@@ -27,7 +27,7 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
     return () => {
       avatarInput.removeEventListener('change', clickAvatarHandler)
     }
-  }, [])
+  }, [avatarInputrRef.current])
 
   const uploadAvatarHandler = () => {
     avatarInputrRef.current.click()
