@@ -13,20 +13,22 @@ const Show = () => {
 
   const prevEditableRef = useRef(appProps.editable)
 
-  const showExampleCVHandler = () => {
+  const showExampleCVHandler = async () => {
     prevEditableRef.current = appProps.editable
 
     if (appProps.editable) {
       appProps.toggleEditable()
     }
 
-    loadExampleCV()
+    await loadExampleCV()
+
     appProps.toggleShowExampleCV()
   }
 
-  const showMyCVHandler = () => {
-    loadCV()
+  const showMyCVHandler = async () => {
     appProps.toggleShowExampleCV()
+
+    await loadCV()
 
     if (prevEditableRef.current !== appProps.editable) {
       appProps.toggleEditable()
