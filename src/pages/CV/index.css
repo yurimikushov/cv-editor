@@ -26,3 +26,9 @@
   color: var(--color-black);
   font-size: 1.5rem;
 }
+
+@media print {
+  .toolbar {
+    display: none;
+  }
+}
