@@ -16,16 +16,16 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
       return
     }
 
-    const clickAvatarHandler = async () => {
+    const avatarChangeHandler = async () => {
       if (avatarInput.files && avatarInput.files[0]) {
         setAvatar(await fileToBase64(avatarInput.files[0]))
       }
     }
 
-    avatarInput.addEventListener('change', clickAvatarHandler)
+    avatarInput.addEventListener('change', avatarChangeHandler)
 
     return () => {
-      avatarInput.removeEventListener('change', clickAvatarHandler)
+      avatarInput.removeEventListener('change', avatarChangeHandler)
     }
   }, [editable])
 
