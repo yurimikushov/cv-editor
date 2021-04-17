@@ -10,11 +10,11 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
   const { t } = useTranslation()
 
   useEffect(() => {
-    if (!editable) {
+    const { current: avatarInput } = avatarInputrRef
+
+    if (!avatarInput) {
       return
     }
-
-    const { current: avatarInput } = avatarInputrRef
 
     const clickAvatarHandler = async () => {
       if (avatarInput.files && avatarInput.files[0]) {
@@ -27,7 +27,7 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
     return () => {
       avatarInput.removeEventListener('change', clickAvatarHandler)
     }
-  }, [avatarInputrRef.current])
+  }, [editable])
 
   const uploadAvatarHandler = () => {
     avatarInputrRef.current.click()
