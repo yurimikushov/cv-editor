@@ -35,7 +35,7 @@
   height: var(--avatar-size);
   border-radius: 50%;
   color: var(--color-gray-3);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   opacity: 0;
   transform: translate(-50%, -50%);
   transition: opacity 0.3s;
@@ -47,15 +47,15 @@
 
 .avatar__remove-btn {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 15px;
-  height: 15px;
+  top: 0.2rem;
+  right: 0.2rem;
+  width: 1.3rem;
+  height: 1.3rem;
   background: var(--color-white);
   border-radius: 50%;
   box-shadow: 0 1px 3px 0 var(--color-gray-0);
   color: var(--color-gray-3);
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   opacity: 0;
   transition: opacity 0.3s;
 }

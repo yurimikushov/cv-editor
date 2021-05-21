@@ -13,6 +13,7 @@
 
 .contact__remove-btn {
   position: absolute;
-  top: 0.5rem;
+  top: 0.35rem;
   right: 0.7rem;
+  font-size: 1.3rem;
 }

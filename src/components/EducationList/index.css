@@ -10,8 +10,9 @@
 
 .education__remove-btn {
   position: absolute;
-  top: 0.3rem;
+  top: 0.2rem;
   right: 0.5rem;
+  font-size: 1.3rem;
 }
 
 .educations__add-btn {
