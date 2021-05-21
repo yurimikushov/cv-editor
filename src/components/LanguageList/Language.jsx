@@ -21,7 +21,7 @@ const Language = ({ editable, language, removeLanguage }) => {
       {editable && (
         <Button
           className='language__remove-btn'
-          title='x'
+          title={'\u00D7'}
           onClick={() => removeLanguage(language.id)}
         />
       )}

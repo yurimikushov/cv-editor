@@ -46,7 +46,7 @@ const Experience = ({ editable, experience, removeExperience }) => {
       {editable && (
         <Button
           className='experience__remove-btn'
-          title='x'
+          title={'\u00D7'}
           onClick={() => removeExperience(experience.id)}
         />
       )}

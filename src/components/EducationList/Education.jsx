@@ -35,7 +35,7 @@ const Education = ({ editable, education, removeEducation }) => {
       {editable && (
         <Button
           className='education__remove-btn'
-          title='x'
+          title={'\u00D7'}
           onClick={() => removeEducation(education.id)}
         />
       )}

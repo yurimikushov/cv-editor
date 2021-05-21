@@ -26,7 +26,7 @@ const Contact = ({ editable, contact, removeContact }) => {
           />
           <Button
             className='contact__remove-btn'
-            title='x'
+            title={'\u00D7'}
             onClick={() => removeContact(contact.id)}
           />
         </>

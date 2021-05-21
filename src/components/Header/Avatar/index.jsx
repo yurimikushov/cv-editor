@@ -50,7 +50,7 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
         <>
           <Button
             className='avatar__upload-btn'
-            title='+'
+            title={'\u002B'}
             onClick={uploadAvatarHandler}
             tabIndex='-1'
           />
@@ -64,7 +64,7 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
           {src && (
             <Button
               className='avatar__remove-btn'
-              title='x'
+              title={'\u00D7'}
               onClick={removeAvatarHandler}
               tabIndex='-1'
             />
