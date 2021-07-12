@@ -14,7 +14,7 @@ import TechnologyList from '../../components/TechnologyList'
 import LanguageList from '../../components/LanguageList'
 import './index.css'
 
-const CV = () => {
+const CVPage = () => {
   const {
     appProps: { isCVLoading, showExampleCV },
   } = useStore()
@@ -47,4 +47,4 @@ const CV = () => {
   )
 }
 
-export default observer(CV)
+export default observer(CVPage)

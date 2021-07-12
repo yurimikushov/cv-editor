@@ -8,7 +8,7 @@ import {
 } from './hooks'
 import Loader from './components/Common/Loader'
 import Toolbar from './components/Toolbar'
-import CV from './pages/CV'
+import CVPage from './pages/CV'
 import './App.css'
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
   return (
     <Suspense fallback={<Loader className='app-loader' />}>
       <Toolbar />
-      <CV />
+      <CVPage />
     </Suspense>
   )
 }
