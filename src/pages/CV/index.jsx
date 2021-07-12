@@ -4,7 +4,8 @@ import { useStore } from '../../store'
 import TopLine from '../../components/TopLine'
 import Loader from '../../components/Common/Loader'
 import EditButton from '../../components/EditButton'
-import Header from '../../components/Header'
+import Title from '../../components/Title'
+import Avatar from '../../components/Avatar'
 import AboutMe from '../../components/AboutMe'
 import ExperienceList from '../../components/ExperienceList'
 import EducationList from '../../components/EducationList'
@@ -14,31 +15,32 @@ import LanguageList from '../../components/LanguageList'
 import './index.css'
 
 const CV = () => {
-  const { appProps } = useStore()
+  const {
+    appProps: { isCVLoading, showExampleCV },
+  } = useStore()
 
-  if (appProps.isCVLoading) {
+  if (isCVLoading) {
     return <Loader className='cv-loader' />
   }
 
   return (
     <>
       <TopLine />
-      {!appProps.showExampleCV && <EditButton />}
+      {!showExampleCV && <EditButton />}
       <div className='cv-wrapper'>
         <div className='cv'>
-          <Header />
-          <main className='cv-body'>
-            <div className='cv-main-info'>
-              <AboutMe />
-              <ExperienceList />
-              <EducationList />
-            </div>
-            <div className='cv-another-info'>
-              <ContactList />
-              <TechnologyList />
-              <LanguageList />
-            </div>
+          <Title className='cv__title' />
+          <Avatar className='cv__avatar' />
+          <main className='cv__main'>
+            <AboutMe />
+            <ExperienceList />
+            <EducationList />
           </main>
+          <aside className='cv__aside'>
+            <ContactList />
+            <TechnologyList />
+            <LanguageList />
+          </aside>
         </div>
       </div>
     </>

@@ -1,16 +1,26 @@
 import React, { useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
+import { observer } from 'mobx-react-lite'
+import { useStore } from '../../store'
 import { useTranslation } from 'react-i18next'
-import { fileToBase64 } from '../../../utils'
-import Button from '../../Common/Button'
+import { fileToBase64 } from '../../utils'
+import Button from '../Common/Button'
 import './index.css'
 
-const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
-  const avatarInputrRef = useRef()
+const DEFAULT_PLACEHOLDER = '/img/avatar-placeholder-100x100.png'
+
+const Avatar = ({ className }) => {
+  const {
+    appProps: { editable },
+    avatar: { avatar, setAvatar, removeAvatar },
+  } = useStore()
+
+  const avatarInputRef = useRef()
   const { t } = useTranslation()
 
   useEffect(() => {
-    const { current: avatarInput } = avatarInputrRef
+    const { current: avatarInput } = avatarInputRef
 
     if (!avatarInput) {
       return
@@ -30,7 +40,7 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
   }, [editable])
 
   const uploadAvatarHandler = () => {
-    avatarInputrRef.current.click()
+    avatarInputRef.current.click()
   }
 
   const removeAvatarHandler = () => {
@@ -40,10 +50,10 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
   }
 
   return (
-    <div className='avatar' data-editable={editable}>
+    <div className={cn(className, 'avatar')} data-editable={editable}>
       <img
         className='avatar__presenter'
-        src={src || '/img/avatar-placeholder-100x100.png'}
+        src={avatar || DEFAULT_PLACEHOLDER}
         alt='Avatar'
       />
       {editable && (
@@ -55,13 +65,13 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
             tabIndex='-1'
           />
           <input
-            ref={avatarInputrRef}
+            ref={avatarInputRef}
             className='avatar__input'
             type='file'
             accept='.png, .jpg, .jpeg'
             style={{ display: 'none' }}
           />
-          {src && (
+          {avatar && (
             <Button
               className='avatar__remove-btn'
               title={'\u00D7'}
@@ -76,10 +86,7 @@ const Avatar = ({ editable, src, setAvatar, removeAvatar }) => {
 }
 
 Avatar.propTypes = {
-  editable: PropTypes.bool.isRequired,
-  src: PropTypes.string.isRequired,
-  setAvatar: PropTypes.func.isRequired,
-  removeAvatar: PropTypes.func.isRequired,
+  className: PropTypes.string,
 }
 
-export default Avatar
+export default observer(Avatar)

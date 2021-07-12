@@ -1,21 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
+import { observer } from 'mobx-react-lite'
+import { useStore } from '../../store'
 import { useTranslation } from 'react-i18next'
 import InputField from '../Common/InputField'
+import './index.css'
 
-const HeaderTitle = ({
-  editable,
-  fullName,
-  position,
-  setFullName,
-  setPosition,
-}) => {
+const Title = ({ className }) => {
+  const {
+    appProps: { editable },
+    aboutMe: { fullName, position, setFullName, setPosition },
+  } = useStore()
+
   const { t } = useTranslation()
 
   return (
-    <div className='cv-header__title'>
+    <div className={cn(className, 'title')}>
       <InputField
-        className='cv-header__name'
+        className='title__name'
         value={fullName}
         onChange={(e) => setFullName(e.target.value)}
         readOnly={!editable}
@@ -23,7 +26,7 @@ const HeaderTitle = ({
         autoFocus={true}
       />
       <InputField
-        className='cv-header__position'
+        className='title__position'
         value={position}
         onChange={(e) => setPosition(e.target.value)}
         readOnly={!editable}
@@ -33,12 +36,8 @@ const HeaderTitle = ({
   )
 }
 
-HeaderTitle.propTypes = {
-  editable: PropTypes.bool.isRequired,
-  fullName: PropTypes.string.isRequired,
-  position: PropTypes.string.isRequired,
-  setFullName: PropTypes.func.isRequired,
-  setPosition: PropTypes.func.isRequired,
+Title.propTypes = {
+  className: PropTypes.string,
 }
 
-export default HeaderTitle
+export default observer(Title)

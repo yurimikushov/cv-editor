@@ -2,18 +2,29 @@
   padding: 50px;
 }
 
-.cv-body {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
+.cv {
+  display: grid;
+  gap: 40px;
+  grid-template-areas:
+    'title avatar'
+    'main aside';
+  grid-template-columns: 1fr 150px;
 }
 
-.cv-main-info {
-  width: 70%;
+.cv__title {
+  grid-area: title;
 }
 
-.cv-another-info {
-  width: 20%;
+.cv__avatar {
+  grid-area: avatar;
+}
+
+.cv__main {
+  grid-area: main;
+}
+
+.cv__aside {
+  grid-area: aside;
 }
 
 .cv-loader {

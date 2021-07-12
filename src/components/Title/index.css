@@ -1,0 +1,15 @@
+.title__name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.title__position {
+  font-size: 1.7rem;
+}
+
+.title__name,
+.title__position {
+  display: block;
+  margin: 5px 0;
+  color: var(--color-black);
+}
