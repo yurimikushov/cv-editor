@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react'
-import { observer } from 'mobx-react-lite'
 import {
   useUpdateAppTitle,
   useUpdateHtmlLangAttr,
@@ -23,4 +22,4 @@ const App = () => {
   )
 }
 
-export default observer(App)
+export default App
