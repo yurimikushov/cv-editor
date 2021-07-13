@@ -4,12 +4,6 @@
   border-radius: 3px;
 }
 
-.toolbar_position-tr {
-  position: absolute;
-  top: 20px;
-  left: calc(var(--page-width) + 30px);
-}
-
 .toolbar__languages-actions {
   display: flex;
 }

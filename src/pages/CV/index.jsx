@@ -1,6 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '../../store'
+import Layout from '../../layouts/Layout'
 import TopLine from '../../components/TopLine'
 import Loader from '../../components/Common/Loader'
 import EditButton from '../../components/EditButton'
@@ -24,7 +25,7 @@ const CVPage = () => {
   }
 
   return (
-    <>
+    <Layout>
       <TopLine />
       {!showExampleCV && <EditButton />}
       <div className='cv-wrapper'>
@@ -43,7 +44,7 @@ const CVPage = () => {
           </aside>
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 

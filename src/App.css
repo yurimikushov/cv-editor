@@ -1,17 +1,9 @@
-.app {
-  position: relative;
-  width: var(--page-width);
-  min-height: var(--page-min-height);
-  margin: 10px auto;
-  background-color: var(--color-white);
-}
-
 .app-loader {
   position: fixed;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
   background: var(--color-white);
   color: var(--color-black);
   font-size: 1.5rem;

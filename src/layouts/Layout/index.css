@@ -1,0 +1,15 @@
+.layout {
+  --page-width: 750px;
+
+  position: relative;
+  width: var(--page-width);
+  min-height: 900px;
+  margin: 10px auto;
+  background-color: var(--color-white);
+}
+
+.toolbar_tr {
+  position: absolute;
+  top: 20px;
+  left: calc(var(--page-width) + 30px);
+}

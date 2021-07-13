@@ -7,7 +7,6 @@ import {
   useSaveAppData,
 } from './hooks'
 import Loader from './components/Common/Loader'
-import Toolbar from './components/Toolbar'
 import CVPage from './pages/CV'
 import './App.css'
 
@@ -19,7 +18,6 @@ const App = () => {
 
   return (
     <Suspense fallback={<Loader className='app-loader' />}>
-      <Toolbar />
       <CVPage />
     </Suspense>
   )
