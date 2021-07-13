@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '../../store'
@@ -11,10 +11,10 @@ const Show = () => {
   const loadExampleCV = useLoadExampleCV()
   const { t } = useTranslation()
 
-  const prevEditableRef = useRef(appProps.editable)
-
   const showExampleCVHandler = async () => {
-    prevEditableRef.current = appProps.editable
+    window.__toolbar__ = {
+      prevEditable: appProps.editable,
+    }
 
     if (appProps.editable) {
       appProps.toggleEditable()
@@ -30,7 +30,7 @@ const Show = () => {
 
     await loadCV()
 
-    if (prevEditableRef.current !== appProps.editable) {
+    if (window.__toolbar__.prevEditable !== appProps.editable) {
       appProps.toggleEditable()
     }
   }
