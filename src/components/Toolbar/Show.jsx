@@ -37,30 +37,17 @@ const Show = () => {
 
   return (
     <div className='toolbar__show item item_2'>
-      <div className='toolbar__show-title title title_3 item item_3'>
+      <span className='toolbar__show-title title title_3 item item_3'>
         {t('Show')}
-      </div>
-      <ul className='toolbar__show-actions'>
-        {appProps.showExampleCV ? (
-          <li className='toolbar__show-my-cv item item_3'>
-            <Button
-              className='toolbar__show-my-cv-btn'
-              title={t('My CV')}
-              onClick={showMyCVHandler}
-              tabIndex='-1'
-            />
-          </li>
-        ) : (
-          <li className='toolbar__show-example-cv item item_3'>
-            <Button
-              className='toolbar__show-example-cv-btn'
-              title={t('Example')}
-              onClick={showExampleCVHandler}
-              tabIndex='-1'
-            />
-          </li>
-        )}
-      </ul>
+      </span>
+      <Button
+        className='toolbar__show-btn'
+        title={appProps.showExampleCV ? t('My CV') : t('Example')}
+        onClick={
+          appProps.showExampleCV ? showMyCVHandler : showExampleCVHandler
+        }
+        tabIndex='-1'
+      />
     </div>
   )
 }
