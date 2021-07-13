@@ -27,7 +27,7 @@ const CVPage = () => {
   return (
     <Layout>
       <TopLine />
-      {!showExampleCV && <EditButton />}
+      {!showExampleCV && <EditButton className='edit-btn_tr' />}
       <div className='cv-wrapper'>
         <div className='cv'>
           <Title className='cv__title' />
