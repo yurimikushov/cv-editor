@@ -1,4 +1,6 @@
 .avatar {
+  --avatar-size: 72px;
+
   position: relative;
   width: var(--avatar-size);
   height: var(--avatar-size);
