@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import cn from 'classnames'
 import { useTranslation } from 'react-i18next'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '../../store'
@@ -17,19 +18,17 @@ const Languages = () => {
     appProps.setLang(lang)
   }
 
-  const setActiveBtnClass = (lang) => {
-    return appProps.lang === lang ? ' active-btn' : ''
-  }
-
   return (
     <div className='toolbar__languages item item_2'>
-      <div className='toolbar__languages-title title title_3 item item_3'>
+      <span className='toolbar__languages-title title title_3 item item_3'>
         {t('Languages')}
-      </div>
+      </span>
       <ul className='toolbar__languages-actions'>
         <li className='toolbar__language item item_3'>
           <Button
-            className={'toolbar__language-btn' + setActiveBtnClass('en')}
+            className={cn('toolbar__language-btn', {
+              'active-btn': appProps.lang === 'en',
+            })}
             title={t('EN')}
             onClick={() => changeLanguage('en')}
             tabIndex='-1'
@@ -37,7 +36,9 @@ const Languages = () => {
         </li>
         <li className='toolbar__language item item_3'>
           <Button
-            className={'toolbar__language-btn' + setActiveBtnClass('ru')}
+            className={cn('toolbar__language-btn', {
+              'active-btn': appProps.lang === 'ru',
+            })}
             title={t('RU')}
             onClick={() => changeLanguage('ru')}
             tabIndex='-1'
