@@ -55,9 +55,3 @@ textarea:not([readonly]):focus {
   box-shadow: 0 0 4px 0 var(--color-gray-1);
   outline: none;
 }
-
-.flex-center-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

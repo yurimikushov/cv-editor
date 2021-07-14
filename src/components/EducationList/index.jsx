@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '../../store'
 import Education from './Education'
-import Button from '../Common/Button'
+import AddButton from '../Common/AddButton'
 
 const EducationList = () => {
   const { appProps, educationList } = useStore()
@@ -23,11 +23,7 @@ const EducationList = () => {
         />
       ))}
       {appProps.editable && (
-        <Button
-          className='educations__add-btn flex-center-center'
-          title={t('Add')}
-          onClick={() => educationList.addEducation()}
-        />
+        <AddButton onClick={() => educationList.addEducation()} />
       )}
     </div>
   )

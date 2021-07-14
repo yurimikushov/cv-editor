@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '../../store'
 import Contact from './Contact'
-import Button from '../Common/Button'
+import AddButton from '../Common/AddButton'
 import './index.css'
 
 const ContactList = () => {
@@ -22,11 +22,7 @@ const ContactList = () => {
         />
       ))}
       {appProps.editable && (
-        <Button
-          className='contacts__add-btn flex-center-center'
-          title={t('Add')}
-          onClick={() => contactList.addContact()}
-        />
+        <AddButton onClick={() => contactList.addContact()} />
       )}
     </div>
   )

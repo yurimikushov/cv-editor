@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '../../store'
 import Language from './Language'
-import Button from '../Common/Button'
+import AddButton from '../Common/AddButton'
 import './index.css'
 
 const LanguageList = () => {
@@ -24,11 +24,7 @@ const LanguageList = () => {
         />
       ))}
       {appProps.editable && (
-        <Button
-          className='languages__add-btn flex-center-center'
-          title={t('Add')}
-          onClick={() => languageList.addLanguage()}
-        />
+        <AddButton onClick={() => languageList.addLanguage()} />
       )}
     </div>
   )
