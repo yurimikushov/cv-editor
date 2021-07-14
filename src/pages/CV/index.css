@@ -14,7 +14,7 @@
   grid-template-areas:
     'title avatar'
     'main aside';
-  grid-template-columns: 1fr 150px;
+  grid-template-columns: minmax(auto, 460px) 150px;
 }
 
 .cv__title {
