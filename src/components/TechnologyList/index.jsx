@@ -10,8 +10,8 @@ const TechnologyList = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='technologies item item_1'>
-      <div className='technologies__title title t-4 item item_3'>
+    <div className='technologies item i-1'>
+      <div className='technologies__title title t-4 item i-3'>
         {t('Technologies')}
       </div>
       <MultilineInputField

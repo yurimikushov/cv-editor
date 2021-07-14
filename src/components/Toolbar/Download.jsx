@@ -24,12 +24,12 @@ const Download = () => {
   }
 
   return (
-    <div className='toolbar__download item item_2'>
-      <div className='toolbar__download-title title t-4 item item_3'>
+    <div className='toolbar__download item i-2'>
+      <div className='toolbar__download-title title t-4 item i-3'>
         {t('Download')}
       </div>
       <ul className='toolbar__download-actions'>
-        <li className='toolbar__download-pdf item item_3'>
+        <li className='toolbar__download-pdf item i-3'>
           <Button
             className='toolbar__download-pdf-btn'
             title={t('PDF')}

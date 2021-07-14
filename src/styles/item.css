@@ -1,11 +1,11 @@
-.item.item_1 + .item.item_1 {
+.item.i-1 + .item.i-1 {
   margin-top: 14px;
 }
 
-.item.item_2 + .item.item_2 {
+.item.i-2 + .item.i-2 {
   margin-top: 10px;
 }
 
-.item.item_3 + .item.item_3 {
+.item.i-3 + .item.i-3 {
   margin-top: 4px;
 }

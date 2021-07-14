@@ -10,7 +10,7 @@ const AboutMe = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='about-me item item_1'>
+    <div className='about-me item i-1'>
       <MultilineInputField
         className='about-me__description title t-3'
         value={aboutMe.description}

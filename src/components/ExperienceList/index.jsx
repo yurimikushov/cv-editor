@@ -10,8 +10,8 @@ const ExperienceList = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='experiences item item_1'>
-      <div className='experiences___title title t-1 item item_2'>
+    <div className='experiences item i-1'>
+      <div className='experiences___title title t-1 item i-2'>
         {t('Experience')}
       </div>
       {experienceList.experiences.map((experience) => (

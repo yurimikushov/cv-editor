@@ -9,7 +9,7 @@ const Language = ({ editable, language, removeLanguage }) => {
   const { t } = useTranslation()
 
   return (
-    <div className='language item item_3'>
+    <div className='language item i-3'>
       <InputField
         className='language__title title t-5'
         value={language.language}

@@ -10,8 +10,8 @@ const EducationList = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='educations item item_1'>
-      <div className='educations__title title t-1 item item_2'>
+    <div className='educations item i-1'>
+      <div className='educations__title title t-1 item i-2'>
         {t('Education')}
       </div>
       {educationList.educations.map((education) => (

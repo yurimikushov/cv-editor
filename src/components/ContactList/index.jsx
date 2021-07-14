@@ -11,10 +11,8 @@ const ContactList = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='contacts item item_1'>
-      <div className='contacts__title title t-4 item item_3'>
-        {t('Contacts')}
-      </div>
+    <div className='contacts item i-1'>
+      <div className='contacts__title title t-4 item i-3'>{t('Contacts')}</div>
       {contactList.contacts.map((contact) => (
         <Contact
           key={contact.id}

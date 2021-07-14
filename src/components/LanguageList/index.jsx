@@ -11,8 +11,8 @@ const LanguageList = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='languages item item_1'>
-      <div className='languages__title title t-4 item item_3'>
+    <div className='languages item i-1'>
+      <div className='languages__title title t-4 item i-3'>
         {t('Languages')}
       </div>
       {languageList.languages.map((language) => (

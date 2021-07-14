@@ -36,8 +36,8 @@ const Show = () => {
   }
 
   return (
-    <div className='toolbar__show item item_2'>
-      <span className='toolbar__show-title title t-4 item item_3'>
+    <div className='toolbar__show item i-2'>
+      <span className='toolbar__show-title title t-4 item i-3'>
         {t('Show')}
       </span>
       <Button
