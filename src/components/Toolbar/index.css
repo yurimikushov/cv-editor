@@ -8,6 +8,6 @@
   display: flex;
 }
 
-.toolbar__languages-actions > .toolbar__language {
-  margin: 0 2px;
+.toolbar__language + .toolbar__language {
+  margin-left: 5px;
 }
