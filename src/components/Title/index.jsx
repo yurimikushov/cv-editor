@@ -18,7 +18,7 @@ const Title = ({ className }) => {
   return (
     <div className={cn(className, 'title')}>
       <InputField
-        className='title__name'
+        className='title__name item i-1'
         value={fullName}
         onChange={(e) => setFullName(e.target.value)}
         readOnly={!editable}
@@ -26,7 +26,7 @@ const Title = ({ className }) => {
         autoFocus={true}
       />
       <InputField
-        className='title__position'
+        className='title__position item i-1'
         value={position}
         onChange={(e) => setPosition(e.target.value)}
         readOnly={!editable}
