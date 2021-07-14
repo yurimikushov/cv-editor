@@ -4,11 +4,11 @@
   transition: box-shadow 0.2s ease-out;
 }
 
-.card[data-editable=true].card_1 {
+.card[data-editable=true].c-1 {
   padding: 3px 7px;
 }
 
-.card[data-editable=true].card_2 {
+.card[data-editable=true].c-2 {
   padding: 2px 4px;
 }
 

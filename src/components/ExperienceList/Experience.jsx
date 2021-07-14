@@ -11,10 +11,7 @@ const Experience = ({ editable, experience, removeExperience }) => {
   const { t } = useTranslation()
 
   return (
-    <div
-      className='experience card card_1 item item_2'
-      data-editable={editable}
-    >
+    <div className='experience card c-1 item item_2' data-editable={editable}>
       <InputField
         className='experience__position title t-2'
         value={experience.position}

@@ -10,7 +10,7 @@ const Education = ({ editable, education, removeEducation }) => {
   const { t } = useTranslation()
 
   return (
-    <div className='education card card_1 item item_2' data-editable={editable}>
+    <div className='education card c-1 item item_2' data-editable={editable}>
       <InputField
         className='education__degree title t-2'
         value={education.degree}

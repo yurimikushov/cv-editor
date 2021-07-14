@@ -9,7 +9,7 @@ const Contact = ({ editable, contact, removeContact }) => {
   const { t } = useTranslation()
 
   return (
-    <div className='contact card card_2 item item_3' data-editable={editable}>
+    <div className='contact card c-2 item item_3' data-editable={editable}>
       {editable ? (
         <>
           <InputField
