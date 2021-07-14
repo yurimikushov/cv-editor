@@ -12,7 +12,7 @@ const LanguageList = () => {
 
   return (
     <div className='languages item item_1'>
-      <div className='languages__title title title_3 item item_3'>
+      <div className='languages__title title t-4 item item_3'>
         {t('Languages')}
       </div>
       {languageList.languages.map((language) => (

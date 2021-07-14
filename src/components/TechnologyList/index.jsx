@@ -11,11 +11,11 @@ const TechnologyList = () => {
 
   return (
     <div className='technologies item item_1'>
-      <div className='technologies__title title title_3 item item_3'>
+      <div className='technologies__title title t-4 item item_3'>
         {t('Technologies')}
       </div>
       <MultilineInputField
-        className='technologies__list title title_4'
+        className='technologies__list title t-5'
         value={technologyList.technologies}
         onChange={(e) => technologyList.setTechnologies(e.target.value)}
         placeholder={t('Technology stack')}

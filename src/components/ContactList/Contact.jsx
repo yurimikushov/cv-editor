@@ -13,13 +13,13 @@ const Contact = ({ editable, contact, removeContact }) => {
       {editable ? (
         <>
           <InputField
-            className='contact__title title title_4'
+            className='contact__title title t-5'
             value={contact.title}
             placeholder={t('Text')}
             onChange={(e) => contact.setTitle(e.target.value)}
           />
           <InputField
-            className='contact__href title title_4'
+            className='contact__href title t-5'
             value={contact.href}
             placeholder={t('Ref')}
             onChange={(e) => contact.setHref(e.target.value)}
@@ -32,7 +32,7 @@ const Contact = ({ editable, contact, removeContact }) => {
         </>
       ) : (
         <a
-          className='contact__title title title_4'
+          className='contact__title title t-5'
           href={contact.href}
           target='_blank'
           rel='noreferrer'

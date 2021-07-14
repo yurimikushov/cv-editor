@@ -16,28 +16,28 @@ const Experience = ({ editable, experience, removeExperience }) => {
       data-editable={editable}
     >
       <InputField
-        className='experience__position title title_1'
+        className='experience__position title t-2'
         value={experience.position}
         onChange={(e) => experience.setPosition(e.target.value)}
         placeholder={t('Position')}
         readOnly={!editable}
       />
       <InputField
-        className='experience__company title title_2'
+        className='experience__company title t-3'
         value={experience.company}
         onChange={(e) => experience.setCompany(e.target.value)}
         placeholder={t('Company')}
         readOnly={!editable}
       />
       <InputField
-        className='experience__duration title title_5'
+        className='experience__duration title t-6'
         value={experience.duration}
         onChange={(e) => experience.setDuration(e.target.value)}
         placeholder={t('Experience duration')}
         readOnly={!editable}
       />
       <MultilineInputField
-        className='experience__description title title_2'
+        className='experience__description title t-3'
         value={experience.description}
         onChange={(e) => experience.setDescription(e.target.value)}
         placeholder={t('Experience description')}

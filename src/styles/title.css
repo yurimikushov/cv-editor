@@ -6,36 +6,36 @@
   line-height: 1.4rem;
 }
 
-.title.title_0 {
+.title.t-1 {
   color: var(--color-gray-3);
   font-size: 0.7rem;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
 }
 
-.title.title_1 {
+.title.t-2 {
   font-weight: bold;
   letter-spacing: 0.07rem;
 }
 
-.title.title_2 {
+.title.t-3 {
   font-size: 1rem;
   font-weight: 100;
 }
 
-.title.title_3 {
+.title.t-4 {
   color: var(--color-gray-3);
   font-size: 0.92rem;
   font-weight: 700;
 }
 
-.title.title_4 {
+.title.t-5 {
   color: var(--color-gray-3);
   font-size: 0.85rem;
   line-height: 1.2rem;
 }
 
-.title.title_5 {
+.title.t-6 {
   color: var(--color-gray-3);
   font-size: 0.77rem;
   font-weight: 100;

@@ -11,7 +11,7 @@ const Language = ({ editable, language, removeLanguage }) => {
   return (
     <div className='language item item_3'>
       <InputField
-        className='language__title title title_4'
+        className='language__title title t-5'
         value={language.language}
         onChange={(e) => language.setLanguage(e.target.value)}
         placeholder={t('Language')}

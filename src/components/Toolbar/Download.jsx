@@ -25,7 +25,7 @@ const Download = () => {
 
   return (
     <div className='toolbar__download item item_2'>
-      <div className='toolbar__download-title title title_3 item item_3'>
+      <div className='toolbar__download-title title t-4 item item_3'>
         {t('Download')}
       </div>
       <ul className='toolbar__download-actions'>

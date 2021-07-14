@@ -12,7 +12,7 @@ const ContactList = () => {
 
   return (
     <div className='contacts item item_1'>
-      <div className='contacts__title title title_3 item item_3'>
+      <div className='contacts__title title t-4 item item_3'>
         {t('Contacts')}
       </div>
       {contactList.contacts.map((contact) => (

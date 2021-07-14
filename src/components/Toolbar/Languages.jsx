@@ -20,7 +20,7 @@ const Languages = () => {
 
   return (
     <div className='toolbar__languages item item_2'>
-      <span className='toolbar__languages-title title title_3 item item_3'>
+      <span className='toolbar__languages-title title t-4 item item_3'>
         {t('Languages')}
       </span>
       <ul className='toolbar__languages-actions'>

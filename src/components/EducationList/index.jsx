@@ -11,7 +11,7 @@ const EducationList = () => {
 
   return (
     <div className='educations item item_1'>
-      <div className='educations__title title title_0 item item_2'>
+      <div className='educations__title title t-1 item item_2'>
         {t('Education')}
       </div>
       {educationList.educations.map((education) => (

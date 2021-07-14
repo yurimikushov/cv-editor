@@ -11,7 +11,7 @@ const ExperienceList = () => {
 
   return (
     <div className='experiences item item_1'>
-      <div className='experiences___title title title_0 item item_2'>
+      <div className='experiences___title title t-1 item item_2'>
         {t('Experience')}
       </div>
       {experienceList.experiences.map((experience) => (

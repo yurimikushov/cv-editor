@@ -12,21 +12,21 @@ const Education = ({ editable, education, removeEducation }) => {
   return (
     <div className='education card card_1 item item_2' data-editable={editable}>
       <InputField
-        className='education__degree title title_1'
+        className='education__degree title t-2'
         value={education.degree}
         onChange={(e) => education.setDegree(e.target.value)}
         placeholder={t('Degree')}
         readOnly={!editable}
       />
       <InputField
-        className='education__university title title_2'
+        className='education__university title t-3'
         value={education.university}
         onChange={(e) => education.setUniversity(e.target.value)}
         placeholder={t('University')}
         readOnly={!editable}
       />
       <InputField
-        className='education__duration title title_5'
+        className='education__duration title t-6'
         value={education.duration}
         onChange={(e) => education.setDuration(e.target.value)}
         placeholder={t('Education duration')}
