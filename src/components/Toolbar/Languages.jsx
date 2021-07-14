@@ -20,11 +20,11 @@ const Languages = () => {
 
   return (
     <div className='toolbar__languages item i-2'>
-      <span className='toolbar__languages-title title t-4 item i-3'>
+      <span className='toolbar__languages-title title t-4'>
         {t('Languages')}
       </span>
       <ul className='toolbar__languages-actions'>
-        <li className='toolbar__language item i-3'>
+        <li className='toolbar__language'>
           <Button
             className={cn('toolbar__language-btn', {
               'active-btn': appProps.lang === 'en',
@@ -34,7 +34,7 @@ const Languages = () => {
             tabIndex='-1'
           />
         </li>
-        <li className='toolbar__language item i-3'>
+        <li className='toolbar__language'>
           <Button
             className={cn('toolbar__language-btn', {
               'active-btn': appProps.lang === 'ru',
