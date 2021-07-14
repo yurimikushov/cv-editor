@@ -36,8 +36,7 @@ button {
   fill: var(--color-gray-3);
 }
 
-button:hover,
-.active-btn {
+button:hover {
   color: var(--color-black);
   fill: var(--color-black);
 }

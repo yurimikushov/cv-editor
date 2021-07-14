@@ -27,7 +27,7 @@ const Languages = () => {
         <li className='toolbar__language'>
           <Button
             className={cn('toolbar__language-btn', {
-              'active-btn': appProps.lang === 'en',
+              'toolbar__language-btn_activated': appProps.lang === 'en',
             })}
             title={t('EN')}
             onClick={() => changeLanguage('en')}
@@ -37,7 +37,7 @@ const Languages = () => {
         <li className='toolbar__language'>
           <Button
             className={cn('toolbar__language-btn', {
-              'active-btn': appProps.lang === 'ru',
+              'toolbar__language-btn_activated': appProps.lang === 'ru',
             })}
             title={t('RU')}
             onClick={() => changeLanguage('ru')}

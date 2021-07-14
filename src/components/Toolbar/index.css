@@ -11,3 +11,8 @@
 .toolbar__language + .toolbar__language {
   margin-left: 5px;
 }
+
+.toolbar__language-btn_activated {
+  color: var(--color-black);
+  fill: var(--color-black);
+}
