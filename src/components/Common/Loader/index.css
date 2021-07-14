@@ -4,7 +4,7 @@
   justify-content: center;
 }
 
-.loader > .loader__title {
+.loader__title {
   animation: blinking 2s infinite;
 }
 

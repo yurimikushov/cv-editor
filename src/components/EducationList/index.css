@@ -2,9 +2,9 @@
   position: relative;
 }
 
-.education > .education__degree,
-.education > .education__university,
-.education > .education__duration {
+.education__degree,
+.education__university,
+.education__duration {
   margin: 5px 0;
 }
 

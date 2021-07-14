@@ -15,7 +15,7 @@ const TechnologyList = () => {
         {t('Technologies')}
       </div>
       <MultilineInputField
-        className='technologies__list title t-5'
+        className='technologies__field title t-5'
         value={technologyList.technologies}
         onChange={(e) => technologyList.setTechnologies(e.target.value)}
         placeholder={t('Technology stack')}

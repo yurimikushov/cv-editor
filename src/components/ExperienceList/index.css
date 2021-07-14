@@ -6,10 +6,10 @@
   width: 100%;
 }
 
-.experience > .experience__position,
-.experience > .experience__company,
-.experience > .experience__duration,
-.experience > .experience__description {
+.experience__position,
+.experience__company,
+.experience__duration,
+.experience__description {
   margin: 5px 0;
 }
 

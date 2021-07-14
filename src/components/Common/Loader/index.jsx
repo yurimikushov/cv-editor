@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import './index.css'
 
 const Loader = ({ className = '', ...props }) => (
-  <div className={(className ? className + ' ' : '') + 'loader'} {...props}>
+  <div className={cn(className, 'loader')} {...props}>
     <span className='loader__title'>Loading...</span>
   </div>
 )
